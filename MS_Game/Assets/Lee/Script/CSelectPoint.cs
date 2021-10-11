@@ -8,7 +8,7 @@ public class CSelectPoint : MonoBehaviour
     private Camera m_MainCamera;
     private GameObject m_SelectPointPlane;//選択マス上のPlane
 
-    public bool m_DragFlag = false;
+    public bool m_IsDrag = false;
 
     RaycastHit m_RaycastHit;
 
@@ -18,8 +18,10 @@ public class CSelectPoint : MonoBehaviour
         m_MainCamera = Camera.main;
         m_RaycastHit = new RaycastHit();
 
-        m_SelectPointPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-        m_SelectPointPlane.transform.localScale = new Vector3(0.1f, 1.0f, 0.1f);
+        m_SelectPointPlane = GameObject.FindGameObjectWithTag("Plane");
+
+        //m_SelectPointPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        //m_SelectPointPlane.transform.localScale = new Vector3(0.1f, 1.0f, 0.1f);
     }
 
     // Update is called once per frame
@@ -27,42 +29,39 @@ public class CSelectPoint : MonoBehaviour
     {
         Ray ray = m_MainCamera.ScreenPointToRay(Input.mousePosition); //カメラからレイを飛ばす
 
-        if (Physics.Raycast(ray, out m_RaycastHit))
+        if (Input.GetMouseButtonDown(0))
         {
-
-            if (Input.GetMouseButtonDown(0))
+            if (Physics.Raycast(ray, out m_RaycastHit))
             {
-                if (Mathf.Abs(m_SelectPointPlane.transform.position.x - m_RaycastHit.point.x) < 0.5f && Mathf.Abs(m_SelectPointPlane.transform.position.z - m_RaycastHit.point.z) < 0.5f)
+                if (m_RaycastHit.collider.tag == "Plane")
                 {
-                    m_DragFlag = true;
+                    m_IsDrag = true;
                 }
+
             }
+        }
 
-            /*if (!m_SelectPointPlane)
+        if (m_IsDrag)
+        {
+            if (Physics.Raycast(ray, out m_RaycastHit))
             {
-                m_SelectPointPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-                m_SelectPointPlane.transform.localScale = new Vector3(0.1f, 1.0f, 0.1f);
-            }*/
 
-            if(m_DragFlag)
-            {
                 //1マス超えなかったらreturn
-                if (Mathf.Abs(m_SelectPointPlane.transform.position.x - m_RaycastHit.point.x) < 0.5f && Mathf.Abs(m_SelectPointPlane.transform.position.z - m_RaycastHit.point.z) < 0.5f)
+                if (Mathf.Abs(m_SelectPointPlane.transform.position.x - m_RaycastHit.point.x) >= 0.5f || Mathf.Abs(m_SelectPointPlane.transform.position.z - m_RaycastHit.point.z) >= 0.5f)
                 {
-                    return;
+                    //planeの座標をレイがあってるとこにする(微妙な少数になったりしたから整数にする)
+                    m_SelectPointPlane.transform.position = new Vector3(Mathf.RoundToInt(m_RaycastHit.point.x), m_RaycastHit.point.y, Mathf.RoundToInt(m_RaycastHit.point.z));
+                    m_SelectPointPlane.transform.position += new Vector3(0, 0.01f, 0);
                 }
-
-                //planeの座標をレイがあってるとこにする(微妙な少数になったりしたから整数にする)
-                m_SelectPointPlane.transform.position = new Vector3(Mathf.RoundToInt(m_RaycastHit.point.x), m_RaycastHit.point.y, Mathf.RoundToInt(m_RaycastHit.point.z));
-                m_SelectPointPlane.transform.position += new Vector3(0, 0.01f, 0);
             }
-            
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                m_IsDrag = false;
+            }
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            m_DragFlag = false;
-        }
 
     }
+
 }
