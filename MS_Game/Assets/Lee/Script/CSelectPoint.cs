@@ -18,8 +18,6 @@ public class CSelectPoint : MonoBehaviour
         m_MainCamera = Camera.main;
         m_RaycastHit = new RaycastHit();
 
-        m_SelectPointPlane = GameObject.FindGameObjectWithTag("Plane");
-
         //m_SelectPointPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
         //m_SelectPointPlane.transform.localScale = new Vector3(0.1f, 1.0f, 0.1f);
     }
@@ -35,6 +33,8 @@ public class CSelectPoint : MonoBehaviour
             {
                 if (m_RaycastHit.collider.tag == "Plane")
                 {
+                    Debug.Log("‚ ‚½‚Á‚½");
+                    m_SelectPointPlane = GameObject.FindGameObjectWithTag("Plane");
                     m_IsDrag = true;
                 }
 

@@ -7,9 +7,9 @@ using NPOI.HSSF.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
-public class TreeDatas_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/Lee/Excel/TreeDatas.xls";
-	private static readonly string exportPath = "Assets/Lee/Excel/TreeDatas.asset";
+public class TreeData_importer : AssetPostprocessor {
+	private static readonly string filePath = "Assets/Lee/Excel/TreeData.xls";
+	private static readonly string exportPath = "Assets/Lee/Excel/TreeData.asset";
 	private static readonly string[] sheetNames = { "Tree", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
@@ -18,9 +18,9 @@ public class TreeDatas_importer : AssetPostprocessor {
 			if (!filePath.Equals (asset))
 				continue;
 				
-			TreeDatas data = (TreeDatas)AssetDatabase.LoadAssetAtPath (exportPath, typeof(TreeDatas));
+			TreeData data = (TreeData)AssetDatabase.LoadAssetAtPath (exportPath, typeof(TreeData));
 			if (data == null) {
-				data = ScriptableObject.CreateInstance<TreeDatas> ();
+				data = ScriptableObject.CreateInstance<TreeData> ();
 				AssetDatabase.CreateAsset ((ScriptableObject)data, exportPath);
 				data.hideFlags = HideFlags.NotEditable;
 			}
@@ -41,14 +41,14 @@ public class TreeDatas_importer : AssetPostprocessor {
 						continue;
 					}
 
-					TreeDatas.Sheet s = new TreeDatas.Sheet ();
+					TreeData.Sheet s = new TreeData.Sheet ();
 					s.name = sheetName;
 				
 					for (int i=1; i<= sheet.LastRowNum; i++) {
 						IRow row = sheet.GetRow (i);
 						ICell cell = null;
 						
-						TreeDatas.Param p = new TreeDatas.Param ();
+						TreeData.Param p = new TreeData.Param ();
 						
 					cell = row.GetCell(0); p.Id = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(1); p.Name = (cell == null ? "" : cell.StringCellValue);

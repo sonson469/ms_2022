@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class TreeDatas : ScriptableObject
+public class TreeData : ScriptableObject
 {	
 	public List<Sheet> sheets = new List<Sheet> ();
 

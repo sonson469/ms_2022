@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2063e587275b4044aa3e512f21b4f169, type: 3}
-  m_Name: TreeDatas
+  m_Script: {fileID: 11500000, guid: aa0420a66718c934eb925eb74c124781, type: 3}
+  m_Name: TreeData
   m_EditorClassIdentifier: 
   sheets:
   - name: Tree
     list:
     - Id: 1
-      Name: Keyaki
+      Name: "\u6B05"
       Cost: 100
     - Id: 2
-      Name: Ume
+      Name: "\u6885"
       Cost: 200
     - Id: 3
       Name: "\u7AF9"
