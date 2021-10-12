@@ -34,7 +34,6 @@ public class GameSpeedManager : MonoBehaviour
         }
 
         Time.timeScale = m_GameSpeedCount;
-        Debug.Log(m_GameSpeedCount);
     }
 
     public void PauseGame()

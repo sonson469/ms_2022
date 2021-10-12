@@ -6,36 +6,39 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private Canvas canvas;
-    private Button button;
+    [SerializeField] private Canvas[] m_Canvas;
+    [SerializeField] private Canvas m_ObjCanvas;
+
+    [SerializeField] private int m_DispCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        m_DispCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(m_DispCount);
     }
 
-    public void UIDisp()
+    public void DispUI()
     {
-        canvas.gameObject.SetActive(!canvas.gameObject.activeSelf);    
+        if (++ m_DispCount % 2 == 0)
+        {
+            m_ObjCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_ObjCanvas.gameObject.SetActive(false);
+        }
     }
 
-    //public void ChangeColor()
-    //{
-    //    if (canvas.gameObject.activeSelf==false)
-    //    {
-    //        this.gameObject.GetComponent<Image>().color = Color.red;
-    //    }
-    //    else
-    //    {
-    //        this.gameObject.GetComponent<Image>().color = Color.white;
-    //    }
-    //}
+    public void DispObjUI()
+    {
+        m_ObjCanvas.gameObject.SetActive(!m_ObjCanvas.gameObject.activeSelf);
+    }
 
 }
