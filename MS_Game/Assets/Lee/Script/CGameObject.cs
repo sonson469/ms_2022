@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class CGameObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int m_ObjectNum;  //オブジェクトの識別番号
+    public int m_Cost;       //生成コスト
+    public int m_Limit;      //生成上限数
+
 }
