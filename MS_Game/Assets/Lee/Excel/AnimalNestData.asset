@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d042a105a7f773b448a6be487d9f22ff, type: 3}
+  m_Name: AnimalNestData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Sheet1
+    list:
+    - Id: 1
+      Name: "\u30CF\u30C4\u30AB\u30CD\u30BA\u30DF\u306E\u5DE3"
+      Cost: 400
+    - Id: 2
+      Name: "\u30A2\u30DE\u30AB\u30A8\u30EB\u306E\u5DE3"
+      Cost: 600
+    - Id: 3
+      Name: "\u30B7\u30DE\u30D8\u30D3\u306E\u5DE3"
+      Cost: 900
+    - Id: 4
+      Name: "\u30EC\u30C3\u30B5\u30FC\u30D1\u30F3\u30C0\u306E\u5DE3"
+      Cost: 1300
+    - Id: 5
+      Name: "\u30CB\u30DB\u30F3\u30A4\u30BF\u30C1\u306E\u5DE3"
+      Cost: 1900
+    - Id: 6
+      Name: "\u30E4\u30DE\u30A4\u30CC\u306E\u5DE3"
+      Cost: 2800
+    - Id: 7
+      Name: "\u30AA\u30AA\u30BF\u30AB\u306E\u5DE3"
+      Cost: 4200
+    - Id: 8
+      Name: "\u30D5\u30AF\u30ED\u30A6\u306E\u5DE3"
+      Cost: 6300
+    - Id: 9
+      Name: "\u30B0\u30EA\u30BA\u30EA\u30FC\u306E\u5DE3"
+      Cost: 9400
+    - Id: 10
+      Name: "\u30C8\u30E9\u306E\u5DE3"
+      Cost: 14000
+    - Id: 11
+      Name: "\u30B7\u30E7\u30A6\u30AC\u30E9\u30B4\u306E\u5DE3"
+      Cost: 600
+    - Id: 12
+      Name: "\u30AB\u30D4\u30D0\u30E9\u306E\u5DE3"
+      Cost: 900
+    - Id: 13
+      Name: "\u30B3\u30A2\u30E9\u306E\u5DE3"
+      Cost: 1300
+    - Id: 14
+      Name: "\u30A6\u30A9\u30F3\u30D0\u30C3\u30C8\u306E\u5DE3"
+      Cost: 1900
+    - Id: 15
+      Name: "\u30AA\u30AA\u30A2\u30EA\u30AF\u30A4\u306E\u5DE3"
+      Cost: 2800
+    - Id: 16
+      Name: "\u30BF\u30B9\u30DE\u30CB\u30A2\u30C7\u30D3\u30EB\u306E\u5DE3"
+      Cost: 4200
+    - Id: 17
+      Name: "\u30AA\u30AA\u30B3\u30A6\u30E2\u30EA\u306E\u5DE3"
+      Cost: 6300
+    - Id: 18
+      Name: "\u30B4\u30EA\u30E9\u306E\u5DE3"
+      Cost: 9400
+    - Id: 19
+      Name: "\u30EF\u30CB\u306E\u5DE3"
+      Cost: 14000
+    - Id: 20
+      Name: "\u30B8\u30E3\u30AC\u30FC\u306E\u5DE3"
+      Cost: 21000
+    - Id: 21
+      Name: "\u30CF\u30EA\u30CD\u30BA\u30DF\u306E\u5DE3"
+      Cost: 900
+    - Id: 22
+      Name: "\u30A2\u30EB\u30DE\u30B8\u30ED\u306E\u5DE3"
+      Cost: 1300
+    - Id: 23
+      Name: "\u30E9\u30AF\u30C0\u306E\u5DE3"
+      Cost: 1900
+    - Id: 24
+      Name: "\u30B7\u30DE\u30A6\u30DE\u306E\u5DE3"
+      Cost: 2800
+    - Id: 25
+      Name: "\u30B5\u30FC\u30D0\u30EB\u306E\u5DE3"
+      Cost: 4200
+    - Id: 26
+      Name: "\u30B8\u30E3\u30C3\u30AB\u30EB\u306E\u5DE3"
+      Cost: 6300
+    - Id: 27
+      Name: "\u30AB\u30D0\u306E\u5DE3"
+      Cost: 9400
+    - Id: 28
+      Name: "\u30B5\u30A4\u306E\u5DE3"
+      Cost: 14000
+    - Id: 29
+      Name: "\u30BE\u30A6\u306E\u5DE3"
+      Cost: 21000
+    - Id: 30
+      Name: "\u30E9\u30A4\u30AA\u30F3\u306E\u5DE3"
+      Cost: 31000
+    - Id: 31
+      Name: "\u30DA\u30F3\u30AE\u30F3\u306E\u5DE3\t\t"
+      Cost: 1300
+    - Id: 32
+      Name: "\u30A2\u30B6\u30E9\u30B7\u306E\u5DE3\t\t"
+      Cost: 1900
+    - Id: 33
+      Name: "\u30C8\u30CA\u30AB\u30A4\u306E\u5DE3"
+      Cost: 2800
+    - Id: 34
+      Name: "\u30B8\u30E3\u30B3\u30A6\u30A6\u30B7\u306E\u5DE3"
+      Cost: 4200
+    - Id: 35
+      Name: "\u30DB\u30C3\u30AD\u30E7\u30AF\u30AD\u30C4\u30CD\u306E\u5DE3"
+      Cost: 6300
+    - Id: 36
+      Name: "\u30B7\u30ED\u30D5\u30AF\u30ED\u30A6\u306E\u5DE3"
+      Cost: 9400
+    - Id: 37
+      Name: "\u30AF\u30BA\u30EA\u306E\u5DE3"
+      Cost: 14000
+    - Id: 38
+      Name: "\u30C4\u30F3\u30C9\u30E9\u30AA\u30AA\u30AB\u30DF\u306E\u5DE3"
+      Cost: 21000
+    - Id: 39
+      Name: "\u30BB\u30A4\u30A6\u30C1\u306E\u5DE3"
+      Cost: 31000
+    - Id: 40
+      Name: "\u30DB\u30C3\u30AD\u30E7\u30AF\u30B0\u30DE\u306E\u5DE3"
+      Cost: 46000
