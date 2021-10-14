@@ -26,14 +26,19 @@ public class UIManager : MonoBehaviour
 
     public void DispUI()
     {
-        if (++ m_DispCount % 2 == 0)
+        m_DispCount++;
+        for(int i = 0; i < m_Canvas.Length; i++)
         {
-            m_ObjCanvas.gameObject.SetActive(true);
+            if (m_DispCount % 2 == 0)
+            {
+                m_Canvas[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                m_Canvas[i].gameObject.SetActive(false);
+            }
         }
-        else
-        {
-            m_ObjCanvas.gameObject.SetActive(false);
-        }
+        
     }
 
     public void DispObjUI()
