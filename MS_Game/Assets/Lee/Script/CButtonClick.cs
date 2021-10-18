@@ -5,6 +5,8 @@ using UnityEngine;
 public class CButtonClick : MonoBehaviour
 {
     [SerializeField] private TreeData m_TreeData;
+    [SerializeField] private AnimalNestData m_NestData;
+
     private CPrefabList m_PrefabList;
     private CObjectMove m_ObjectMoveScript;
 
@@ -27,24 +29,83 @@ public class CButtonClick : MonoBehaviour
         
     }
 
-    public void CeateTree(int TreeID)
+    public void CreateTree(int TreeID)
     {
+
         if(m_TreeData.sheets[0].list[TreeID-1].Cost <= 10000)
         {
 
+            m_ObjectMoveScript.SetNum(TreeID);
+            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
+
+            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
+            {
+                Destroy(m_TargetObject);
+            }
+
             m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
 
-            m_ObjectPosition = new Vector3(5.0f, 0.0f, 0.0f);
+            ObjectCreate();
 
-            // プレハブを元にオブジェクトを生成する
-            m_TargetObject = Instantiate(m_Object,m_ObjectPosition,Quaternion.identity);
-
-            m_ObjectMoveScript.SetTargetObject(m_TargetObject);
-
-            m_ObjectMoveScript.SetObjectMove(true);
-
-            m_ObjectMoveScript.SetPlane();
         }
+    }
+
+    public void CreateNest(int NestID)
+    {
+
+        if (m_NestData.sheets[0].list[NestID - 1].Cost <= 10000)
+        {
+
+            if (m_TargetObject != null)
+            {
+                Destroy(m_TargetObject);
+            }
+
+            m_ObjectMoveScript.SetNum(NestID);
+            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.NEST);
+
+            m_Object = (GameObject)Resources.Load(m_NestData.sheets[0].list[NestID - 1].Name);
+
+            ObjectCreate();
+
+        }
+    }
+
+    public void CreateMachine(int MachineID)
+    {
+        if (m_NestData.sheets[0].list[MachineID - 1].Cost <= 10000)
+        {
+            if (m_TargetObject != null)
+            {
+                Destroy(m_TargetObject);
+            }
+            m_ObjectMoveScript.SetNum(MachineID);
+            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.MACHINE);
+
+            m_Object = (GameObject)Resources.Load(m_NestData.sheets[0].list[MachineID - 1].Name);
+
+            ObjectCreate();
+
+        }
+    }
+
+    public void Cancel()
+    {
+        m_ObjectMoveScript.ResetMove();
+    }
+
+    private void ObjectCreate()
+    {
+        m_ObjectPosition = new Vector3(m_ObjectMoveScript.GetCreatePosition().x, 0.0f, m_ObjectMoveScript.GetCreatePosition().z);
+
+        // プレハブを元にオブジェクトを生成する
+        m_TargetObject = Instantiate(m_Object, m_ObjectPosition, Quaternion.identity);
+
+        m_ObjectMoveScript.SetTargetObject(m_TargetObject);
+
+        m_ObjectMoveScript.SetObjectMove(true);
+
+        m_ObjectMoveScript.SetPlane();
     }
 
     public Vector3 GetObjectPosition()

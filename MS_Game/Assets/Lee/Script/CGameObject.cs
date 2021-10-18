@@ -5,8 +5,150 @@ using UnityEngine;
 public class CGameObject : MonoBehaviour
 {
 
-    public int m_ObjectNum;  //オブジェクトの識別番号
-    public int m_Cost;       //生成コスト
-    public int m_Limit;      //生成上限数
+    [SerializeField] private TreeData m_TreeData;
+
+    public enum TreeNumber
+    {
+        KEYAKI,
+        UME,
+        TAKE,
+        MATU,
+        SAKURA,
+        KAPOKKU,
+        MAHOGANI,
+        ASAIYASI,
+        TOWARAN,
+        WOKINGUPAMU,
+        NATUMEYASHI,
+        AKASHIYA,
+        ITIZIKU,
+        HAROKISHIRON,
+        BAOBABU,
+        DAKEKANBA,
+        YANAGI,
+        KONARA,
+        DAKEMOMI,
+        YATUDE,
+        KUTINASHI,
+        BURUBERI,
+        RABENDA,
+        ROZUMARI,
+        RATANNYASHI,
+        ASERORA,
+        SATOUKIBI,
+        KOHINOKI,
+        RAHURESHIA,
+        SABOTEN,
+        ENOKOROGUSA,
+        PANPASUGURASU,
+        JATOROFA,
+        SORUGAMU,
+        MIZUGOKE,
+        ONIIWAHIGE,
+        HAKUSANNITIGE,
+        TAKANESUMIRE,
+        KOMAKUSA,
+        HISU
+    }
+    public int[] m_TreeCount;      //樹木生成数
+
+    public enum AnimalNumber
+    {
+        HATUKANEZUMI,
+        AMAKAERU,
+        SHIMAHEBI,
+        RESSAPANDA,
+        NIHONNITATI,
+        YAMAINU,
+        OOTAKA,
+        HUKUROU,
+        GURIZURI,
+        TORA,
+        SYOUGARAGO,
+        KAPIBARA,
+        KOARA,
+        WONBATTO,
+        OOARIKUI,
+        TASUMANIADEBIRU,
+        OOKOUMORI,
+        GORIRA,
+        WANI,
+        ZYAGA,
+        HARINEZUMI,
+        ARUMAZIRO,
+        RAKUDA,
+        SHIMAUMA,
+        SABARU,
+        ZYAKKARU,
+        KABA,
+        SAI,
+        ZOU,
+        RAION,
+        PENGIN,
+        AZARASHI,
+        TONAKAI,
+        ZYAKOUUSHI,
+        HOKKYOKUKITUNE,
+        SHIROHUKUROU,
+        KUZURI,
+        TUNDORAOOKAMI,
+        SEIUTI,
+        HOKKYOKUGUMA
+    }
+    public int[] m_AnimalCount;    //動物生成数
+
+    public enum NestNumber
+    {
+        HATUKANEZUMI,
+        AMAKAERU,
+        SHIMAHEBI,
+        RESSAPANDA,
+        NIHONNITATI,
+        YAMAINU,
+        OOTAKA,
+        HUKUROU,
+        GURIZURI,
+        TORA,
+        SYOUGARAGO,
+        KAPIBARA,
+        KOARA,
+        WONBATTO,
+        OOARIKUI,
+        TASUMANIADEBIRU,
+        OOKOUMORI,
+        GORIRA,
+        WANI,
+        ZYAGA,
+        HARINEZUMI,
+        ARUMAZIRO,
+        RAKUDA,
+        SHIMAUMA,
+        SABARU,
+        ZYAKKARU,
+        KABA,
+        SAI,
+        ZOU,
+        RAION,
+        PENGIN,
+        AZARASHI,
+        TONAKAI,
+        ZYAKOUUSHI,
+        HOKKYOKUKITUNE,
+        SHIROHUKUROU,
+        KUZURI,
+        TUNDORAOOKAMI,
+        SEIUTI,
+        HOKKYOKUGUMA
+    }
+    public int[] m_NestCount;      //巣生成数
+
+    public enum MachineNumber
+    {
+        ONTAI,
+        NETTAI,
+        KANSOUTAI,
+        KANTAI
+    }
+    public int[] m_MachineCount;      //機械生成数
 
 }
