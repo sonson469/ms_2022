@@ -33,7 +33,6 @@ public class CSelectPoint : MonoBehaviour
             {
                 if (m_RaycastHit.collider.tag == "Plane")
                 {
-                    Debug.Log("‚ ‚½‚Á‚½");
                     m_SelectPointPlane = GameObject.FindGameObjectWithTag("Plane");
                     m_IsDrag = true;
                 }
