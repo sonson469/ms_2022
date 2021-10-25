@@ -66,10 +66,9 @@ public class CButtonClick : MonoBehaviour
         if (m_NestData.sheets[0].list[NestID - 1].Cost <= 10000)
         {
 
-            m_ObjectMoveScript.TreeReset();
-
-            if (m_TargetObject != null)
+            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
+                m_ObjectMoveScript.TreeReset();
                 Destroy(m_TargetObject);
             }
 
