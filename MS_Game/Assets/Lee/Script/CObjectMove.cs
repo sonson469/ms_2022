@@ -26,10 +26,19 @@ public class CObjectMove : MonoBehaviour
     { 
         TREE,
         NEST,
-        MACHINE
+        MACHINE,
+        NULL
+    }
+
+    public enum TreeSize
+    {
+        BIG,
+        SMALL,
+        NULL
     }
 
     private CreateObject m_CreateObjectNum; //オブジェクトの種類番号
+    private TreeSize m_TreeSize = TreeSize.NULL;        //木だったときに樹木か低樹木か判別用
 
     private RaycastHit m_RaycastHit;
 
@@ -56,8 +65,8 @@ public class CObjectMove : MonoBehaviour
         if (Physics.Raycast(ray, out m_RaycastHit))
         {
 
-            m_CreatePosition = m_RaycastHit.point;
-            Debug.Log(m_CreatePosition);
+            m_CreatePosition = new Vector3 (Mathf.Round(m_RaycastHit.point.x + 16.5f), 0, Mathf.Round(m_RaycastHit.point.z - 1.5f));
+            
 
         }
         
@@ -128,6 +137,8 @@ public class CObjectMove : MonoBehaviour
         m_Plane.SetActive(false);
         m_Button.SetActive(false);
 
+        TreeReset();
+
         Destroy(m_TargetObject);
 
         m_TargetPosition = new Vector3(0, 0, 0);
@@ -135,6 +146,24 @@ public class CObjectMove : MonoBehaviour
         m_PutBeforePosition = new Vector3(0, 0, 0);
         m_Vector = new Vector3(2, 0, 0);
         m_TargetObject = null;
+        m_CreateObjectNum = CreateObject.NULL;
+    }
+
+    public void TreeReset()
+    {
+        if (m_TreeSize == TreeSize.BIG)
+        {
+            CTreeBig treescript = m_TargetObject.GetComponent<CTreeBig>();
+            treescript.ResetList();
+
+        }
+        else if (m_TreeSize == TreeSize.SMALL)
+        {
+            CTreeSmall treescript = m_TargetObject.GetComponent<CTreeSmall>();
+            treescript.ResetList();
+        }
+
+        m_TreeSize = TreeSize.NULL;
     }
 
     public void SetObjectMove(bool flag)
@@ -162,6 +191,11 @@ public class CObjectMove : MonoBehaviour
     public void SetObjectNum(CreateObject num)
     {
         m_CreateObjectNum = num;
+    }
+
+    public void SetTreeSize(TreeSize size)
+    {
+        m_TreeSize = size;
     }
 
     public bool GetSuccession()
