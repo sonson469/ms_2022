@@ -18,6 +18,8 @@ public class CObjectMove : MonoBehaviour
 
     private CButtonClick m_ButtonScript;  //クリックのスクリプト
 
+    private CGameObject m_GameObjectScript;
+
     private bool m_Succession;     //連続で置いてる状態か
 
     private int m_Num;     //置く対象の番号
@@ -50,6 +52,7 @@ public class CObjectMove : MonoBehaviour
     void Start()
     {
         m_ButtonScript = this.gameObject.GetComponent<CButtonClick>();
+        m_GameObjectScript = this.gameObject.GetComponent<CGameObject>();
 
         m_Vector = new Vector3(2.0f, 0, 0);
 
@@ -69,7 +72,6 @@ public class CObjectMove : MonoBehaviour
             
 
         }
-        
 
         if (m_ObjectMove)
         {
@@ -90,7 +92,6 @@ public class CObjectMove : MonoBehaviour
                 if (m_PutPosition != null)
                 {
                     m_PutBeforePosition = m_PutPosition;
-                    
                 }
 
                 //置いたオブジェクトの座標を格納
@@ -103,14 +104,25 @@ public class CObjectMove : MonoBehaviour
 
                 if(m_CreateObjectNum == CreateObject.TREE)
                 {
+                    m_GameObjectScript.TreeList.Add(m_TargetObject);
+                    if(m_TreeSize == TreeSize.BIG)
+                    {
+                        m_GameObjectScript.m_TreeBigCount++;
+                    }
+                    else if(m_TreeSize == TreeSize.SMALL)
+                    {
+                        m_GameObjectScript.m_TreeSmallCount++;
+                    }
                     m_ButtonScript.CreateTree(m_Num);
                 }
                 else if(m_CreateObjectNum == CreateObject.NEST)
                 {
+                    m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
                     m_ButtonScript.CreateNest(m_Num);
                 }
                 else if (m_CreateObjectNum == CreateObject.MACHINE)
                 {
+                    m_GameObjectScript.MachineList.Add(m_TargetObject);
                     m_ButtonScript.CreateMachine(m_Num);
                 }
 
