@@ -18206,6 +18206,7 @@ GameObject:
   - component: {fileID: 633838507}
   - component: {fileID: 633838508}
   - component: {fileID: 633838509}
+  - component: {fileID: 633838510}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18326,6 +18327,24 @@ MonoBehaviour:
   m_PutBeforePosition: {x: 0, y: 0, z: 0}
   m_Vector: {x: 0, y: 0, z: 0}
   m_TargetObject: {fileID: 0}
+--- !u!114 &633838510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633838504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2287e2b1186d429094529c72c6ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TreeList: []
+  m_TreeBigCount: 0
+  m_TreeSmallCount: 0
+  AnimalList: []
+  AnimalNestList: []
+  MachineList: []
 --- !u!1 &642990966
 GameObject:
   m_ObjectHideFlags: 0
@@ -44509,6 +44528,7 @@ GameObject:
   - component: {fileID: 1718345627}
   - component: {fileID: 1718345629}
   - component: {fileID: 1718345628}
+  - component: {fileID: 1718345632}
   m_Layer: 0
   m_Name: GameManager (1)
   m_TagString: Untagged
@@ -44629,6 +44649,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718345632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718345626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2287e2b1186d429094529c72c6ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TreeList: []
+  m_TreeBigCount: 0
+  m_TreeSmallCount: 0
+  AnimalList: []
+  AnimalNestList: []
+  MachineList: []
 --- !u!1 &1720897268
 GameObject:
   m_ObjectHideFlags: 0

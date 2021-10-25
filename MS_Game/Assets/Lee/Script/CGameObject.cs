@@ -5,7 +5,7 @@ using UnityEngine;
 public class CGameObject : MonoBehaviour
 {
 
-    [SerializeField] private TreeData m_TreeData;
+    //[SerializeField] private TreeData m_TreeData;
 
     public enum TreeNumber
     {
@@ -50,7 +50,9 @@ public class CGameObject : MonoBehaviour
         KOMAKUSA,
         HISU
     }
-    public int[] m_TreeCount;      //÷–Ø¶¬”
+    public List<GameObject> TreeList = new List<GameObject>();  //¶¬‚³‚ê‚½÷–Ø
+    public int m_TreeBigCount;     //÷–Ø‚Ì”
+    public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
 
     public enum AnimalNumber
     {
@@ -95,7 +97,7 @@ public class CGameObject : MonoBehaviour
         SEIUTI,
         HOKKYOKUGUMA
     }
-    public int[] m_AnimalCount;    //“®•¨¶¬”
+    public List<GameObject> AnimalList = new List<GameObject>();  //¶¬‚³‚ê‚½“®•¨
 
     public enum NestNumber
     {
@@ -140,7 +142,7 @@ public class CGameObject : MonoBehaviour
         SEIUTI,
         HOKKYOKUGUMA
     }
-    public int[] m_NestCount;      //‘ƒ¶¬”
+    public List<GameObject> AnimalNestList = new List<GameObject>();  //¶¬‚³‚ê‚½‘ƒ
 
     public enum MachineNumber
     {
@@ -149,6 +151,6 @@ public class CGameObject : MonoBehaviour
         KANSOUTAI,
         KANTAI
     }
-    public int[] m_MachineCount;      //‹@ŠB¶¬”
+    public List<GameObject> MachineList = new List<GameObject>();  //¶¬‚³‚ê‚½‹@ŠB
 
 }
