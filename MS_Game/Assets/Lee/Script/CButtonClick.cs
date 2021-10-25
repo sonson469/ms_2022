@@ -35,12 +35,22 @@ public class CButtonClick : MonoBehaviour
         if(m_TreeData.sheets[0].list[TreeID-1].Cost <= 10000)
         {
 
+            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
+            {
+                m_ObjectMoveScript.TreeReset();
+                Destroy(m_TargetObject);
+            }
+
             m_ObjectMoveScript.SetNum(TreeID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
 
-            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
+            if(TreeID <= 19)
             {
-                Destroy(m_TargetObject);
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.BIG);
+            }
+            else if(TreeID >= 20)
+            {
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.SMALL);
             }
 
             m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
@@ -56,6 +66,8 @@ public class CButtonClick : MonoBehaviour
         if (m_NestData.sheets[0].list[NestID - 1].Cost <= 10000)
         {
 
+            m_ObjectMoveScript.TreeReset();
+
             if (m_TargetObject != null)
             {
                 Destroy(m_TargetObject);
@@ -64,10 +76,9 @@ public class CButtonClick : MonoBehaviour
             m_ObjectMoveScript.SetNum(NestID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.NEST);
 
-            m_Object = (GameObject)Resources.Load(m_NestData.sheets[0].list[NestID - 1].Name);
+            m_Object = (GameObject)Resources.Load("Anima_Nest/" + m_NestData.sheets[0].list[NestID - 1].Name);
 
             ObjectCreate();
-
         }
     }
 
@@ -75,6 +86,10 @@ public class CButtonClick : MonoBehaviour
     {
         if (m_NestData.sheets[0].list[MachineID - 1].Cost <= 10000)
         {
+
+            m_ObjectMoveScript.TreeReset();
+
+
             if (m_TargetObject != null)
             {
                 Destroy(m_TargetObject);
