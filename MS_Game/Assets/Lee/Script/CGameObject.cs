@@ -48,7 +48,8 @@ public class CGameObject : MonoBehaviour
         HAKUSANNITIGE,
         TAKANESUMIRE,
         KOMAKUSA,
-        HISU
+        HISU,
+        TREEMAX,
     }
     public List<GameObject> TreeList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩé˜ñÿ
     public int m_TreeBigCount;     //é˜ñÿÇÃêî
@@ -140,7 +141,8 @@ public class CGameObject : MonoBehaviour
         KUZURI,
         TUNDORAOOKAMI,
         SEIUTI,
-        HOKKYOKUGUMA
+        HOKKYOKUGUMA,
+        NESTMAX,
     }
     public List<GameObject> AnimalNestList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩëÉ
 
@@ -153,4 +155,17 @@ public class CGameObject : MonoBehaviour
     }
     public List<GameObject> MachineList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩã@äB
 
+
+    [SerializeField] private TreeData m_TreeData;
+    private int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
+    private void Update()
+    {
+        for (int i = 0; i <= TreeList.Count; i++)
+        {
+            if (TreeList[i].gameObject.name == m_TreeData.sheets[0].list[i].Name)
+            {
+                m_TreeNameCount[i]++;
+            }
+        }
+    }
 }
