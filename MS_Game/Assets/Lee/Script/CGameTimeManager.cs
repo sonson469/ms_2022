@@ -31,6 +31,8 @@ public class CGameTimeManager : MonoBehaviour
         m_MoneyText = m_MoneyTextObject.GetComponent<Text>();
 
         m_TimeSpeed = 0;
+
+        m_Money = 10000;
     }
 
     // Update is called once per frame
@@ -58,5 +60,15 @@ public class CGameTimeManager : MonoBehaviour
     public void SetTimeSpeed(int num)
     {
         m_TimeSpeed = num;
+    }
+
+    public int GetMoney()
+    {
+        return m_Money;
+    }
+
+    public void UseMoney(int cost)
+    {
+        m_Money -= cost;
     }
 }

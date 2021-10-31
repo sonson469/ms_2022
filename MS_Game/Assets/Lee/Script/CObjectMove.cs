@@ -6,6 +6,8 @@ public class CObjectMove : MonoBehaviour
 {
     private bool m_ObjectMove = false;     //移動モードかどうか
 
+    private int m_TargetObjectCost;      //移動させるオブジェクトのコスト
+
     [SerializeField] private GameObject m_Plane;  //置くときオブジェクトの下に敷くやつ
     [SerializeField] private GameObject m_Button;  //キャンセルボタン
 
@@ -19,6 +21,7 @@ public class CObjectMove : MonoBehaviour
     private CButtonClick m_ButtonScript;  //クリックのスクリプト
 
     private CGameObject m_GameObjectScript;
+    private CGameTimeManager m_TimeScript;
 
     private bool m_Succession;     //連続で置いてる状態か
 
@@ -53,6 +56,7 @@ public class CObjectMove : MonoBehaviour
     {
         m_ButtonScript = this.gameObject.GetComponent<CButtonClick>();
         m_GameObjectScript = this.gameObject.GetComponent<CGameObject>();
+        m_TimeScript = this.gameObject.GetComponent<CGameTimeManager>();
 
         m_Vector = new Vector3(2.0f, 0, 0);
 
@@ -85,60 +89,65 @@ public class CObjectMove : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
-
-                m_Succession = true;
-
-                //同じオブジェクトを既に設置してたら
-                if (m_PutPosition != null)
+                if (m_TargetObjectCost <= m_TimeScript.GetMoney())
                 {
-                    m_PutBeforePosition = m_PutPosition;
-                }
+                    m_Succession = true;
 
-                //置いたオブジェクトの座標を格納
-                m_PutPosition = m_TargetObject.transform.position;
-
-                if(m_PutBeforePosition != null)
-                {
-                    m_Vector = m_PutPosition - m_PutBeforePosition;
-                }
-
-                if(m_CreateObjectNum == CreateObject.TREE)
-                {
-                    m_GameObjectScript.TreeList.Add(m_TargetObject);
-                    if(m_TreeSize == TreeSize.BIG)
+                    //同じオブジェクトを既に設置してたら
+                    if (m_PutPosition != null)
                     {
-                        m_GameObjectScript.m_TreeBigCount++;
+                        m_PutBeforePosition = m_PutPosition;
                     }
-                    else if(m_TreeSize == TreeSize.SMALL)
+
+                    //置いたオブジェクトの座標を格納
+                    m_PutPosition = m_TargetObject.transform.position;
+
+                    if (m_PutBeforePosition != null)
                     {
-                        m_GameObjectScript.m_TreeSmallCount++;
+                        m_Vector = m_PutPosition - m_PutBeforePosition;
                     }
-                    m_ButtonScript.CreateTree(m_Num);
-                }
-                else if(m_CreateObjectNum == CreateObject.NEST)
-                {
-                    m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
-                    m_ButtonScript.CreateNest(m_Num);
-                }
-                else if (m_CreateObjectNum == CreateObject.MACHINE)
-                {
-                    m_GameObjectScript.MachineList.Add(m_TargetObject);
-                    m_ButtonScript.CreateMachine(m_Num);
-                }
 
-                //隣においてた時
-                if (m_Vector.magnitude == 1.0f)
-                {
-                    m_Plane.transform.position = new Vector3(m_PutPosition.x + m_Vector.x, 0.52f, m_PutPosition.z + m_Vector.z);
-                    
-                }
-                //初期もしくは隣以外
-                else 
-                {
-                    m_Plane.transform.position = new Vector3(m_PutPosition.x + 1.0f, 0.52f, m_PutPosition.z);
-                }
+                    m_TimeScript.UseMoney(m_TargetObjectCost);
 
-                m_Succession = false;
+                    if (m_CreateObjectNum == CreateObject.TREE)
+                    {
+                        m_GameObjectScript.TreeList.Add(m_TargetObject);
+                        if (m_TreeSize == TreeSize.BIG)
+                        {
+                            m_GameObjectScript.m_TreeBigCount++;
+                        }
+                        else if (m_TreeSize == TreeSize.SMALL)
+                        {
+                            m_GameObjectScript.m_TreeSmallCount++;
+                        }
+                        m_ButtonScript.CreateTree(m_Num);
+                        
+                    }
+                    else if (m_CreateObjectNum == CreateObject.NEST)
+                    {
+                        m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
+                        m_ButtonScript.CreateNest(m_Num);
+                    }
+                    else if (m_CreateObjectNum == CreateObject.MACHINE)
+                    {
+                        m_GameObjectScript.MachineList.Add(m_TargetObject);
+                        m_ButtonScript.CreateMachine(m_Num);
+                    }
+
+                    //隣においてた時
+                    if (m_Vector.magnitude == 1.0f)
+                    {
+                        m_Plane.transform.position = new Vector3(m_PutPosition.x + m_Vector.x, 0.52f, m_PutPosition.z + m_Vector.z);
+
+                    }
+                    //初期もしくは隣以外
+                    else
+                    {
+                        m_Plane.transform.position = new Vector3(m_PutPosition.x + 1.0f, 0.52f, m_PutPosition.z);
+                    }
+
+                    m_Succession = false;
+                }
             }
         }
     }
@@ -208,6 +217,11 @@ public class CObjectMove : MonoBehaviour
     public void SetTreeSize(TreeSize size)
     {
         m_TreeSize = size;
+    }
+
+    public void SetCost(int cost)
+    {
+        m_TargetObjectCost = cost;
     }
 
     public bool GetSuccession()
