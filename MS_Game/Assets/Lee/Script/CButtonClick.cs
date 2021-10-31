@@ -6,10 +6,10 @@ public class CButtonClick : MonoBehaviour
 {
     [SerializeField] private TreeData m_TreeData;
     [SerializeField] private AnimalNestData m_NestData;
-    [SerializeField] private CGameTimeManager m_TimeManager;
 
     private CPrefabList m_PrefabList;
     private CObjectMove m_ObjectMoveScript;
+    private CGameTimeManager m_TimeManager;
 
     private GameObject m_Object;
 
@@ -34,7 +34,7 @@ public class CButtonClick : MonoBehaviour
     public void CreateTree(int TreeID)
     {
 
-        if(m_TreeData.sheets[0].list[TreeID-1].Cost <= 10000)
+        if(m_TreeData.sheets[0].list[TreeID-1].Cost <= m_TimeManager.GetMoney())
         {
 
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
@@ -45,8 +45,9 @@ public class CButtonClick : MonoBehaviour
 
             m_ObjectMoveScript.SetNum(TreeID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
+            m_ObjectMoveScript.SetCost(m_TreeData.sheets[0].list[TreeID - 1].Cost);
 
-            if(TreeID <= 19)
+            if (TreeID <= 19)
             {
                 m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.BIG);
             }
@@ -65,7 +66,7 @@ public class CButtonClick : MonoBehaviour
     public void CreateNest(int NestID)
     {
 
-        if (m_NestData.sheets[0].list[NestID - 1].Cost <= 10000)
+        if (m_NestData.sheets[0].list[NestID - 1].Cost <= m_TimeManager.GetMoney())
         {
 
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
@@ -77,6 +78,8 @@ public class CButtonClick : MonoBehaviour
             m_ObjectMoveScript.SetNum(NestID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.NEST);
 
+            m_ObjectMoveScript.SetCost(m_NestData.sheets[0].list[NestID - 1].Cost);
+
             m_Object = (GameObject)Resources.Load("Anima_Nest/" + m_NestData.sheets[0].list[NestID - 1].Name);
 
             ObjectCreate();
@@ -85,7 +88,7 @@ public class CButtonClick : MonoBehaviour
 
     public void CreateMachine(int MachineID)
     {
-        if (m_NestData.sheets[0].list[MachineID - 1].Cost <= 10000)
+        if (m_NestData.sheets[0].list[MachineID - 1].Cost <= m_TimeManager.GetMoney())
         {
 
             m_ObjectMoveScript.TreeReset();
@@ -95,8 +98,10 @@ public class CButtonClick : MonoBehaviour
             {
                 Destroy(m_TargetObject);
             }
+
             m_ObjectMoveScript.SetNum(MachineID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.MACHINE);
+            m_ObjectMoveScript.SetCost(m_NestData.sheets[0].list[MachineID - 1].Cost);
 
             m_Object = (GameObject)Resources.Load(m_NestData.sheets[0].list[MachineID - 1].Name);
 

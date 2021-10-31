@@ -160,6 +160,11 @@ public class CGameObject : MonoBehaviour
     private int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
     private void Update()
     {
+        
+    }
+
+    public void TreeNameCount()
+    {
         for (int i = 0; i <= TreeList.Count; i++)
         {
             if (TreeList[i].gameObject.name == m_TreeData.sheets[0].list[i].Name)

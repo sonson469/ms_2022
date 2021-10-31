@@ -18808,7 +18808,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeData: {fileID: 11400000, guid: 149dd808eb0661a4da86ece818f959dc, type: 2}
   m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}
-  m_TimeManager: {fileID: 0}
 --- !u!114 &633838508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18899,6 +18898,7 @@ MonoBehaviour:
   AnimalList: []
   AnimalNestList: []
   MachineList: []
+  m_TreeData: {fileID: 0}
 --- !u!1 &642990966
 GameObject:
   m_ObjectHideFlags: 0
@@ -45506,7 +45506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeData: {fileID: 11400000, guid: 149dd808eb0661a4da86ece818f959dc, type: 2}
   m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}
-  m_TimeManager: {fileID: 0}
 --- !u!114 &1718345628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45624,6 +45623,7 @@ MonoBehaviour:
   AnimalList: []
   AnimalNestList: []
   MachineList: []
+  m_TreeData: {fileID: 11400000, guid: 149dd808eb0661a4da86ece818f959dc, type: 2}
 --- !u!114 &1718345633
 MonoBehaviour:
   m_ObjectHideFlags: 0
