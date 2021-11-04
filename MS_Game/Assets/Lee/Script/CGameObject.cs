@@ -14,10 +14,10 @@ public class CGameObject : MonoBehaviour
     public List<GameObject> MachineList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩã@äB
 
     [SerializeField] private TreeData m_TreeData;
-    [SerializeField] private int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
+    public int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
 
     [SerializeField] private AnimalNestData m_NestData;
-    [SerializeField] private int[] m_NextNameCount = new int[(int)NestNumber.NESTMAX];
+    public int[] m_NestNameCount = new int[(int)NestNumber.NESTMAX];
 
     public enum TreeNumber
     {
@@ -173,7 +173,8 @@ public class CGameObject : MonoBehaviour
 
     public void NestNameCount(int num)
     {
-        m_NextNameCount[num]++;
+        m_NestNameCount[num]++;
     }
+    
 
 }
