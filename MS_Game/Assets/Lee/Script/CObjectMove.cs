@@ -112,6 +112,7 @@ public class CObjectMove : MonoBehaviour
                     if (m_CreateObjectNum == CreateObject.TREE)
                     {
                         m_GameObjectScript.TreeList.Add(m_TargetObject);
+                        m_GameObjectScript.TreeNameCount(m_Num - 1);
                         if (m_TreeSize == TreeSize.BIG)
                         {
                             m_GameObjectScript.m_TreeBigCount++;
@@ -126,11 +127,14 @@ public class CObjectMove : MonoBehaviour
                     else if (m_CreateObjectNum == CreateObject.NEST)
                     {
                         m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
+                        m_GameObjectScript.NestNameCount(m_Num - 1);
+
                         m_ButtonScript.CreateNest(m_Num);
                     }
                     else if (m_CreateObjectNum == CreateObject.MACHINE)
                     {
                         m_GameObjectScript.MachineList.Add(m_TargetObject);
+
                         m_ButtonScript.CreateMachine(m_Num);
                     }
 

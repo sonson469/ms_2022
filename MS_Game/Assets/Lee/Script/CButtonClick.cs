@@ -6,6 +6,7 @@ public class CButtonClick : MonoBehaviour
 {
     [SerializeField] private TreeData m_TreeData;
     [SerializeField] private AnimalNestData m_NestData;
+    [SerializeField] private MachineData m_MachineData;
 
     private CPrefabList m_PrefabList;
     private CObjectMove m_ObjectMoveScript;
@@ -88,7 +89,7 @@ public class CButtonClick : MonoBehaviour
 
     public void CreateMachine(int MachineID)
     {
-        if (m_NestData.sheets[0].list[MachineID - 1].Cost <= m_TimeManager.GetMoney())
+        if (m_MachineData.sheets[0].list[MachineID - 1].Cost <= m_TimeManager.GetMoney())
         {
 
             m_ObjectMoveScript.TreeReset();
@@ -101,9 +102,9 @@ public class CButtonClick : MonoBehaviour
 
             m_ObjectMoveScript.SetNum(MachineID);
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.MACHINE);
-            m_ObjectMoveScript.SetCost(m_NestData.sheets[0].list[MachineID - 1].Cost);
+            m_ObjectMoveScript.SetCost(m_MachineData.sheets[0].list[MachineID - 1].Cost);
 
-            m_Object = (GameObject)Resources.Load(m_NestData.sheets[0].list[MachineID - 1].Name);
+            m_Object = (GameObject)Resources.Load("Machine/" + m_MachineData.sheets[0].list[MachineID - 1].Name);
 
             ObjectCreate();
 

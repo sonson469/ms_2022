@@ -5,7 +5,19 @@ using UnityEngine;
 public class CGameObject : MonoBehaviour
 {
 
-    //[SerializeField] private TreeData m_TreeData;
+    public List<GameObject> TreeList = new List<GameObject>();  //¶¬‚³‚ê‚½÷–Ø
+    public int m_TreeBigCount;     //÷–Ø‚Ì”
+    public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
+
+    public List<GameObject> AnimalList = new List<GameObject>();  //¶¬‚³‚ê‚½“®•¨
+    public List<GameObject> AnimalNestList = new List<GameObject>();  //¶¬‚³‚ê‚½‘ƒ
+    public List<GameObject> MachineList = new List<GameObject>();  //¶¬‚³‚ê‚½‹@ŠB
+
+    [SerializeField] private TreeData m_TreeData;
+    [SerializeField] private int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
+
+    [SerializeField] private AnimalNestData m_NestData;
+    [SerializeField] private int[] m_NextNameCount = new int[(int)NestNumber.NESTMAX];
 
     public enum TreeNumber
     {
@@ -51,9 +63,6 @@ public class CGameObject : MonoBehaviour
         HISU,
         TREEMAX,
     }
-    public List<GameObject> TreeList = new List<GameObject>();  //¶¬‚³‚ê‚½÷–Ø
-    public int m_TreeBigCount;     //÷–Ø‚Ì”
-    public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
 
     public enum AnimalNumber
     {
@@ -98,7 +107,6 @@ public class CGameObject : MonoBehaviour
         SEIUTI,
         HOKKYOKUGUMA
     }
-    public List<GameObject> AnimalList = new List<GameObject>();  //¶¬‚³‚ê‚½“®•¨
 
     public enum NestNumber
     {
@@ -144,7 +152,6 @@ public class CGameObject : MonoBehaviour
         HOKKYOKUGUMA,
         NESTMAX,
     }
-    public List<GameObject> AnimalNestList = new List<GameObject>();  //¶¬‚³‚ê‚½‘ƒ
 
     public enum MachineNumber
     {
@@ -153,24 +160,20 @@ public class CGameObject : MonoBehaviour
         KANSOUTAI,
         KANTAI
     }
-    public List<GameObject> MachineList = new List<GameObject>();  //¶¬‚³‚ê‚½‹@ŠB
-
-
-    [SerializeField] private TreeData m_TreeData;
-    private int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];
     private void Update()
     {
         
     }
 
-    public void TreeNameCount()
+    //–¼‘O‚²‚Æ‚É‰½ŒÂ‚ ‚é‚©”‚¦‚é
+    public void TreeNameCount(int num)
     {
-        for (int i = 0; i <= TreeList.Count; i++)
-        {
-            if (TreeList[i].gameObject.name == m_TreeData.sheets[0].list[i].Name)
-            {
-                m_TreeNameCount[i]++;
-            }
-        }
+        m_TreeNameCount[num]++;
     }
+
+    public void NestNameCount(int num)
+    {
+        m_NextNameCount[num]++;
+    }
+
 }
