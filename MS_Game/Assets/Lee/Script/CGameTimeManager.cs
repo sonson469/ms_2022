@@ -17,15 +17,22 @@ public class CGameTimeManager : MonoBehaviour
     [SerializeField] GameObject m_TimeMaterObject;
     [SerializeField] GameObject m_DayTextObject;
     [SerializeField] GameObject m_MoneyTextObject;
+
+    private CGameObject m_GameObjectScript;
     private Slider m_TimeMater;
     private Text m_DayText;
     private Text m_MoneyText;
 
     private int  m_TimeSpeed;
 
+    private bool m_DayEnd;   //1ì˙Ç®ÇÌÇË
+    private int m_NestCount;   //ìÆï®Çê∂ê¨ÇµÇΩëÉÇÃêî(MAXÇ…Ç»Ç¡ÇΩÇÁÇPì˙Ç®ÇÌÇËèàóù)
+
     // Start is called before the first frame update
     void Start()
     {
+        m_GameObjectScript = this.gameObject.GetComponent<CGameObject>();
+
         m_TimeMater = m_TimeMaterObject.GetComponent<Slider>();
         m_DayText = m_DayTextObject.GetComponent<Text>();
         m_MoneyText = m_MoneyTextObject.GetComponent<Text>();
@@ -38,14 +45,22 @@ public class CGameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Progress(m_TimeSpeed);
-
-        //1ì˙Ç®ÇÌÇË
-        if (m_GameTime >= m_DayTime)
+        if(m_DayEnd && m_NestCount >= m_GameObjectScript.AnimalNestList.Count)
         {
             m_GameDay++;
             m_Money += 1000;
             m_GameTime = 0;
+            m_DayEnd = false;
+            m_NestCount = 0;
+        }
+        if(!m_DayEnd)
+        {
+            Progress(m_TimeSpeed);
+        }
+        //1ì˙Ç®ÇÌÇË
+        if (m_GameTime >= m_DayTime)
+        {
+            m_DayEnd = true;
         }
 
         m_TimeMater.value = m_GameTime / m_DayTime;
@@ -71,5 +86,15 @@ public class CGameTimeManager : MonoBehaviour
     public void UseMoney(int cost)
     {
         m_Money -= cost;
+    }
+
+    public void AddNestCount()
+    {
+        m_NestCount++;
+    }
+
+    public bool GetDayEnd()
+    {
+        return m_DayEnd;
     }
 }
