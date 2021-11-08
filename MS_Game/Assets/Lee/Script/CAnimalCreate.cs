@@ -5,16 +5,17 @@ using UnityEngine;
 public class CAnimalCreate : MonoBehaviour
 {
 
-    public GameObject m_MyNest;
-    public AnimalNestData m_NestData;
+    [Header("子オブジェクトの巣")]
+    protected GameObject m_MyNest;
+    [SerializeField] private AnimalNestData m_NestData;
 
-    public CNest m_NestScript;
+    protected CNest m_NestScript;
 
-    public CGameObject m_GameObjectScript;
+    protected GameObject m_Manager;
+    protected CGameTimeManager m_TimeManager;
 
     public void Start()
     {
-        m_GameObjectScript = this.gameObject.GetComponent<CGameObject>();
     }
 
     public void CreateAnimal(int NestID)

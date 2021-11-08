@@ -6,14 +6,21 @@ public class LowerHerbivore : CAnimalCreate
 {
 
     // Start is called before the first frame update
-    void Start()
+    public new void Start()
     {
         m_NestScript = m_MyNest.gameObject.GetComponent<CNest>();
+        m_Manager = GameObject.FindWithTag("Manager");
+        m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(m_TimeManager.GetDayEnd())
+        {
+            NestAnimal();
+            m_TimeManager.AddNestCount();
+        }
     }
 
     public override void NestAnimal()

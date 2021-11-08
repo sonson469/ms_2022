@@ -24,7 +24,6 @@ public class CNest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -43,7 +42,6 @@ public class CNest : MonoBehaviour
             m_TreeBigCount--;
         }
     }
-
     public void CountTreeSmall(bool plus)
     {
         if (plus)
@@ -55,7 +53,6 @@ public class CNest : MonoBehaviour
             m_TreeSmallCount--;
         }
     }
-
     public int GetTreeBig()
     {
         return m_TreeBigCount;
@@ -74,7 +71,6 @@ public class CNest : MonoBehaviour
     {
         return m_NestNumAll;
     }
-
     public Climate GetClimate()
     {
         return m_Climate;
