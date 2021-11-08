@@ -40,6 +40,7 @@ public class CGameTimeManager : MonoBehaviour
     {
         Progress(m_TimeSpeed);
 
+        //1“ú‚¨‚í‚è
         if (m_GameTime >= m_DayTime)
         {
             m_GameDay++;
