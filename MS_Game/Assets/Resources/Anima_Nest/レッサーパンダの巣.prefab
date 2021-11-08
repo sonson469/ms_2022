@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 70328173938347909}
   m_Layer: 0
   m_Name: "\u30EC\u30C3\u30B5\u30FC\u30D1\u30F3\u30C0\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nRESSAPANDA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

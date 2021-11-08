@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 3732015584768199028}
   m_Layer: 0
   m_Name: "\u30AB\u30D4\u30D0\u30E9\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nKAPIBARA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9078330111446675569}
   m_Layer: 0
   m_Name: "\u30AB\u30D0\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nKABA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

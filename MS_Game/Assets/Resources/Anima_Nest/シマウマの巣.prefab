@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3018382501317606703}
   m_Layer: 0
   m_Name: "\u30B7\u30DE\u30A6\u30DE\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nSHIMAUMA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
