@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4384043236727366189}
   m_Layer: 0
   m_Name: "\u30A6\u30A9\u30F3\u30D0\u30C3\u30C8\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nWONBATTO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3230437795854654039}
   m_Layer: 0
   m_Name: "\u30B7\u30DE\u30D8\u30D3\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nSHIMAHEBI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

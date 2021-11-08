@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9073064628274402006}
   m_Layer: 0
   m_Name: "\u30C8\u30CA\u30AB\u30A4\u306E\u5DE3"
-  m_TagString: Untagged
+  m_TagString: nTONAKAI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
