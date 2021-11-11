@@ -10,6 +10,7 @@ public class LowerCarnivore : CAnimalCreate
     // Start is called before the first frame update
     public new void Start()
     {
+        m_NestScript = m_MyNest.gameObject.GetComponent<CNest>();
         m_NestCountScript = this.gameObject.GetComponent<CNestCount>();
         m_Manager = GameObject.FindWithTag("Manager");
         m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
