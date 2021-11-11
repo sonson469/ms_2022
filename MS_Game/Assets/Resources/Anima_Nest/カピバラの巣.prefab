@@ -59,6 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
+  m_NestNum: 2
+  m_NestNumAll: 12
+  m_Climate: 1
 --- !u!1 &7637343287937908360
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +155,7 @@ GameObject:
   - component: {fileID: 7637343289893249302}
   - component: {fileID: 6025110558368739004}
   - component: {fileID: 3732015584768199028}
+  - component: {fileID: 2383447416457938825}
   m_Layer: 0
   m_Name: "\u30AB\u30D4\u30D0\u30E9\u306E\u5DE3"
   m_TagString: nKAPIBARA
@@ -200,3 +204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21ee15dd663730429fc86720181c5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MyNest: {fileID: 1466912667223645815}
+  m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+--- !u!114 &2383447416457938825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637343289893249303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca59f8d09482ffe4c991af1b251d6caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}

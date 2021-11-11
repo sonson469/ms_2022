@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 4588732468770953075}
   - component: {fileID: -8838677164905474665}
   - component: {fileID: 3256970489718788668}
+  - component: {fileID: -1584776915792831015}
   m_Layer: 0
   m_Name: "\u30BF\u30B9\u30DE\u30CB\u30A2\u30C7\u30D3\u30EB\u306E\u5DE3"
   m_TagString: nTASUMANIADEBIRU
@@ -141,6 +142,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8cbfd1c791fdb41a21a2f3c911d985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MyNest: {fileID: 7969428107114097004}
+  m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+  m_NestCountScript: {fileID: 0}
+--- !u!114 &-1584776915792831015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588732468770953074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca59f8d09482ffe4c991af1b251d6caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}
 --- !u!1 &7969428107114097004
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,3 +218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
+  m_NestNum: 6
+  m_NestNumAll: 16
+  m_Climate: 1

@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 462064227051873405}
   - component: {fileID: -9206962666283244763}
   - component: {fileID: 9073064628274402006}
+  - component: {fileID: -5158864073715929496}
   m_Layer: 0
   m_Name: "\u30C8\u30CA\u30AB\u30A4\u306E\u5DE3"
   m_TagString: nTONAKAI
@@ -141,6 +142,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21ee15dd663730429fc86720181c5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MyNest: {fileID: 8299985919401341142}
+  m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+--- !u!114 &-5158864073715929496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462064227051873404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca59f8d09482ffe4c991af1b251d6caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}
 --- !u!1 &8299985919401341142
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,3 +217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
+  m_NestNum: 3
+  m_NestNumAll: 33
+  m_Climate: 3

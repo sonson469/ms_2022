@@ -18926,7 +18926,7 @@ MonoBehaviour:
   m_TreeData: {fileID: 0}
   m_TreeNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_NestData: {fileID: 0}
-  m_NextNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &642990966
 GameObject:
   m_ObjectHideFlags: 0
@@ -19872,7 +19872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &685933857
 GameObject:
@@ -44246,6 +44246,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642895229}
   m_CullTransparentMesh: 1
+--- !u!1 &1650580446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650580447}
+  m_Layer: 0
+  m_Name: Model_Penguin (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1650580447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650580446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653352982
 GameObject:
   m_ObjectHideFlags: 0
@@ -44967,7 +44997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5745183738834314138, guid: 0730036ecd25ec64eb174f3b1e3d6aa3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5745183738834314138, guid: 0730036ecd25ec64eb174f3b1e3d6aa3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45539,8 +45569,8 @@ GameObject:
   - component: {fileID: 1718345633}
   - component: {fileID: 1718345634}
   m_Layer: 0
-  m_Name: GameManager (1)
-  m_TagString: Untagged
+  m_Name: GameManager
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45680,7 +45710,7 @@ MonoBehaviour:
   m_TreeData: {fileID: 11400000, guid: 149dd808eb0661a4da86ece818f959dc, type: 2}
   m_TreeNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_NestData: {fileID: 0}
-  m_NextNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &1718345633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45710,8 +45740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyNest: {fileID: 0}
-  m_NestData: {fileID: 0}
-  m_NestScript: {fileID: 0}
+  m_AnimalData: {fileID: 0}
 --- !u!1 &1720897268
 GameObject:
   m_ObjectHideFlags: 0
@@ -52170,67 +52199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973532085}
   m_CullTransparentMesh: 1
---- !u!1001 &1974787007
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.449486
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5000039
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.4119291
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.21153243
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.977371
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 204.424
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_Name
-      value: Model_Penguin
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2e885eeb81096b949ae2839aa70c7402, type: 3}
 --- !u!1 &1976187073
 GameObject:
   m_ObjectHideFlags: 0

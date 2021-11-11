@@ -59,6 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
+  m_NestNum: 7
+  m_NestNumAll: 7
+  m_Climate: 0
 --- !u!1 &5403514157044448319
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +73,7 @@ GameObject:
   - component: {fileID: 5403514157044448318}
   - component: {fileID: 3261524835207326492}
   - component: {fileID: 6536512497964406513}
+  - component: {fileID: 933652882830340419}
   m_Layer: 0
   m_Name: "\u30AA\u30AA\u30BF\u30AB\u306E\u5DE3"
   m_TagString: nOOTAKA
@@ -118,6 +122,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a20f35af88f2e4e92aa231d3aca49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MyNest: {fileID: 1563835440018562602}
+  m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+--- !u!114 &933652882830340419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403514157044448319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca59f8d09482ffe4c991af1b251d6caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_NestData: {fileID: 11400000, guid: 58d2be723670e8847a265b28d778be7e, type: 2}
 --- !u!1 &5403514157790258080
 GameObject:
   m_ObjectHideFlags: 0

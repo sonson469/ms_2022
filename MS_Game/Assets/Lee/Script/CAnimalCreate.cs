@@ -6,8 +6,8 @@ public class CAnimalCreate : MonoBehaviour
 {
 
     [Header("子オブジェクトの巣")]
-    protected GameObject m_MyNest;
-    [SerializeField] private AnimalNestData m_NestData;
+    [SerializeField] protected GameObject m_MyNest;
+    [SerializeField] private AnimalData m_AnimalData;
 
     protected CNest m_NestScript;
 
@@ -20,7 +20,7 @@ public class CAnimalCreate : MonoBehaviour
 
     public void CreateAnimal(int NestID)
     {
-        GameObject Object = (GameObject)Resources.Load("Animal/" + m_NestData.sheets[0].list[NestID - 1].Name);
+        GameObject Object = (GameObject)Resources.Load("Animal/" + m_AnimalData.sheets[0].list[NestID - 1].Name);
         Vector3 Position = new Vector3(0.0f, 0.0f, 0.0f);
 
         // プレハブを元にオブジェクトを生成する

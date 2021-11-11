@@ -46,6 +46,7 @@ TagManager:
   - nTUNDORAOOKAMI
   - nSEIUTI
   - nHOKKYOKUGUMA
+  - Manager
   layers:
   - Default
   - TransparentFX

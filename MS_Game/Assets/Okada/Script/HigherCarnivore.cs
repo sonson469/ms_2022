@@ -5,7 +5,7 @@ using UnityEngine;
 public class HigherCarnivore : CAnimalCreate
 {
 
-    [SerializeField] private CNestCount m_NestCountScript;
+    private CNestCount m_NestCountScript;
 
     // Start is called before the first frame update
     public new void Start()
