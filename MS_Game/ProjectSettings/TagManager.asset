@@ -47,6 +47,10 @@ TagManager:
   - nSEIUTI
   - nHOKKYOKUGUMA
   - Manager
+  - ONTAI
+  - NETTAI
+  - KANSOUTAI
+  - KANTAI
   layers:
   - Default
   - TransparentFX

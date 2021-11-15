@@ -95,8 +95,9 @@ public class CButtonClick : MonoBehaviour
             m_ObjectMoveScript.TreeReset();
 
 
-            if (m_TargetObject != null)
+            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
+                m_ObjectMoveScript.TreeReset();
                 Destroy(m_TargetObject);
             }
 
