@@ -50,7 +50,7 @@ public class CSelectPoint : MonoBehaviour
                 {
                     //plane‚ÌÀ•W‚ğƒŒƒC‚ª‚ ‚Á‚Ä‚é‚Æ‚±‚É‚·‚é(”÷–­‚È­”‚É‚È‚Á‚½‚è‚µ‚½‚©‚ç®”‚É‚·‚é)
                     m_SelectPointPlane.transform.position = new Vector3(Mathf.RoundToInt(m_RaycastHit.point.x), m_RaycastHit.point.y, Mathf.RoundToInt(m_RaycastHit.point.z));
-                    m_SelectPointPlane.transform.position += new Vector3(0, 0.01f, 0);
+                    m_SelectPointPlane.transform.position += new Vector3(0, 0.15f, 0);
                 }
             }
 
