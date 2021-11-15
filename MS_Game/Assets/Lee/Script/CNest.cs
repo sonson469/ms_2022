@@ -11,6 +11,8 @@ public class CNest : MonoBehaviour
     [SerializeField] private int m_NestNum;        //Še’n‘Ñ‚Å‚Ì‘ƒ”Ô†
     [SerializeField] private int m_NestNumAll;     //‘S‘Ì‚Å‚Ì”Ô†
 
+    [SerializeField] private float m_Range;
+
     public enum Climate
     {
         ONTAI,
@@ -74,5 +76,10 @@ public class CNest : MonoBehaviour
     public Climate GetClimate()
     {
         return m_Climate;
+    }
+
+    public float GetRange()
+    {
+        return m_Range;
     }
 }

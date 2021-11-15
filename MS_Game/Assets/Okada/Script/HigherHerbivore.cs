@@ -11,6 +11,7 @@ public class HigherHerbivore : CAnimalCreate
         m_NestScript = m_MyNest.gameObject.GetComponent<CNest>();
         m_Manager = GameObject.FindWithTag("Manager");
         m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
+        m_MyObject = this.gameObject;
     }
 
     // Update is called once per frame
@@ -27,13 +28,13 @@ public class HigherHerbivore : CAnimalCreate
     {
         if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 5)
         {
-            CreateAnimal(m_NestScript.GetNestNumAll());
-            CreateAnimal(m_NestScript.GetNestNumAll());
-            CreateAnimal(m_NestScript.GetNestNumAll());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
         }
         else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3)
         {
-            CreateAnimal(m_NestScript.GetNestNumAll());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
         }
     }
 }
