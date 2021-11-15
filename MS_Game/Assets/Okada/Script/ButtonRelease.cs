@@ -10,7 +10,7 @@ public class ButtonRelease : MonoBehaviour
     private CGameObject m_CGameObj;
 
     [SerializeField] private GameObject[] m_NestButtonObject = new GameObject[(int)NestNumber.NESTMAX];
-    [SerializeField] private Button[] m_NestButton = new Button[(int)NestNumber.NESTMAX];
+    private Button[] m_NestButton = new Button[(int)NestNumber.NESTMAX];
     [SerializeField] private bool[] m_NestActive = new bool[(int)NestNumber.NESTMAX];
 
     private void Start()
@@ -19,7 +19,7 @@ public class ButtonRelease : MonoBehaviour
 
         for (int i = 0; i < 40; i++)
         {
-            m_NestButton[i] = m_NestButton[i].gameObject.GetComponent<Button>();
+            m_NestButton[i] = m_NestButtonObject[i].gameObject.GetComponent<Button>();
             m_NestButton[i].interactable = m_NestActive[i];
         }
     }
