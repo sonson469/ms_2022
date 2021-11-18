@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Nest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1988928673664648694
 Transform:
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_TreeSmallCount: 0
   m_NestNum: 1
   m_NestNumAll: 1
+  m_Range: 6.5
   m_Climate: 0
 --- !u!1 &8891917950360676866
 GameObject:
@@ -79,7 +80,7 @@ GameObject:
   m_TagString: nHATUKANEZUMI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8891917950360676867
 Transform:
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MyNest: {fileID: 3208820736893601921}
   m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+  a: {fileID: 0}
 --- !u!114 &-2650783097894423252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8891917950704334238
 Transform:
