@@ -34,6 +34,10 @@ public class CAnimalCreate : MonoBehaviour
         // プレハブを元にオブジェクトを生成する
         GameObject animal = Instantiate(Object, Position, Quaternion.identity);
 
+        AnimalMove animalmove = animal.GetComponent<AnimalMove>();
+        animalmove.SetTagetNest(nest);
+        animalmove.SetRange(range);
+        
     }
 
     public virtual void NestAnimal()
