@@ -43,7 +43,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13, y: 1, z: 13}
+  m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &8225627869261682224
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_TreeSmallCount: 0
   m_NestNum: 1
   m_NestNumAll: 1
-  m_Range: 6.5
+  m_Range: 7.5
   m_Climate: 0
 --- !u!1 &8891917950360676866
 GameObject:
@@ -109,7 +109,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13, y: 1, z: 13}
+  m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &3224014672220019821
 MonoBehaviour:
