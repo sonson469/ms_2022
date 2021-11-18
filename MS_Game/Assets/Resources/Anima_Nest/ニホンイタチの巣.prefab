@@ -43,7 +43,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 1, z: 9}
+  m_Size: {x: 11, y: 1, z: 11}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &1070965033027584595
 MonoBehaviour:
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_TreeSmallCount: 0
   m_NestNum: 5
   m_NestNumAll: 5
+  m_Range: 5.5
   m_Climate: 0
 --- !u!1 &4461686362472131216
 GameObject:
@@ -108,7 +109,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 1, z: 9}
+  m_Size: {x: 11, y: 1, z: 11}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &-1766856701426744402
 MonoBehaviour:
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MyNest: {fileID: 2496176659976194269}
   m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+  a: {fileID: 0}
   m_NestCountScript: {fileID: 0}
 --- !u!114 &-5987545096158695409
 MonoBehaviour:
