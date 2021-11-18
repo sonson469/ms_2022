@@ -27,6 +27,8 @@ public class CObjectMove : MonoBehaviour
 
     private int m_Num;     //置く対象の番号
 
+    private bool m_OnObj;
+
     public enum CreateObject     //置くオブジェクトの種類番号用
     { 
         TREE,
@@ -126,6 +128,7 @@ public class CObjectMove : MonoBehaviour
                     }
                     else if (m_CreateObjectNum == CreateObject.NEST)
                     {
+                        m_OnObj = true;
                         m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
                         m_GameObjectScript.NestNameCount(m_Num - 1);
 
@@ -228,6 +231,11 @@ public class CObjectMove : MonoBehaviour
         m_TargetObjectCost = cost;
     }
 
+    public void SetOnObj(bool flag)
+    {
+        m_OnObj = flag;
+    }
+
     public bool GetSuccession()
     {
         return m_Succession;
@@ -236,5 +244,10 @@ public class CObjectMove : MonoBehaviour
     public Vector3 GetCreatePosition()
     {
         return m_CreatePosition;
+    }
+
+    public bool GetOnOjb()
+    {
+        return m_OnObj;
     }
 }

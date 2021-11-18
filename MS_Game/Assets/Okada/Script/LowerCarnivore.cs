@@ -32,6 +32,7 @@ public class LowerCarnivore : CAnimalCreate
     {
 
         int count = 0;
+        int recount = 0;
 
         if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
         {
@@ -43,6 +44,11 @@ public class LowerCarnivore : CAnimalCreate
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
                 Make(count);
+                for (int i = 4; i <= 9; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
             //ニホンイタチ、ヤマイヌ
             else if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
@@ -51,8 +57,12 @@ public class LowerCarnivore : CAnimalCreate
                 {
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
-
                 Make(count);
+                for (int i = 6; i <= 9; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
         }
         else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
@@ -66,6 +76,11 @@ public class LowerCarnivore : CAnimalCreate
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
                 Make(count);
+                for (int i = 16; i <= 19; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
 
         }
@@ -78,8 +93,12 @@ public class LowerCarnivore : CAnimalCreate
                 {
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
-
                 Make(count);
+                for (int i = 26; i <= 29; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
 
         }
@@ -92,8 +111,12 @@ public class LowerCarnivore : CAnimalCreate
                 {
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
-
                 Make(count);
+                for (int i = 36; i <= 39; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
         }
     }
@@ -102,9 +125,25 @@ public class LowerCarnivore : CAnimalCreate
     {
         if (count >= 1)
         {
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),3);
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),3);
         }
     }
 
+    public void ReduceMyList(int count)
+    {
+        for (int i = 1; i <= count; i++)
+        {
+            if (m_MyAnimalList.Count >= 1)
+            {
+                Destroy(m_MyAnimalList[m_MyAnimalList.Count - 1]);
+                m_MyAnimalList.RemoveAt(m_MyAnimalList.Count - 1);
+            }
+        }
+    }
+
+    public void AddMyList(GameObject animal)
+    {
+        m_MyAnimalList.Add(animal);
+    }
 }
