@@ -201,6 +201,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b7b0bbcd63a98684d8389a9f288d6e05, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7e5815ed66973b47ad9b78ebfede1f2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: b7b0bbcd63a98684d8389a9f288d6e05, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ebdd5eda29ab3542a1019d1a519ee27, type: 2}
+    - target: {fileID: -7511558181221131132, guid: b7b0bbcd63a98684d8389a9f288d6e05, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8759058c134a70f4482bed4b92679c73, type: 2}
+    - target: {fileID: -7511558181221131132, guid: b7b0bbcd63a98684d8389a9f288d6e05, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: f04a072fe358cd342ac5f138b47631df, type: 2}
     - target: {fileID: 919132149155446097, guid: b7b0bbcd63a98684d8389a9f288d6e05, type: 3}
       propertyPath: m_Name
       value: "\u30DA\u30F3\u30AE\u30F3"
