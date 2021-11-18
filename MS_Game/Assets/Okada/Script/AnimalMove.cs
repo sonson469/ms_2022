@@ -6,20 +6,26 @@ using UnityEngine.AI;
 public class AnimalMove : MonoBehaviour
 {
     private Vector3 m_TargetPos;
-    private float m_Max;
+    private float m_Range;
     private NavMeshAgent m_NavMeshAgent;
     private NavMeshSurface m_NavMeshSurface;
     private GameObject m_TargetNest;
+    private bool m_Once;
+
     void Start()
-    {
+    { 
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
         m_NavMeshAgent.autoBraking = false;
         m_NavMeshSurface = GetComponent<NavMeshSurface>();
-        GotoNextPoint();
     }
 
     void Update()
     {
+        if (!m_Once)
+        {
+            m_Once = true;
+            GotoNextPoint();
+        }
         if (m_NavMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
         {
             if (!m_NavMeshAgent.pathPending && m_NavMeshAgent.remainingDistance < 0.5f)
@@ -29,12 +35,9 @@ public class AnimalMove : MonoBehaviour
 
     void GotoNextPoint()
     {
-        m_TargetPos.x = Random.Range(-m_Max, m_Max);
-        m_TargetPos.z = Random.Range(-m_Max, m_Max);
         //m_NavMeshSurface.BuildNavMesh();
-        m_TargetPos.y = m_TargetNest.transform.position.y;
+        m_TargetPos = new Vector3(Random.Range(-m_Range, m_Range), m_TargetNest.transform.position.y, Random.Range(-m_Range, m_Range));
         Vector3 pos = m_TargetNest.transform.position + m_TargetPos;
-        m_NavMeshAgent.Warp(pos);
         m_NavMeshAgent.SetDestination(pos);
     }
 
@@ -47,7 +50,7 @@ public class AnimalMove : MonoBehaviour
 
     public void SetRange(float range)
     {
-        m_Max = range;
+        m_Range = range;
     }
 }
 
