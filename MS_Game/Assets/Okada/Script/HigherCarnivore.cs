@@ -32,6 +32,7 @@ public class HigherCarnivore : CAnimalCreate
     {
 
         int count = 0;
+        int recount = 0;
 
         if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
         {
@@ -43,6 +44,11 @@ public class HigherCarnivore : CAnimalCreate
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
                 Make(count);
+                for (int i = 8; i <= 9; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
             //グリズリー、トラ
             else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
@@ -66,6 +72,11 @@ public class HigherCarnivore : CAnimalCreate
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
                 Make(count);
+                for (int i = 18; i <= 19; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
             //ワニ、ジャガー
             else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
@@ -74,7 +85,6 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
-
                 Make(count);
             }
 
@@ -102,8 +112,12 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     count += m_NestCountScript.m_NestNameCount[i];
                 }
-
                 Make(count);
+                for (int i = 38; i <= 39; i++)
+                {
+                    recount += m_NestCountScript.m_NestNameCount[i];
+                }
+                ReduceMyList(recount);
             }
             //ホッキョクグマ
             else if (m_NestScript.GetNestNum() == 10)
@@ -122,8 +136,25 @@ public class HigherCarnivore : CAnimalCreate
     {
         if (count >= 1)
         {
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange());
+            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),1);
         }
+    }
+
+    private void ReduceMyList(int count)
+    {
+        for (int i = 1; i <= count; i++)
+        {
+            if (m_MyAnimalList.Count >= 1)
+            {
+                Destroy(m_MyAnimalList[m_MyAnimalList.Count - 1]);
+                m_MyAnimalList.RemoveAt(m_MyAnimalList.Count - 1);
+            }
+        }
+    }
+
+    public void AddMyList(GameObject animal)
+    {
+        m_MyAnimalList.Add(animal);
     }
 
 }

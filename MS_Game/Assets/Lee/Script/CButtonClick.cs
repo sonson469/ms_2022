@@ -18,6 +18,8 @@ public class CButtonClick : MonoBehaviour
 
     private Vector3 m_ObjectPosition;
 
+    private bool m_NestBreake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +116,7 @@ public class CButtonClick : MonoBehaviour
 
     public void Cancel()
     {
+        m_NestBreake = true;
         m_ObjectMoveScript.ResetMove();
     }
 
@@ -139,5 +142,14 @@ public class CButtonClick : MonoBehaviour
     public Vector3 GetObjectPosition()
     {
         return m_ObjectPosition;
+    }
+
+    public bool GetNestBreake()
+    {
+        return m_NestBreake;
+    }
+    public void SetNestBreake(bool flag)
+    {
+        m_NestBreake = flag;
     }
 }
