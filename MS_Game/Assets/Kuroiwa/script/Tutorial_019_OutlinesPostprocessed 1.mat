@@ -25,23 +25,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth1: 0.343
-    - _Depth1_1: 0.255
-    - _Depth2: 0.215
-    - _Depth2_1: 0.215
-    - _Depth2_2: 0.203
-    - _Depth3: 0.203
-    - _Depth3_1: 0.192
-    - _Depth3_2: 0.192
+    - _Depth1: 0.179
+    - _Depth1_1: 0.161
+    - _Depth2: 0.156
+    - _Depth2_1: 0.145
+    - _Depth2_2: 0.144
+    - _Depth3: 0.145
+    - _Depth3_1: 0.128
+    - _Depth3_2: 0.11
     - _DepthBias: 1.78
     - _DepthMult: 1.44
-    - _Normal1: 0.198
-    - _Normal1_1: 0.175
-    - _Normal2: 0.169
-    - _Normal2_1: 0.176
-    - _Normal2_2: 0.18
+    - _Normal1: 0.07
+    - _Normal1_1: 0.053
+    - _Normal2: 0.064
+    - _Normal2_1: 0.054
+    - _Normal2_2: 0.069
     - _NormalBias: 2.27
-    - _NormalCutOff: 0.057
+    - _NormalCutOff: 0.082
     - _NormalMult: 2.49
     m_Colors:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}

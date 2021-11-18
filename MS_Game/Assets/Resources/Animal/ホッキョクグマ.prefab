@@ -213,6 +213,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5887b4d0555c57a4ea1f6157653a2b23, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e44415c86af533418c4c80fd7c4e09a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5887b4d0555c57a4ea1f6157653a2b23, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 083c84bdae19a604dafb2742f296cb33, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5887b4d0555c57a4ea1f6157653a2b23, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b9b4e6f38dfd024ebf6c6fc9f632d73, type: 2}
     - target: {fileID: 919132149155446097, guid: 5887b4d0555c57a4ea1f6157653a2b23, type: 3}
       propertyPath: m_Name
       value: Model_Hokkyokukuma
