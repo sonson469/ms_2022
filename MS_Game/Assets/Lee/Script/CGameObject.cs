@@ -19,6 +19,8 @@ public class CGameObject : MonoBehaviour
     [SerializeField] private AnimalNestData m_NestData;
     public int[] m_NestNameCount = new int[(int)NestNumber.NESTMAX];
 
+    public int[] m_MachineNameCount = new int[(int)MachineNumber.MACHINEMAX];
+
     public enum TreeNumber
     {
         KEYAKI,
@@ -158,7 +160,8 @@ public class CGameObject : MonoBehaviour
         ONTAI,
         NETTAI,
         KANSOUTAI,
-        KANTAI
+        KANTAI,
+        MACHINEMAX
     }
     private void Update()
     {
@@ -176,5 +179,9 @@ public class CGameObject : MonoBehaviour
         m_NestNameCount[num]++;
     }
     
+    public void MachineNameCount(int num)
+    {
+        m_MachineNameCount[num]++;
+    }
 
 }
