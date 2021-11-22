@@ -14,9 +14,12 @@ public class ButtonRelease : MonoBehaviour
     private Button[] m_NestButton = new Button[(int)NestNumber.NESTMAX];
     [SerializeField] private bool[] m_NestActive = new bool[(int)NestNumber.NESTMAX];
 
+    private CGameTimeManager m_TimeManager;
+
     private void Start()
     {
         m_CGameObj = gameObject.GetComponent<CGameObject>();
+        m_TimeManager = GetComponent<CGameTimeManager>();
 
         for (int i = 0; i < 40; i++)
         {
@@ -27,7 +30,6 @@ public class ButtonRelease : MonoBehaviour
     private void Update()
     {
         //‰·‘Ñ‰ð•ú
-        //10–¢ŽÀ‘•
         if (m_CGameObj.m_TreeBigCount >= 1 && m_CGameObj.m_TreeSmallCount >= 1)
             m_NestActive[(int)NestNumber.HATUKANEZUMI] = true;
 
@@ -65,7 +67,6 @@ public class ButtonRelease : MonoBehaviour
             m_NestActive[(int)NestNumber.TORA] = true;
 
         //”M‘Ñ‰ð•ú
-        //7–¢ŽÀ‘•
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.RATANNYASHI] >= 1)
             m_NestActive[(int)NestNumber.SYOUGARAGO] = true;
 
@@ -89,6 +90,9 @@ public class ButtonRelease : MonoBehaviour
         if (m_CGameObj.m_NestNameCount[(int)NestNumber.WONBATTO] >= 3)
             m_NestActive[(int)NestNumber.TASUMANIADEBIRU] = true;
 
+        if (m_TimeManager.GetGameDay() >= 365 * 5)
+            m_NestActive[(int)NestNumber.OOKOUMORI] = true;
+
 
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KAPOKKU] >= 20
             && m_CGameObj.m_TreeNameCount[(int)TreeNumber.MAHOGANI] >= 20
@@ -104,7 +108,9 @@ public class ButtonRelease : MonoBehaviour
             m_NestActive[(int)NestNumber.ZYAGA] = true;
 
         //Š£‘‡‘Ñ‰ð•ú
-        //1E10–¢ŽÀ‘•
+        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANSOUTAI] >= 1)
+            m_NestActive[(int)NestNumber.HARINEZUMI] = true;
+
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.SABOTEN] >= 5
             && m_CGameObj.m_TreeNameCount[(int)TreeNumber.ENOKOROGUSA] >= 5)
             m_NestActive[(int)NestNumber.ARUMAZIRO] = true;
@@ -139,12 +145,14 @@ public class ButtonRelease : MonoBehaviour
                 aridCount++;
         }
         Debug.Log(nest.Length);
-        if (aridCount == )
+        if (aridCount == 38)
             m_NestActive[(int)NestNumber.RAION] = true;
 
 
         //Š¦‘Ñ‰ð•ú
-        //1E10–¢ŽÀ‘•
+        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANTAI] >= 1)
+            m_NestActive[(int)NestNumber.PENGIN] = true;
+
         if (m_CGameObj.m_NestNameCount[(int)NestNumber.PENGIN] >= 3)
             m_NestActive[(int)NestNumber.AZARASHI] = true;
 
@@ -170,6 +178,10 @@ public class ButtonRelease : MonoBehaviour
         if (m_CGameObj.m_NestNameCount[(int)NestNumber.PENGIN] >= 15
             && m_CGameObj.m_NestNameCount[(int)NestNumber.AZARASHI] >= 15)
             m_NestActive[(int)NestNumber.SEIUTI] = true;
+
+        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANTAI] >= 15)
+            m_NestActive[(int)NestNumber.HOKKYOKUGUMA] = true;
+
 
 
         for (int i = 0; i < (int)NestNumber.NESTMAX; i++)
