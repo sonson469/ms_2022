@@ -97,4 +97,9 @@ public class CGameTimeManager : MonoBehaviour
     {
         return m_DayEnd;
     }
+
+    public float GetGameDay()
+    {
+        return m_GameDay;
+    }
 }
