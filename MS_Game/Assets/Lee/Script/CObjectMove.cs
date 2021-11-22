@@ -137,7 +137,7 @@ public class CObjectMove : MonoBehaviour
                     else if (m_CreateObjectNum == CreateObject.MACHINE)
                     {
                         m_GameObjectScript.MachineList.Add(m_TargetObject);
-
+                        m_GameObjectScript.MachineNameCount(m_Num - 1);
                         m_ButtonScript.CreateMachine(m_Num);
                     }
 
