@@ -91,6 +91,13 @@ public class CObjectMove : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
+                //機械の時、他の機械の地面と接してたらおけない
+                if (m_CreateObjectNum == CreateObject.MACHINE)
+                {
+                    CMachine machinescript = m_TargetObject.GetComponent<CMachine>();
+                    if (!machinescript.GetCanPut())
+                        return;
+                }
                 if (m_TargetObjectCost <= m_TimeScript.GetMoney())
                 {
                     m_Succession = true;
@@ -115,6 +122,9 @@ public class CObjectMove : MonoBehaviour
                     {
                         m_GameObjectScript.TreeList.Add(m_TargetObject);
                         m_GameObjectScript.TreeNameCount(m_Num - 1);
+
+                        CTree treescript = m_TargetObject.GetComponent<CTree>();
+                        treescript.SetSapling();
                         if (m_TreeSize == TreeSize.BIG)
                         {
                             m_GameObjectScript.m_TreeBigCount++;
@@ -124,7 +134,7 @@ public class CObjectMove : MonoBehaviour
                             m_GameObjectScript.m_TreeSmallCount++;
                         }
                         m_ButtonScript.CreateTree(m_Num);
-                        
+
                     }
                     else if (m_CreateObjectNum == CreateObject.NEST)
                     {
@@ -136,6 +146,9 @@ public class CObjectMove : MonoBehaviour
                     }
                     else if (m_CreateObjectNum == CreateObject.MACHINE)
                     {
+                        CMachine machinescript = m_TargetObject.GetComponent<CMachine>();
+                        machinescript.SetPut();
+
                         m_GameObjectScript.MachineList.Add(m_TargetObject);
                         m_GameObjectScript.MachineNameCount(m_Num - 1);
                         m_ButtonScript.CreateMachine(m_Num);

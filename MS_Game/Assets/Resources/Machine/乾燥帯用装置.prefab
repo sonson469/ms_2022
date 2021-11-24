@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3519219041739547591}
   - component: {fileID: 9196227154407852678}
   - component: {fileID: 765790376553290690}
+  - component: {fileID: 2506363510933872357}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: KANSOUTAI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2506363510933872357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264367116802629268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &6379394474655773385
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,9 +107,10 @@ GameObject:
   - component: {fileID: 6379394474655773384}
   - component: {fileID: 4090761911657995586}
   - component: {fileID: -3479843342809922940}
+  - component: {fileID: 3207672580196334415}
   m_Layer: 0
   m_Name: "\u4E7E\u71E5\u5E2F\u7528\u88C5\u7F6E"
-  m_TagString: KANSOUTAI
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +142,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
+  m_Size: {x: 30, y: 1, z: 30}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &-3479843342809922940
 Rigidbody:
@@ -145,6 +160,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3207672580196334415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379394474655773385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2776da422adbf448af921e34c7d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyGround: {fileID: 264367116802629268}
 --- !u!1 &6379394475386350934
 GameObject:
   m_ObjectHideFlags: 0

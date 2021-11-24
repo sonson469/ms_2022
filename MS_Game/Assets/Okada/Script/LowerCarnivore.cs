@@ -33,90 +33,92 @@ public class LowerCarnivore : CAnimalCreate
 
         int count = 0;
         int recount = 0;
-
-        if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
+        if (m_NestScript.GetNowZone() == m_NestScript.GetClimate())
         {
-            //シマヘビ
-            if (m_NestScript.GetNestNum() == 3)
+            if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
             {
-                for(int i = 0; i <= 1; i++)
+                //シマヘビ
+                if (m_NestScript.GetNestNum() == 3)
                 {
-                    count += m_NestCountScript.m_NestNameCount[i];
+                    for (int i = 0; i <= 1; i++)
+                    {
+                        count += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    Make(count);
+                    for (int i = 4; i <= 9; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
                 }
-                Make(count);
-                for (int i = 4; i <= 9; i++)
+                //ニホンイタチ、ヤマイヌ
+                else if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
                 {
-                    recount += m_NestCountScript.m_NestNameCount[i];
+                    for (int i = 0; i <= 3; i++)
+                    {
+                        count += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    Make(count);
+                    for (int i = 6; i <= 9; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
                 }
-                ReduceMyList(recount);
             }
-            //ニホンイタチ、ヤマイヌ
-            else if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
+            else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
             {
-                for (int i = 0; i <= 3; i++)
-                {
-                    count += m_NestCountScript.m_NestNameCount[i];
-                }
-                Make(count);
-                for (int i = 6; i <= 9; i++)
-                {
-                    recount += m_NestCountScript.m_NestNameCount[i];
-                }
-                ReduceMyList(recount);
-            }
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
-        {
 
-            //タスマニアデビル
-            if (m_NestScript.GetNestNum() == 6)
-            {
-                for (int i = 10; i <= 13; i++)
+                //タスマニアデビル
+                if (m_NestScript.GetNestNum() == 6)
                 {
-                    count += m_NestCountScript.m_NestNameCount[i];
+                    for (int i = 10; i <= 13; i++)
+                    {
+                        count += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    Make(count);
+                    for (int i = 16; i <= 19; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
                 }
-                Make(count);
-                for (int i = 16; i <= 19; i++)
-                {
-                    recount += m_NestCountScript.m_NestNameCount[i];
-                }
-                ReduceMyList(recount);
-            }
 
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
-        {
-            //サーバル、ジャッカル
-            if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
-            {
-                for (int i = 20; i <= 23; i++)
-                {
-                    count += m_NestCountScript.m_NestNameCount[i];
-                }
-                Make(count);
-                for (int i = 26; i <= 29; i++)
-                {
-                    recount += m_NestCountScript.m_NestNameCount[i];
-                }
-                ReduceMyList(recount);
             }
-
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
-        {
-            //ホッキョクキツネ、シロフクロウ
-            if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
+            else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
             {
-                for (int i = 30; i <= 33; i++)
+                //サーバル、ジャッカル
+                if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
                 {
-                    count += m_NestCountScript.m_NestNameCount[i];
+                    for (int i = 20; i <= 23; i++)
+                    {
+                        count += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    Make(count);
+                    for (int i = 26; i <= 29; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
                 }
-                Make(count);
-                for (int i = 36; i <= 39; i++)
+
+            }
+            else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
+            {
+                //ホッキョクキツネ、シロフクロウ
+                if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
                 {
-                    recount += m_NestCountScript.m_NestNameCount[i];
+                    for (int i = 30; i <= 33; i++)
+                    {
+                        count += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    Make(count);
+                    for (int i = 36; i <= 39; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
                 }
-                ReduceMyList(recount);
             }
         }
     }
