@@ -24,6 +24,7 @@ public class ButtonRelease : MonoBehaviour
         for (int i = 0; i < 40; i++)
         {
             m_NestButton[i] = m_NestButtonObject[i].gameObject.GetComponent<Button>();
+            m_NestActive[i] = true;
             m_NestButton[i].interactable = m_NestActive[i];
         }
     }

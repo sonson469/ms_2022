@@ -236,10 +236,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
-  m_NestNum: 0
-  m_NestNumAll: 0
+  m_NestNum: 9
+  m_NestNumAll: 39
   m_Range: 3.5
-  m_Climate: 0
+  m_Climate: 3
 --- !u!1001 &662787524922424004
 PrefabInstance:
   m_ObjectHideFlags: 0

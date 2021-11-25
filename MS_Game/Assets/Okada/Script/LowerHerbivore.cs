@@ -33,13 +33,13 @@ public class LowerHerbivore : CAnimalCreate
 
         if (m_NestScript.GetNowZone() == m_NestScript.GetClimate())
         {
-            if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3)
+            if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3 && m_MyAnimalList.Count <= 10)
             {
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
             }
-            else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 1)
+            else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 1 && m_MyAnimalList.Count <= 10)
             {
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
             }

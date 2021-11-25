@@ -9,7 +9,7 @@ public class CGameTimeManager : MonoBehaviour
     private float m_GameTime;   //‚P“úisŠÔ(•b)
     private int m_GameDay;      //“ú
 
-    private int m_Money;
+    [SerializeField] private int m_Money;
 
     [Header("1“ú‚É‚©‚©‚éŠÔ(•b)")]
     [SerializeField] float m_DayTime = 60;
@@ -40,7 +40,6 @@ public class CGameTimeManager : MonoBehaviour
 
         m_TimeSpeed = 0;
 
-        m_Money = 10000;
     }
 
     // Update is called once per frame
