@@ -31,51 +31,55 @@ public class HigherHerbivore : CAnimalCreate
 
         int recount = 0;
 
-        if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 5)
-        {
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),2);
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),2);
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),2);
-        }
-        else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3)
-        {
-            CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),2);
-        }
-
-        if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
-        {
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
+        if (m_NestScript.GetNowZone() == m_NestScript.GetClimate())
         {
 
-            //ゴリラ
-            if (m_NestScript.GetNestNum() == 8)
+            if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 5)
             {
-               
-                for (int i = 18; i <= 19; i++)
-                {
-                    recount += m_NestCountScript.m_NestNameCount[i];
-                }
-                ReduceMyList(recount);
+                CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
+                CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
+                CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
+            }
+            else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3)
+            {
+                CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
             }
 
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
-        {
-            //カバ、サイ
-            if (m_NestScript.GetNestNum() == 7 || m_NestScript.GetNestNum() == 8)
+            if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
             {
-                for (int i = 28; i <= 29; i++)
-                {
-                    recount += m_NestCountScript.m_NestNameCount[i];
-                }
-                ReduceMyList(recount);
             }
+            else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
+            {
 
-        }
-        else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
-        {
-            
+                //ゴリラ
+                if (m_NestScript.GetNestNum() == 8)
+                {
+
+                    for (int i = 18; i <= 19; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
+                }
+
+            }
+            else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
+            {
+                //カバ、サイ
+                if (m_NestScript.GetNestNum() == 7 || m_NestScript.GetNestNum() == 8)
+                {
+                    for (int i = 28; i <= 29; i++)
+                    {
+                        recount += m_NestCountScript.m_NestNameCount[i];
+                    }
+                    ReduceMyList(recount);
+                }
+
+            }
+            else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
+            {
+
+            }
         }
     }
     private void ReduceMyList(int count)

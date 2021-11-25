@@ -19,10 +19,12 @@ public class CNest : MonoBehaviour
         ONTAI,
         NETTAI,
         KANSOUTAI,
-        KANTAI
+        KANTAI,
+        NONE
     }
 
     [SerializeField] private Climate m_Climate;
+    private Climate m_NowZone = Climate.NONE;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class CNest : MonoBehaviour
     void Update()
     {
     }
+
+
 
     public void CountTreeBig(bool plus)
     {
@@ -78,9 +82,41 @@ public class CNest : MonoBehaviour
     {
         return m_Climate;
     }
+    public Climate GetNowZone()
+    {
+        return m_NowZone;
+    }
 
     public float GetRange()
     {
         return m_Range;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "ONTAI")
+        {
+            m_NowZone = Climate.ONTAI;
+        }
+        else if (other.gameObject.tag == "NETTAI")
+        {
+            m_NowZone = Climate.NETTAI;
+        }
+        else if (other.gameObject.tag == "KANSOUTAI")
+        {
+            m_NowZone = Climate.KANSOUTAI;
+        }
+        else if (other.gameObject.tag == "KANTAI")
+        {
+            m_NowZone = Climate.KANTAI;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Machine")
+        {
+            m_NowZone = Climate.NONE;
+        }
     }
 }

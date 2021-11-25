@@ -51,6 +51,7 @@ TagManager:
   - NETTAI
   - KANSOUTAI
   - KANTAI
+  - Machine
   layers:
   - Default
   - TransparentFX

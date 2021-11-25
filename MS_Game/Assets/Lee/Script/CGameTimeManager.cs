@@ -27,6 +27,7 @@ public class CGameTimeManager : MonoBehaviour
 
     private bool m_DayEnd;   //1“ú‚¨‚í‚è
     private int m_NestCount;   //“®•¨‚ð¶¬‚µ‚½‘ƒ‚Ì”(MAX‚É‚È‚Á‚½‚ç‚P“ú‚¨‚í‚èˆ—)
+    private int m_TreeCount;    //¶¬‚µ‚½–Ø‚Ì”(MAX‚É‚È‚Á‚½‚ç‚P“ú‚¨‚í‚èˆ—)
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,7 @@ public class CGameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_DayEnd && m_NestCount >= m_GameObjectScript.AnimalNestList.Count)
+        if(m_DayEnd && m_NestCount >= m_GameObjectScript.AnimalNestList.Count && m_TreeCount >= m_GameObjectScript.TreeList.Count)
         {
             m_GameDay++;
             m_Money += 1000;
@@ -91,6 +92,11 @@ public class CGameTimeManager : MonoBehaviour
     public void AddNestCount()
     {
         m_NestCount++;
+    }
+
+    public void AddTreeCount()
+    {
+        m_TreeCount++;
     }
 
     public bool GetDayEnd()

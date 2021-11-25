@@ -18,7 +18,6 @@ public class CAnimalCreate : MonoBehaviour
 
     protected List<GameObject> m_MyAnimalList = new List<GameObject>();  //©•ª‚Ì‘ƒ‚Å¶¬‚³‚ê‚½“®•¨
 
-    public GameObject a;
 
     public void Start()
     {
