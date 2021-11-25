@@ -33,7 +33,6 @@ public class HigherCarnivore : CAnimalCreate
 
         int count = 0;
         int recount = 0;
-
         if (m_NestScript.GetNowZone() == m_NestScript.GetClimate())
         {
             if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
@@ -137,7 +136,7 @@ public class HigherCarnivore : CAnimalCreate
 
     private void Make(int count)
     {
-        if (count >= 1)
+        if (count >= 1 && m_MyAnimalList.Count <= 10)
         {
             CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(),1);
         }

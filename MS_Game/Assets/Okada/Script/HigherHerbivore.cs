@@ -30,17 +30,16 @@ public class HigherHerbivore : CAnimalCreate
     {
 
         int recount = 0;
-
         if (m_NestScript.GetNowZone() == m_NestScript.GetClimate())
         {
 
-            if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 5)
+            if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 5 && m_MyAnimalList.Count <= 10)
             {
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
             }
-            else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3)
+            else if (m_NestScript.GetTreeBig() + m_NestScript.GetTreeSmall() >= 3 && m_MyAnimalList.Count <= 10)
             {
                 CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 2);
             }
@@ -57,7 +56,7 @@ public class HigherHerbivore : CAnimalCreate
 
                     for (int i = 18; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i]/2/2;
+                        recount += m_NestCountScript.m_NestNameCount[i] / 2 / 2;
                     }
                     ReduceMyList(recount);
                 }
@@ -70,7 +69,7 @@ public class HigherHerbivore : CAnimalCreate
                 {
                     for (int i = 28; i <= 29; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i]/2/2;
+                        recount += m_NestCountScript.m_NestNameCount[i] / 2 / 2;
                     }
                     ReduceMyList(recount);
                 }
@@ -81,6 +80,7 @@ public class HigherHerbivore : CAnimalCreate
 
             }
         }
+
     }
     private void ReduceMyList(int count)
     {
