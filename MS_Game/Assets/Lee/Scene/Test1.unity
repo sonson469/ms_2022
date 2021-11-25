@@ -45714,7 +45714,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MyNest: {fileID: 0}
   m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
-  a: {fileID: 0}
 --- !u!114 &1718345635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47172,7 +47171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6433505629801600343, guid: 08c4478a1facc9e4fad2cc361e0b705f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6433505629801600343, guid: 08c4478a1facc9e4fad2cc361e0b705f, type: 3}
       propertyPath: m_LocalPosition.z
