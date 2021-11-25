@@ -189,6 +189,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -228,6 +240,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6709887311135511210, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b925df280dea82489c9083d1444142a, type: 2}
+    - target: {fileID: -6662530792555743716, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12440c6ffce613942888f93a19a988a5, type: 2}
+    - target: {fileID: -6662530792555743716, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12440c6ffce613942888f93a19a988a5, type: 2}
+    - target: {fileID: -6662530792555743716, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12440c6ffce613942888f93a19a988a5, type: 2}
     - target: {fileID: 919132149155446097, guid: d12c9382cf45dce4f8fc7bf0576bc539, type: 3}
       propertyPath: m_Name
       value: "\u685C"
