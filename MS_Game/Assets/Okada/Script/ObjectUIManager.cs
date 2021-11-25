@@ -6,14 +6,11 @@ using UnityEngine.UI;
 public class ObjectUIManager : MonoBehaviour
 {
 
-    [SerializeField] private Scrollbar[] m_Scrollbar;
     [SerializeField] private GameObject[] m_GameObjects;
     // Start is called before the first frame update
     void Start()
     {
 
-        for(int i=0;i<m_Scrollbar.Length;i++)
-            m_Scrollbar[i].value = 1.0f;
     }
 
     // Update is called once per frame
