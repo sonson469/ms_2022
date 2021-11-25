@@ -43,12 +43,12 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 0; i <= 5; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     Make(count);
                     for (int i = 8; i <= 9; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -57,7 +57,7 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 0; i <= 7; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
 
                     Make(count);
@@ -71,12 +71,12 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 10; i <= 15; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     Make(count);
                     for (int i = 18; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -85,7 +85,7 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 10; i <= 17; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     Make(count);
                 }
@@ -98,7 +98,7 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 20; i <= 27; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
 
                     Make(count);
@@ -112,12 +112,12 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 30; i <= 35; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     Make(count);
                     for (int i = 38; i <= 39; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -126,7 +126,7 @@ public class HigherCarnivore : CAnimalCreate
                 {
                     for (int i = 30; i <= 37; i++)
                     {
-                        count += m_NestCountScript.m_NestNameCount[i];
+                        count += m_NestCountScript.m_NestNameCount[i]/2;
                     }
 
                     Make(count);

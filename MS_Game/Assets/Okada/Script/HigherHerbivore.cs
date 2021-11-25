@@ -57,7 +57,7 @@ public class HigherHerbivore : CAnimalCreate
 
                     for (int i = 18; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -70,7 +70,7 @@ public class HigherHerbivore : CAnimalCreate
                 {
                     for (int i = 28; i <= 29; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2/2;
                     }
                     ReduceMyList(recount);
                 }

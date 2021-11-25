@@ -51,7 +51,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 2; i <= 9; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -61,7 +61,7 @@ public class LowerHerbivore : CAnimalCreate
 
                     for (int i = 4; i <= 9; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -73,7 +73,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 12; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -82,7 +82,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 14; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -91,7 +91,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 16; i <= 19; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -104,7 +104,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 22; i <= 29; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -113,7 +113,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 24; i <= 29; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -126,7 +126,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 32; i <= 39; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
@@ -135,7 +135,7 @@ public class LowerHerbivore : CAnimalCreate
                 {
                     for (int i = 34; i <= 39; i++)
                     {
-                        recount += m_NestCountScript.m_NestNameCount[i];
+                        recount += m_NestCountScript.m_NestNameCount[i]/2;
                     }
                     ReduceMyList(recount);
                 }
