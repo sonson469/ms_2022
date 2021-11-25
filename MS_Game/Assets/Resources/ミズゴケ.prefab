@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2928030139698738611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2928030141117180463}
   - {fileID: 8625459952197534275}
@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "005_\u30DF\u30BA\u30B4\u30B1"
       objectReference: {fileID: 0}
+    - target: {fileID: 7604074243727124161, guid: 3130695bf85901b4bbca0b9d1cc949ee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75517c18e70a2134e91a18e465780242, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3130695bf85901b4bbca0b9d1cc949ee, type: 3}
 --- !u!1 &9004976647310924025 stripped
