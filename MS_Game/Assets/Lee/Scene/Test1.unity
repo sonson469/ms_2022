@@ -19264,7 +19264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u30DA\u30F3\u30AE\u30F3\u306E\u5DE3"
 --- !u!222 &662419330
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19576,6 +19576,7 @@ GameObject:
   - component: {fileID: 681875589}
   - component: {fileID: 681875588}
   - component: {fileID: 681875587}
+  - component: {fileID: 681875591}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19661,6 +19662,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: 45, z: 0}
+--- !u!114 &681875591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681875586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828d68fb7a22db74aa0f70e9dd0f7a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postprocessMaterial: {fileID: 2100000, guid: 8ffe2fdd55a312a4498aa12bbdb5d12b, type: 2}
 --- !u!1 &684433051
 GameObject:
   m_ObjectHideFlags: 0
