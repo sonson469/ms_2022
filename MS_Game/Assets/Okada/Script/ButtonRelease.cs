@@ -24,18 +24,18 @@ public class ButtonRelease : MonoBehaviour
         for (int i = 0; i < 40; i++)
         {
             m_NestButton[i] = m_NestButtonObject[i].gameObject.GetComponent<Button>();
-            m_NestActive[i] = true;
+            //m_NestActive[i] = true;
             m_NestButton[i].interactable = m_NestActive[i];
         }
     }
     private void Update()
     {
         //‰·‘Ñ‰ð•ú
-        
-        if (m_CGameObj.TreeList[(int)TreeNumber.YATUDE].Count>=1)
+
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.YATUDE] >= 1)
             m_NestActive[(int)NestNumber.HATUKANEZUMI] = true;
 
-        if (m_CGameObj.TreeList[(int)TreeNumber.KEYAKI].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KEYAKI] >= 1)
             m_NestActive[(int)NestNumber.AMAKAERU] = true;
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.AMAKAERU].Count >= 5)
@@ -66,10 +66,10 @@ public class ButtonRelease : MonoBehaviour
 
 
         //”M‘Ñ‰ð•ú
-        if (m_CGameObj.TreeList[(int)TreeNumber.RATANNYASHI].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.RATANNYASHI] >= 1)
             m_NestActive[(int)NestNumber.SYOUGARAGO] = true;
 
-        if (m_CGameObj.TreeList[(int)TreeNumber.KAPOKKU].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KAPOKKU] >= 1)
             m_NestActive[(int)NestNumber.KAPIBARA] = true;
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.SYOUGARAGO].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.KAPIBARA].Count >= 5)
@@ -101,10 +101,10 @@ public class ButtonRelease : MonoBehaviour
 
 
         //Š£‘‡‘Ñ‰ð•ú
-        if (m_CGameObj.TreeList[(int)TreeNumber.SABOTEN].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.SABOTEN] >= 1)
             m_NestActive[(int)NestNumber.HARINEZUMI] = true;
 
-        if (m_CGameObj.TreeList[(int)TreeNumber.NATUMEYASHI].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.NATUMEYASHI] >= 1)
             m_NestActive[(int)NestNumber.ARUMAZIRO] = true;
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HARINEZUMI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.ARUMAZIRO].Count >= 5)
@@ -135,10 +135,10 @@ public class ButtonRelease : MonoBehaviour
 
 
         //Š¦‘Ñ‰ð•ú
-        if (m_CGameObj.TreeList[(int)TreeNumber.MIZUGOKE].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.MIZUGOKE] >= 1)
             m_NestActive[(int)NestNumber.PENGIN] = true;
 
-        if (m_CGameObj.TreeList[(int)TreeNumber.DAKEKANBA].Count >= 1)
+        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.DAKEKANBA] >= 1)
             m_NestActive[(int)NestNumber.AZARASHI] = true;
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.PENGIN].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.AZARASHI].Count >= 5)
@@ -169,7 +169,7 @@ public class ButtonRelease : MonoBehaviour
 
 
 
-        for (int i = 0; i < (int)NestNumber.NESTMAX; i++)
+        for (int i = 0; i < 40; i++)
         {
             m_NestButton[i].interactable = m_NestActive[i];
         }
