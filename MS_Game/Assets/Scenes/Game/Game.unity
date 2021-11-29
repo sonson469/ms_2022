@@ -22378,7 +22378,7 @@ MonoBehaviour:
   m_Direction: 2
   m_Value: 1
   m_Size: 0.17150396
-  m_NumberOfSteps: 11
+  m_NumberOfSteps: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -23647,7 +23647,6 @@ MonoBehaviour:
   TreeList: []
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
-  AnimalList: []
   AnimalNestList: []
   MachineList: []
   m_TreeData: {fileID: 0}
@@ -28958,7 +28957,7 @@ MonoBehaviour:
   m_Direction: 2
   m_Value: 1.0000013
   m_Size: 0.20000017
-  m_NumberOfSteps: 11
+  m_NumberOfSteps: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -35155,7 +35154,7 @@ MonoBehaviour:
   m_Direction: 2
   m_Value: 1.0000015
   m_Size: 0.24904214
-  m_NumberOfSteps: 11
+  m_NumberOfSteps: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -40425,7 +40424,7 @@ MonoBehaviour:
   m_Direction: 0
   m_Value: 0
   m_Size: 0.6744403
-  m_NumberOfSteps: 11
+  m_NumberOfSteps: 6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -51947,7 +51946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Money: 1000000
-  m_DayTime: 60
+  m_DayTime: 20
   m_TimeMaterObject: {fileID: 71839776}
   m_DayTextObject: {fileID: 1411255692}
   m_MoneyTextObject: {fileID: 422488127}
@@ -51966,7 +51965,6 @@ MonoBehaviour:
   TreeList: []
   m_TreeBigCount: 0
   m_TreeSmallCount: 0
-  AnimalList: []
   AnimalNestList: []
   MachineList: []
   m_TreeData: {fileID: 11400000, guid: 149dd808eb0661a4da86ece818f959dc, type: 2}

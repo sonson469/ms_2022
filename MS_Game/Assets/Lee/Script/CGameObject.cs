@@ -5,7 +5,7 @@ using UnityEngine;
 public class CGameObject : MonoBehaviour
 {
 
-    public List<List<GameObject>> TreeList = new List<List<GameObject>>();  //¶¬‚³‚ê‚½÷–Ø
+    public List<GameObject> TreeList = new List<GameObject>(); //¶¬‚³‚ê‚½÷–Ø
     public int m_TreeBigCount;     //÷–Ø‚Ì”
     public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
 
