@@ -31,156 +31,140 @@ public class ButtonRelease : MonoBehaviour
     private void Update()
     {
         //‰·‘Ñ‰ğ•ú
-        if (m_CGameObj.m_TreeBigCount >= 1 && m_CGameObj.m_TreeSmallCount >= 1)
+        
+        if (m_CGameObj.TreeList[(int)TreeNumber.YATUDE].Count>=1)
             m_NestActive[(int)NestNumber.HATUKANEZUMI] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 5)
+        if (m_CGameObj.TreeList[(int)TreeNumber.KEYAKI].Count >= 1)
             m_NestActive[(int)NestNumber.AMAKAERU] = true;
 
-        if (m_CGameObj.m_TreeSmallCount >= 5)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.AMAKAERU].Count >= 5)
             m_NestActive[(int)NestNumber.SHIMAHEBI] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.AMAKAERU].Count >= 1)
             m_NestActive[(int)NestNumber.RESSAPANDA] = true;
 
-        if (m_CGameObj.m_TreeSmallCount >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.RESSAPANDA].Count >= 1)
             m_NestActive[(int)NestNumber.NIHONNITATI] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 30)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.RESSAPANDA].Count >= 5)
             m_NestActive[(int)NestNumber.YAMAINU] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.SAKURA] >= 50)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.YAMAINU].Count >= 5)
             m_NestActive[(int)NestNumber.OOTAKA] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.HATUKANEZUMI] >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.YAMAINU].Count >= 1)
             m_NestActive[(int)NestNumber.HUKUROU] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 300 && m_CGameObj.m_TreeSmallCount >= 300)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.OOTAKA].Count >= 10)
             m_NestActive[(int)NestNumber.GURIZURI] = true;
 
-        int temperateCount = 0; //‰·‘Ñ‰ğ•ú”
-        for (int i = 0; i < 9; i++)
-        {
-            if (m_NestActive[i] == true)
-                temperateCount++;
-        }
-        if (temperateCount == 9)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.OOTAKA].Count >= 10)
             m_NestActive[(int)NestNumber.TORA] = true;
 
+
         //”M‘Ñ‰ğ•ú
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.RATANNYASHI] >= 1)
+        if (m_CGameObj.TreeList[(int)TreeNumber.RATANNYASHI].Count >= 1)
             m_NestActive[(int)NestNumber.SYOUGARAGO] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KAPOKKU] >= 3
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.MAHOGANI] >= 3
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.ASAIYASI] >= 3)
+        if (m_CGameObj.TreeList[(int)TreeNumber.KAPOKKU].Count >= 1)
             m_NestActive[(int)NestNumber.KAPIBARA] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 50)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SYOUGARAGO].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.KAPIBARA].Count >= 5)
             m_NestActive[(int)NestNumber.KOARA] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.RATANNYASHI] >= 10
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.ASERORA] >= 10
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.SATOUKIBI] >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SYOUGARAGO].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.KAPIBARA].Count >= 1)
             m_NestActive[(int)NestNumber.WONBATTO] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KOHINOKI] >= 15
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.RAHURESHIA] >= 15)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.KOARA].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.WONBATTO].Count >= 1)
             m_NestActive[(int)NestNumber.OOARIKUI] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.WONBATTO] >= 3)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.KOARA].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.WONBATTO].Count >= 5)
             m_NestActive[(int)NestNumber.TASUMANIADEBIRU] = true;
 
-        if (m_TimeManager.GetGameDay() >= 365 * 5)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.OOARIKUI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.TASUMANIADEBIRU].Count >= 5)
             m_NestActive[(int)NestNumber.OOKOUMORI] = true;
 
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KAPOKKU] >= 20
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.MAHOGANI] >= 20
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.ASAIYASI] >= 20
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.TOWARAN] >= 20
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.WOKINGUPAMU] >= 20)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.OOARIKUI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.TASUMANIADEBIRU].Count >= 1)
             m_NestActive[(int)NestNumber.GORIRA] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.GORIRA] >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SYOUGARAGO].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.KOARA].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.OOARIKUI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.OOKOUMORI].Count >= 10)
             m_NestActive[(int)NestNumber.WANI] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.WANI] >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.KAPIBARA].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.WONBATTO].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.TASUMANIADEBIRU].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.GORIRA].Count >= 10)
             m_NestActive[(int)NestNumber.ZYAGA] = true;
 
+
         //Š£‘‡‘Ñ‰ğ•ú
-        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANSOUTAI] >= 1)
+        if (m_CGameObj.TreeList[(int)TreeNumber.SABOTEN].Count >= 1)
             m_NestActive[(int)NestNumber.HARINEZUMI] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.SABOTEN] >= 5
-            && m_CGameObj.m_TreeNameCount[(int)TreeNumber.ENOKOROGUSA] >= 5)
+        if (m_CGameObj.TreeList[(int)TreeNumber.NATUMEYASHI].Count >= 1)
             m_NestActive[(int)NestNumber.ARUMAZIRO] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.SABOTEN] >= 20)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HARINEZUMI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.ARUMAZIRO].Count >= 5)
             m_NestActive[(int)NestNumber.RAKUDA] = true;
 
-        if (m_CGameObj.m_TreeSmallCount >= 100)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HARINEZUMI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.ARUMAZIRO].Count >= 1)
             m_NestActive[(int)NestNumber.SHIMAUMA] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.HARINEZUMI] >= 3)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.RAKUDA].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAUMA].Count >= 1)
             m_NestActive[(int)NestNumber.SABARU] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.ARUMAZIRO] >= 5)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.RAKUDA].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAUMA].Count >= 5)
             m_NestActive[(int)NestNumber.ZYAKKARU] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 400 && m_CGameObj.m_TreeSmallCount >= 400)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SABARU].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKKARU].Count >= 5)
             m_NestActive[(int)NestNumber.KABA] = true;
 
-        if (m_CGameObj.m_TreeSmallCount >= 400)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.SABARU].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKKARU].Count >= 1)
             m_NestActive[(int)NestNumber.SAI] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 500 && m_CGameObj.m_TreeSmallCount >= 500)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HARINEZUMI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.RAKUDA].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.SABARU].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.KABA].Count >= 10)
             m_NestActive[(int)NestNumber.ZOU] = true;
 
-        int aridCount = 0;//Š£‘‡‘Ñ‰ğ•ú”
-        int indexToRemove = 28;
-        bool[] nest = m_NestActive.Where((source, index) => index != indexToRemove).ToArray();
-        for (int i = 0; i < nest.Length; i++)
-        {
-            if (nest[i] == true)
-                aridCount++;
-        }
-        Debug.Log(nest.Length);
-        if (aridCount == 38)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.ARUMAZIRO].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAUMA].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKKARU].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SAI].Count >= 10)
             m_NestActive[(int)NestNumber.RAION] = true;
 
 
         //Š¦‘Ñ‰ğ•ú
-        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANTAI] >= 1)
+        if (m_CGameObj.TreeList[(int)TreeNumber.MIZUGOKE].Count >= 1)
             m_NestActive[(int)NestNumber.PENGIN] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.PENGIN] >= 3)
+        if (m_CGameObj.TreeList[(int)TreeNumber.DAKEKANBA].Count >= 1)
             m_NestActive[(int)NestNumber.AZARASHI] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.MIZUGOKE] >= 20)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.PENGIN].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.AZARASHI].Count >= 5)
             m_NestActive[(int)NestNumber.TONAKAI] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.HISU] >= 15)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.PENGIN].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.AZARASHI].Count >= 1)
             m_NestActive[(int)NestNumber.ZYAKOUUSHI] = true;
 
-        if (m_CGameObj.m_TreeBigCount >= 100)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.TONAKAI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKOUUSHI].Count >= 1)
             m_NestActive[(int)NestNumber.HOKKYOKUKITUNE] = true;
 
-        if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.DAKEMOMI] >= 30)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.TONAKAI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKOUUSHI].Count >= 5)
             m_NestActive[(int)NestNumber.SHIROHUKUROU] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.TONAKAI] >= 10)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HOKKYOKUKITUNE].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIROHUKUROU].Count >= 5)
             m_NestActive[(int)NestNumber.KUZURI] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.TONAKAI] >= 15
-            && m_CGameObj.m_NestNameCount[(int)NestNumber.ZYAKOUUSHI] >= 15)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.HOKKYOKUKITUNE].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIROHUKUROU].Count >= 1)
             m_NestActive[(int)NestNumber.TUNDORAOOKAMI] = true;
 
-        if (m_CGameObj.m_NestNameCount[(int)NestNumber.PENGIN] >= 15
-            && m_CGameObj.m_NestNameCount[(int)NestNumber.AZARASHI] >= 15)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.PENGIN].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.TONAKAI].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.HOKKYOKUKITUNE].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.KUZURI].Count >= 10)
             m_NestActive[(int)NestNumber.SEIUTI] = true;
 
-        if (m_CGameObj.m_MachineNameCount[(int)MachineNumber.KANTAI] >= 15)
+        if (m_CGameObj.AnimalList[(int)AnimalNumber.AZARASHI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.ZYAKOUUSHI].Count >= 10
+            && m_CGameObj.AnimalList[(int)AnimalNumber.SHIROHUKUROU].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.TUNDORAOOKAMI].Count >= 10)
             m_NestActive[(int)NestNumber.HOKKYOKUGUMA] = true;
 
 

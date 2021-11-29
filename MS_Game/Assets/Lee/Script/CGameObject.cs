@@ -5,11 +5,11 @@ using UnityEngine;
 public class CGameObject : MonoBehaviour
 {
 
-    public List<GameObject> TreeList = new List<GameObject>();  //¶¬‚³‚ê‚½÷–Ø
+    public List<List<GameObject>> TreeList = new List<List<GameObject>>();  //¶¬‚³‚ê‚½÷–Ø
     public int m_TreeBigCount;     //÷–Ø‚Ì”
     public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
 
-    public List<GameObject> AnimalList = new List<GameObject>();  //¶¬‚³‚ê‚½“®•¨
+    public List<List<GameObject>> AnimalList = new List<List<GameObject>>();@//¶¬‚³‚ê‚½“®•¨
     public List<GameObject> AnimalNestList = new List<GameObject>();  //¶¬‚³‚ê‚½‘ƒ
     public List<GameObject> MachineList = new List<GameObject>();  //¶¬‚³‚ê‚½‹@ŠB
 
