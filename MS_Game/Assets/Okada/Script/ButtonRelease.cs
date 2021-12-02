@@ -7,7 +7,6 @@ using static CGameObject;
 
 public class ButtonRelease : MonoBehaviour
 {
-    [SerializeField] private AnimalNestData m_NestData;
     private CGameObject m_CGameObj;
 
     [SerializeField] private GameObject[] m_NestButtonObject = new GameObject[(int)NestNumber.NESTMAX];
@@ -24,7 +23,7 @@ public class ButtonRelease : MonoBehaviour
         for (int i = 0; i < 40; i++)
         {
             m_NestButton[i] = m_NestButtonObject[i].gameObject.GetComponent<Button>();
-            //m_NestActive[i] = true;
+           // m_NestActive[i] = true;
             m_NestButton[i].interactable = m_NestActive[i];
         }
     }

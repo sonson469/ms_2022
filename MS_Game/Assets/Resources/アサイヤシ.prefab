@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2265400530868114439}
   - component: {fileID: 3236191384535911988}
   - component: {fileID: -2859807794921342474}
+  - component: {fileID: -3200571959413585660}
   m_Layer: 0
   m_Name: "\u30A2\u30B5\u30A4\u30E4\u30B7"
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8116033852051611400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d269c4e380e4f9d4fb4a7fd240bb38e9, type: 3}
   m_Name: 
@@ -95,6 +96,19 @@ MonoBehaviour:
   SaplingObject: {fileID: 1401145124766507309}
   CompleteObject: {fileID: 5801002168048020995}
   WitherObject: {fileID: 3197406258268540242}
+--- !u!114 &-3200571959413585660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116033852051611400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7855752e7b8fa0840982f8a5371ddfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Nettainum: 2
 --- !u!1 &8979537530590936671
 GameObject:
   m_ObjectHideFlags: 0

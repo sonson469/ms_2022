@@ -45,7 +45,7 @@ public class CGameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_DayEnd && m_NestCount >= m_GameObjectScript.AnimalNestList.Count && m_TreeCount >= m_GameObjectScript.TreeList.Count)
+        if(m_DayEnd)
         {
             m_GameDay++;
             m_Money += 1000;

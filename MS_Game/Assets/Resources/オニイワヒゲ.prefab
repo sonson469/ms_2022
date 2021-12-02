@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -6103434925494257145}
   - component: {fileID: -1536933038117763768}
   - component: {fileID: 5758058223846271972}
+  - component: {fileID: -4181672621845119621}
   m_Layer: 0
   m_Name: "\u30AA\u30CB\u30A4\u30EF\u30D2\u30B2"
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119349880397400302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a471b060bcc014439ccb4fa20d6bc83, type: 3}
   m_Name: 
@@ -95,6 +96,19 @@ MonoBehaviour:
   SaplingObject: {fileID: 9215875995553844067}
   CompleteObject: {fileID: 4816066286990101264}
   WitherObject: {fileID: 3731737957412791123}
+--- !u!114 &-4181672621845119621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119349880397400302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5dd5c8b995963448a5d26a056a47db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Kantainum: 5
 --- !u!1 &1119349881278486385
 GameObject:
   m_ObjectHideFlags: 0

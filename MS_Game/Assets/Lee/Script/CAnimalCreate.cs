@@ -13,6 +13,7 @@ public class CAnimalCreate : MonoBehaviour
 
     protected GameObject m_Manager;
     protected CGameTimeManager m_TimeManager;
+    protected CGameObject m_GameObjectScript;
 
     protected GameObject m_MyObject;
 
@@ -23,7 +24,7 @@ public class CAnimalCreate : MonoBehaviour
     {
     }
 
-    public void CreateAnimal(int NestID,GameObject nest,float range,int num)   //巣番号、対象の巣、生成範囲、生成動物の食物連鎖の種類
+    public void CreateAnimal(int NestID,GameObject nest,float range,int num)   //巣番号、対象の巣、生成範囲、地帯
     {
         GameObject Object = (GameObject)Resources.Load("Animal/" + m_AnimalData.sheets[0].list[NestID - 1].Name);
 
@@ -41,22 +42,22 @@ public class CAnimalCreate : MonoBehaviour
 
         if(num == 1)
         {
-            HigherCarnivore animscript = nest.GetComponent<HigherCarnivore>();
+            COntai animscript = nest.GetComponent<COntai>();
             animscript.AddMyList(animal);
         }
-        else if(num == 2)
+        else if (num == 2)
         {
-            HigherHerbivore animscript = nest.GetComponent<HigherHerbivore>();
+            CNettai animscript = nest.GetComponent<CNettai>();
             animscript.AddMyList(animal);
         }
         else if (num == 3)
         {
-            LowerCarnivore animscript = nest.GetComponent<LowerCarnivore>();
+            CKansoutai animscript = nest.GetComponent<CKansoutai>();
             animscript.AddMyList(animal);
         }
         else if (num == 4)
         {
-            LowerHerbivore animscript = nest.GetComponent<LowerHerbivore>();
+            CKantai animscript = nest.GetComponent<CKantai>();
             animscript.AddMyList(animal);
         }
 
