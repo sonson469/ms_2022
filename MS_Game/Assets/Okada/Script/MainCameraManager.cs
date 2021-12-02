@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainCameraManager : MonoBehaviour
 {
     [SerializeField]private float m_MoveSpeed;
+    [SerializeField] private float m_ScrollSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class MainCameraManager : MonoBehaviour
 
         transform.position += moveForward.normalized * m_MoveSpeed * Time.unscaledDeltaTime;
 
-        transform.position += transform.forward * Input.mouseScrollDelta.y;
+        transform.position += transform.forward * Input.mouseScrollDelta.y * m_ScrollSpeed;
 
     }
 }
