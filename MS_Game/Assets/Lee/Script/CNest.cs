@@ -13,6 +13,8 @@ public class CNest : MonoBehaviour
 
     [SerializeField] private float m_Range;
 
+    [SerializeField] private bool m_Put;
+
 
     public enum Climate
     {
@@ -91,6 +93,7 @@ public class CNest : MonoBehaviour
     {
         return m_Range;
     }
+
 
     private void OnTriggerStay(Collider other)
     {

@@ -10,6 +10,7 @@ public class CGameObject : MonoBehaviour
     public int m_TreeSmallCount;   //’á÷–Ø‚Ì”
 
     public List<List<GameObject>> AnimalList = new List<List<GameObject>>();@//¶¬‚³‚ê‚½“®•¨
+
     public List<GameObject> AnimalNestList = new List<GameObject>();  //¶¬‚³‚ê‚½‘ƒ
     public List<GameObject> MachineList = new List<GameObject>();  //¶¬‚³‚ê‚½‹@ŠB
 
@@ -20,6 +21,15 @@ public class CGameObject : MonoBehaviour
     public int[] m_NestNameCount = new int[(int)NestNumber.NESTMAX];
 
     public int[] m_MachineNameCount = new int[(int)MachineNumber.MACHINEMAX];
+
+    private void Start()
+    {
+        for(int i = 0; i < 40; i++)
+        {
+            AnimalList.Add(new List<GameObject>());
+        }
+        
+    }
 
     public enum TreeNumber
     {

@@ -10,6 +10,8 @@ public class CNestCount : MonoBehaviour
 
     [SerializeField] private AnimalNestData m_NestData;
 
+    private bool m_Put = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,15 @@ public class CNestCount : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetPut()
+    {
+        m_Put = true;
+    }
+    public bool GetPut()
+    {
+        return m_Put;
     }
 
     private void OnTriggerEnter(Collider other)

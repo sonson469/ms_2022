@@ -50,13 +50,21 @@ public class CButtonClick : MonoBehaviour
             m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
             m_ObjectMoveScript.SetCost(m_TreeData.sheets[0].list[TreeID - 1].Cost);
 
-            if (TreeID <= 19)
+            if (TreeID <= 5 || (TreeID >= 20 && TreeID <= 24))
             {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.BIG);
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.ONTAI);
             }
-            else if(TreeID >= 20)
+            else if((TreeID >= 6 && TreeID <= 10) || (TreeID >= 25 && TreeID <= 29))
             {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.SMALL);
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.NETTAI);
+            }
+            else if ((TreeID >= 11 && TreeID <= 15) || (TreeID >= 30 && TreeID <= 34))
+            {
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANSOUTAI);
+            }
+            else if ((TreeID >= 16 && TreeID <= 19) || (TreeID >= 35 && TreeID <= 40))
+            {
+                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANTAI);
             }
 
             m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);

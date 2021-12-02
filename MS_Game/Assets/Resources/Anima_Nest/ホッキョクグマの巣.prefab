@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 916946041669444825}
   - component: {fileID: -3926217471992504051}
   - component: {fileID: 950620722045056942}
+  - component: {fileID: 4869441525872590020}
   m_Layer: 0
   m_Name: "\u30DB\u30C3\u30AD\u30E7\u30AF\u30B0\u30DE\u306E\u5DE3"
   m_TagString: nHOKKYOKUGUMA
@@ -177,6 +178,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4869441525872590020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261281126447199922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff7152a91a688f4ca232dfe8066abc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyNest: {fileID: 0}
+  m_AnimalData: {fileID: 11400000, guid: b299a80ea55bfe94ba95127a20131dd6, type: 2}
+  m_TreeCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &5417815421657150434
 GameObject:
   m_ObjectHideFlags: 0

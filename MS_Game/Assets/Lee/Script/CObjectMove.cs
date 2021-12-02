@@ -39,13 +39,15 @@ public class CObjectMove : MonoBehaviour
 
     public enum TreeSize
     {
-        BIG,
-        SMALL,
-        NULL
+        ONTAI,
+        NETTAI,
+        KANSOUTAI,
+        KANTAI,
+        NONE
     }
 
     private CreateObject m_CreateObjectNum; //オブジェクトの種類番号
-    private TreeSize m_TreeSize = TreeSize.NULL;        //木だったときに樹木か低樹木か判別用
+    private TreeSize m_TreeSize = TreeSize.NONE;        //木だったときに樹木か低樹木か判別用
 
     private RaycastHit m_RaycastHit;
 
@@ -91,6 +93,11 @@ public class CObjectMove : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
+                m_Succession = true;
+            }
+
+            if(m_Succession)
+            {
                 //機械の時、他の機械の地面と接してたらおけない
                 if (m_CreateObjectNum == CreateObject.MACHINE)
                 {
@@ -100,7 +107,6 @@ public class CObjectMove : MonoBehaviour
                 }
                 if (m_TargetObjectCost <= m_TimeScript.GetMoney())
                 {
-                    m_Succession = true;
 
                     //同じオブジェクトを既に設置してたら
                     if (m_PutPosition != null)
@@ -125,14 +131,14 @@ public class CObjectMove : MonoBehaviour
 
                         CTree treescript = m_TargetObject.GetComponent<CTree>();
                         treescript.SetSapling();
-                        if (m_TreeSize == TreeSize.BIG)
+                        /*if (m_TreeSize == TreeSize.BIG)
                         {
                             m_GameObjectScript.m_TreeBigCount++;
                         }
                         else if (m_TreeSize == TreeSize.SMALL)
                         {
                             m_GameObjectScript.m_TreeSmallCount++;
-                        }
+                        }*/
                         m_ButtonScript.CreateTree(m_Num);
 
                     }
@@ -141,6 +147,9 @@ public class CObjectMove : MonoBehaviour
                         m_OnObj = true;
                         m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
                         m_GameObjectScript.NestNameCount(m_Num - 1);
+
+                        CNestCount script = m_TargetObject.GetComponent<CNestCount>();
+                        script.SetPut();
 
                         m_ButtonScript.CreateNest(m_Num);
                     }
@@ -192,19 +201,29 @@ public class CObjectMove : MonoBehaviour
 
     public void TreeReset()
     {
-        if (m_TreeSize == TreeSize.BIG)
+        if (m_TreeSize == TreeSize.ONTAI)
         {
-            CTreeBig treescript = m_TargetObject.GetComponent<CTreeBig>();
+            COntaiTree treescript = m_TargetObject.GetComponent<COntaiTree>();
             treescript.ResetList();
 
         }
-        else if (m_TreeSize == TreeSize.SMALL)
+        else if (m_TreeSize == TreeSize.NETTAI)
         {
-            CTreeSmall treescript = m_TargetObject.GetComponent<CTreeSmall>();
+            CNettaiTree treescript = m_TargetObject.GetComponent<CNettaiTree>();
+            treescript.ResetList();
+        }
+        else if (m_TreeSize == TreeSize.KANSOUTAI)
+        {
+            CKansoutaiTree treescript = m_TargetObject.GetComponent<CKansoutaiTree>();
+            treescript.ResetList();
+        }
+        else if (m_TreeSize == TreeSize.KANTAI)
+        {
+            CKantaiTree treescript = m_TargetObject.GetComponent<CKantaiTree>();
             treescript.ResetList();
         }
 
-        m_TreeSize = TreeSize.NULL;
+        m_TreeSize = TreeSize.NONE;
     }
 
     public void SetObjectMove(bool flag)

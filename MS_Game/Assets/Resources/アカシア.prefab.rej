@@ -1,9 +1,0 @@
-diff a/MS_Game/Assets/Resources/アカシア.prefab b/MS_Game/Assets/Resources/アカシア.prefab	(rejected hunks)
-@@ -12,6 +12,7 @@
-   - component: {fileID: -4921309395125392000}
-   - component: {fileID: -7353713736101376569}
-   - component: {fileID: 7553872473052418459}
-+  - component: {fileID: 5530454721347622097}
-   m_Layer: 0
-   m_Name: "\u30A2\u30AB\u30B7\u30A2"
-   m_TagString: Untagged

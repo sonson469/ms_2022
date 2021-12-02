@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: -2567959817104753342}
   - component: {fileID: -2399021136593261114}
   - component: {fileID: 7249032950254591585}
+  - component: {fileID: 8967675858521756035}
   m_Layer: 0
   m_Name: "\u30A4\u30C1\u30B8\u30AF"
   m_TagString: Untagged
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4127519001579381206}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d269c4e380e4f9d4fb4a7fd240bb38e9, type: 3}
   m_Name: 
@@ -177,6 +178,19 @@ MonoBehaviour:
   SaplingObject: {fileID: 8306588008287012528}
   CompleteObject: {fileID: 657156474500495401}
   WitherObject: {fileID: 3529325918844266607}
+--- !u!114 &8967675858521756035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127519001579381206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4edc1d1ca7e1994aafd4666646227b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Kansoutai: 2
 --- !u!1001 &423296055593796984
 PrefabInstance:
   m_ObjectHideFlags: 0
