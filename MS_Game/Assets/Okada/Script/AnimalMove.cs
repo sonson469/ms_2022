@@ -12,11 +12,19 @@ public class AnimalMove : MonoBehaviour
     private GameObject m_TargetNest;
     private bool m_Once;
 
+    private GameObject m_GameManager;
+    private CGameTimeManager m_TimeScript;
+
+
     void Start()
     { 
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
         m_NavMeshAgent.autoBraking = false;
+        m_NavMeshAgent.speed = 0;
         m_NavMeshSurface = GetComponent<NavMeshSurface>();
+
+        m_GameManager = GameObject.FindWithTag("Manager");
+        m_TimeScript = m_GameManager.GetComponent<CGameTimeManager>();
     }
 
     void Update()
@@ -31,6 +39,8 @@ public class AnimalMove : MonoBehaviour
             if (!m_NavMeshAgent.pathPending && m_NavMeshAgent.remainingDistance < 0.5f)
                 GotoNextPoint();
         }
+
+        m_NavMeshAgent.speed = (float)m_TimeScript.GetTimeSpeed() * 0.5f;
     }
 
     void GotoNextPoint()

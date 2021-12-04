@@ -70,6 +70,8 @@ public class CButtonClick : MonoBehaviour
             m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
 
             ObjectCreate();
+            float y = Random.Range(0.0f, 360.0f);
+            m_TargetObject.transform.Rotate(new Vector3(0, y, 0));
 
         }
     }
@@ -94,6 +96,8 @@ public class CButtonClick : MonoBehaviour
             m_Object = (GameObject)Resources.Load("Anima_Nest/" + m_NestData.sheets[0].list[NestID - 1].Name);
 
             ObjectCreate();
+            float y = Random.Range(0.0f, 360.0f);
+            m_TargetObject.transform.Rotate(new Vector3(0, y, 0));
         }
     }
 
