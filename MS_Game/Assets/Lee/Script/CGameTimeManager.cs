@@ -107,4 +107,9 @@ public class CGameTimeManager : MonoBehaviour
     {
         return m_GameDay;
     }
+
+    public int GetTimeSpeed()
+    {
+        return m_TimeSpeed;
+    }
 }
