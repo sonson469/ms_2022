@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d90f5375519a2b4696684e86d40c857, type: 3}
-  m_Name: AnimalData
+  m_Name: AnimalDataS
   m_EditorClassIdentifier: 
   sheets:
   - name: Sheet1
@@ -76,9 +76,9 @@ MonoBehaviour:
     - Id: 30
       Name: "\u30E9\u30A4\u30AA\u30F3"
     - Id: 31
-      Name: "\u30DA\u30F3\u30AE\u30F3\t\t"
+      Name: "\u30DA\u30F3\u30AE\u30F3"
     - Id: 32
-      Name: "\u30A2\u30B6\u30E9\u30B7\t\t"
+      Name: "\u30A2\u30B6\u30E9\u30B7"
     - Id: 33
       Name: "\u30C8\u30CA\u30AB\u30A4"
     - Id: 34

@@ -131,14 +131,6 @@ public class CObjectMove : MonoBehaviour
 
                         CTree treescript = m_TargetObject.GetComponent<CTree>();
                         treescript.SetSapling();
-                        /*if (m_TreeSize == TreeSize.BIG)
-                        {
-                            m_GameObjectScript.m_TreeBigCount++;
-                        }
-                        else if (m_TreeSize == TreeSize.SMALL)
-                        {
-                            m_GameObjectScript.m_TreeSmallCount++;
-                        }*/
                         m_ButtonScript.CreateTree(m_Num);
 
                     }
