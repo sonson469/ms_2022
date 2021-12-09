@@ -5,12 +5,16 @@ using UnityEngine;
 public class COntaiTree : MonoBehaviour
 {
     [SerializeField] int m_Ontainum;
-    private List<GameObject> InNestList = new List<GameObject>();
+    [SerializeField] private List<GameObject> InNestList = new List<GameObject>();
+
+    private GameObject m_Manager;
+    private CGameObject m_GameObjectScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Manager = GameObject.FindWithTag("Manager");
+        m_GameObjectScript = m_Manager.GetComponent<CGameObject>();
     }
 
     // Update is called once per frame
@@ -21,131 +25,136 @@ public class COntaiTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
         {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.AMAKAERU)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIMAHEBI)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.RESSAPANDA)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.NIHONNITATI)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.YAMAINU)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.OOTAKA)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HUKUROU)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.GURIZURI)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TORA)
-        {
-            InNestList.Add(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeCount(m_Ontainum);
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.AMAKAERU)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIMAHEBI)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.RESSAPANDA)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.NIHONNITATI)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.YAMAINU)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.OOTAKA)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HUKUROU)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.GURIZURI)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TORA)
+            {
+                InNestList.Add(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeCount(m_Ontainum);
+            }
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
         {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.AMAKAERU)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIMAHEBI)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.RESSAPANDA)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.NIHONNITATI)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.YAMAINU)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.OOTAKA)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HUKUROU)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.GURIZURI)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TORA)
-        {
-            InNestList.Remove(other.gameObject);
-            COntai script = other.gameObject.GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.AMAKAERU)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIMAHEBI)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.RESSAPANDA)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.NIHONNITATI)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.YAMAINU)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.OOTAKA)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HUKUROU)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.GURIZURI)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TORA)
+            {
+                InNestList.Remove(other.gameObject);
+                COntai script = other.gameObject.GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
         }
     }
 

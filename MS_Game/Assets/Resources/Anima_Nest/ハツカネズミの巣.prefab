@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1988928673664648694}
-  - component: {fileID: 2959361409264558438}
   - component: {fileID: 8225627869261682224}
   m_Layer: 0
   m_Name: Nest
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 8891917950360676867}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2959361409264558438
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208820736893601921}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &8225627869261682224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +60,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8891917950360676867}
   - component: {fileID: 1257928302536661958}
-  - component: {fileID: 3224014672220019821}
   - component: {fileID: -2650783097894423252}
   - component: {fileID: 1083271224043963811}
   - component: {fileID: 3121441450208357356}
@@ -114,20 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: -0.5, z: 0}
---- !u!114 &3224014672220019821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8891917950360676866}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21ee15dd663730429fc86720181c5dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyNest: {fileID: 3208820736893601921}
-  m_AnimalData: {fileID: 0}
 --- !u!114 &-2650783097894423252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_NewNestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  InNestList: []
   m_NestData: {fileID: 11400000, guid: cce622c0008836d4dab1586ebbaaa3cb, type: 2}
 --- !u!54 &1083271224043963811
 Rigidbody:

@@ -134,4 +134,32 @@ public class CNettai : CAnimalCreate
         m_MyAnimalList.Add(animal);
         m_GameObjectScript.AnimalList[m_NestScript.GetNestNum() - 1].Add(animal);
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "ONTAI")
+        {
+            m_NestScript.SetNowZone(CNest.Climate.ONTAI);
+        }
+        else if (other.gameObject.tag == "NETTAI")
+        {
+            m_NestScript.SetNowZone(CNest.Climate.NETTAI);
+        }
+        else if (other.gameObject.tag == "KANSOUTAI")
+        {
+            m_NestScript.SetNowZone(CNest.Climate.KANSOUTAI);
+        }
+        else if (other.gameObject.tag == "KANTAI")
+        {
+            m_NestScript.SetNowZone(CNest.Climate.KANTAI);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Machine")
+        {
+            m_NestScript.SetNowZone(CNest.Climate.NONE);
+        }
+    }
 }

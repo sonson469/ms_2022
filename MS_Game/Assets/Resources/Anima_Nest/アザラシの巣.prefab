@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5186394504483491368}
-  - component: {fileID: 8486430004271695878}
   - component: {fileID: 4473855607412059548}
   m_Layer: 0
   m_Name: Nest
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 4274242923260511015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8486430004271695878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894878175054126656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &4473855607412059548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +60,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4274242923260511015}
   - component: {fileID: 7152419955773945810}
-  - component: {fileID: 4089181863340205657}
   - component: {fileID: 4284064138065455799}
   - component: {fileID: -2113084881677122928}
   - component: {fileID: 9174610161862896280}
@@ -114,20 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: -0.5, z: 0}
---- !u!114 &4089181863340205657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4274242923260511014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21ee15dd663730429fc86720181c5dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyNest: {fileID: 2894878175054126656}
-  m_AnimalData: {fileID: 0}
 --- !u!114 &4284064138065455799
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,10 +7,14 @@ public class CKantaiTree : MonoBehaviour
     [SerializeField] int m_Kantainum;
     private List<GameObject> InNestList = new List<GameObject>();
 
+    private GameObject m_Manager;
+    private CGameObject m_GameObjectScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Manager = GameObject.FindWithTag("Manager");
+        m_GameObjectScript = m_Manager.GetComponent<CGameObject>();
     }
 
     // Update is called once per frame
@@ -21,129 +25,135 @@ public class CKantaiTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
         {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.AZARASHI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TONAKAI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.ZYAKOUUSHI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUKITUNE)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIROHUKUROU)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.KUZURI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TUNDORAOOKAMI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SEIUTI)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUGUMA)
-        {
-            InNestList.Add(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeCount(m_Kantainum);
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.AZARASHI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TONAKAI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.ZYAKOUUSHI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUKITUNE)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIROHUKUROU)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.KUZURI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TUNDORAOOKAMI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SEIUTI)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUGUMA)
+            {
+                InNestList.Add(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeCount(m_Kantainum);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
         {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.AZARASHI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TONAKAI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.ZYAKOUUSHI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUKITUNE)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIROHUKUROU)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.KUZURI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.TUNDORAOOKAMI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.SEIUTI)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
-        }
-        if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUGUMA)
-        {
-            InNestList.Remove(other.gameObject);
-            CKantai script = other.gameObject.GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.AZARASHI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TONAKAI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.ZYAKOUUSHI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUKITUNE)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SHIROHUKUROU)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.KUZURI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.TUNDORAOOKAMI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.SEIUTI)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
+            if (other.gameObject.tag == "n" + CGameObject.NestNumber.HOKKYOKUGUMA)
+            {
+                InNestList.Remove(other.gameObject);
+                CKantai script = other.gameObject.GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
         }
     }
     public void ResetList()   //オブジェクトを消すときリスト内の木の数をリセットさせる
