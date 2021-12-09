@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3379427757088282939}
   - component: {fileID: 8605164086759911060}
-  - component: {fileID: 4384043236727366189}
   - component: {fileID: 2884409948755246270}
   - component: {fileID: -2411405590713498259}
   - component: {fileID: -6220739510000504967}
@@ -50,20 +49,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13, y: 1, z: 13}
   m_Center: {x: 0, y: -0.5, z: 0}
---- !u!114 &4384043236727366189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3379427757088282938}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21ee15dd663730429fc86720181c5dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyNest: {fileID: 3518569092082940779}
-  m_AnimalData: {fileID: 0}
 --- !u!114 &2884409948755246270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +104,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 380543638133183256}
-  - component: {fileID: 2814214869628117226}
   - component: {fileID: 4827873273564805122}
   m_Layer: 0
   m_Name: Nest
@@ -142,19 +126,6 @@ Transform:
   m_Father: {fileID: 3379427757088282939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2814214869628117226
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3518569092082940779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 13, y: 1, z: 13}
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &4827873273564805122
 MonoBehaviour:
   m_ObjectHideFlags: 0

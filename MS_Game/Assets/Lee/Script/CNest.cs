@@ -72,6 +72,11 @@ public class CNest : MonoBehaviour
         return m_TreeSmallCount;
     }
 
+    public void SetNowZone(Climate climate)
+    {
+        m_NowZone = climate;
+    }
+
     public int GetNestNum()
     {
         return m_NestNum;
@@ -94,32 +99,4 @@ public class CNest : MonoBehaviour
         return m_Range;
     }
 
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "ONTAI")
-        {
-            m_NowZone = Climate.ONTAI;
-        }
-        else if (other.gameObject.tag == "NETTAI")
-        {
-            m_NowZone = Climate.NETTAI;
-        }
-        else if (other.gameObject.tag == "KANSOUTAI")
-        {
-            m_NowZone = Climate.KANSOUTAI;
-        }
-        else if (other.gameObject.tag == "KANTAI")
-        {
-            m_NowZone = Climate.KANTAI;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Machine")
-        {
-            m_NowZone = Climate.NONE;
-        }
-    }
 }

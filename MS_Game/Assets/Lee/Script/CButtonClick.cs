@@ -11,6 +11,7 @@ public class CButtonClick : MonoBehaviour
     private CPrefabList m_PrefabList;
     private CObjectMove m_ObjectMoveScript;
     private CGameTimeManager m_TimeManager;
+    private CGameObject m_ObjectScript;
 
     private GameObject m_Object;
 
@@ -26,6 +27,7 @@ public class CButtonClick : MonoBehaviour
         m_PrefabList = this.gameObject.GetComponent<CPrefabList>();
         m_ObjectMoveScript = this.gameObject.GetComponent<CObjectMove>();
         m_TimeManager = this.gameObject.GetComponent<CGameTimeManager>();
+        m_ObjectScript = this.gameObject.GetComponent<CGameObject>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,7 @@ public class CButtonClick : MonoBehaviour
 
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
-                m_ObjectMoveScript.TreeReset();
-                Destroy(m_TargetObject);
+                m_ObjectMoveScript.ResetMove();
             }
 
             m_ObjectMoveScript.SetNum(TreeID);
@@ -84,8 +85,7 @@ public class CButtonClick : MonoBehaviour
 
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
-                m_ObjectMoveScript.TreeReset();
-                Destroy(m_TargetObject);
+                m_ObjectMoveScript.ResetMove();
             }
 
             m_ObjectMoveScript.SetNum(NestID);
@@ -106,13 +106,9 @@ public class CButtonClick : MonoBehaviour
         if (m_MachineData.sheets[0].list[MachineID - 1].Cost <= m_TimeManager.GetMoney())
         {
 
-            m_ObjectMoveScript.TreeReset();
-
-
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
-                m_ObjectMoveScript.TreeReset();
-                Destroy(m_TargetObject);
+                m_ObjectMoveScript.ResetMove();
             }
 
             m_ObjectMoveScript.SetNum(MachineID);
@@ -128,8 +124,34 @@ public class CButtonClick : MonoBehaviour
 
     public void Cancel()
     {
-        m_NestBreake = true;
-        m_ObjectMoveScript.ResetMove();
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
+        {
+            m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
+        }
+        else
+        {
+            m_NestBreake = true;
+            m_ObjectMoveScript.ResetMove();
+        }
+        
+    }
+
+    public void DesObj()
+    {
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
+        {
+            m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
+        }
+        else if (m_ObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
+        {
+            m_NestBreake = true;
+            m_ObjectMoveScript.ResetMove();
+            m_ObjectScript.SetMode(CGameObject.ModeState.DES);
+        }
+        else
+        {
+            m_ObjectScript.SetMode(CGameObject.ModeState.DES);
+        }
     }
 
     public void ChangeTimeSpeed(int num)
@@ -146,7 +168,8 @@ public class CButtonClick : MonoBehaviour
 
         m_ObjectMoveScript.SetTargetObject(m_TargetObject);
 
-        m_ObjectMoveScript.SetObjectMove(true);
+        //m_ObjectMoveScript.SetObjectMove(true);
+        m_ObjectScript.SetMode(CGameObject.ModeState.OBJMOVE);
 
         m_ObjectMoveScript.SetPlane();
     }

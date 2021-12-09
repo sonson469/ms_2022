@@ -27,7 +27,15 @@ public class CTree : MonoBehaviour
     private State m_State = State.PUT;
 
     private CGameTimeManager m_TimeManager;
+    private CGameObject m_ObjectScript;
     private GameObject m_Manager;
+
+    [SerializeField] private COntaiTree m_Ontai;
+    private CNettaiTree m_Nettai;
+    private CKansoutaiTree m_Kansoutai;
+    private CKantaiTree m_Kantai;
+
+    [SerializeField] private GameObject m_DesObj;
 
     [Header("適応地域")]
     [SerializeField] private Zone m_MyZone;   //適応地域
@@ -45,15 +53,45 @@ public class CTree : MonoBehaviour
     {
         m_Manager = GameObject.FindWithTag("Manager");
         m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
+        m_ObjectScript = m_Manager.GetComponent<CGameObject>();
+
+        m_DesObj = this.gameObject.transform.GetChild(3).gameObject;
 
         CompleteObject.SetActive(true);
         SaplingObject.SetActive(false);
         WitherObject.SetActive(false);
+
+        if(m_MyZone == Zone.ONTAI)
+        {
+            m_Ontai = this.gameObject.GetComponent<COntaiTree>();
+        }
+        else if(m_MyZone == Zone.NETTAI)
+        {
+            m_Nettai = this.gameObject.GetComponent<CNettaiTree>();
+        }
+        else if(m_MyZone == Zone.KANSOUTAI)
+        {
+            m_Kansoutai = this.gameObject.GetComponent<CKansoutaiTree>();
+        }
+        else if(m_MyZone == Zone.KANTAI)
+        {
+            m_Kantai = this.gameObject.GetComponent<CKantaiTree>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
+        {
+            m_DesObj.SetActive(true);
+        }
+        else
+        {
+            m_DesObj.SetActive(false);
+        }
+
         if(m_State == State.PUT)
         {
 
@@ -137,4 +175,25 @@ public class CTree : MonoBehaviour
             m_NowZone = Zone.NONE;
         }
     }
+
+    public void TreeReset()
+    {
+        if (m_MyZone == Zone.ONTAI)
+        {
+            m_Ontai.ResetList();
+        }
+        else if (m_MyZone == Zone.NETTAI)
+        {
+            m_Nettai.ResetList();
+        }
+        else if (m_MyZone == Zone.KANSOUTAI)
+        {
+            m_Kansoutai.ResetList();
+        }
+        else if (m_MyZone == Zone.KANTAI)
+        {
+            m_Kantai.ResetList();
+        }
+    }
+
 }

@@ -22,12 +22,23 @@ public class CGameObject : MonoBehaviour
 
     public int[] m_MachineNameCount = new int[(int)MachineNumber.MACHINEMAX];
 
+    public enum ModeState
+    {
+        NORMAL,
+        OBJMOVE,
+        DES
+    }
+
+    private ModeState m_ModeState;
+
     private void Start()
     {
         for(int i = 0; i < 40; i++)
         {
             AnimalList.Add(new List<GameObject>());
         }
+
+        m_ModeState = ModeState.NORMAL;
         
     }
 
@@ -192,6 +203,16 @@ public class CGameObject : MonoBehaviour
     public void MachineNameCount(int num)
     {
         m_MachineNameCount[num]++;
+    }
+
+    public void SetMode(ModeState state)
+    {
+        m_ModeState = state;
+    }
+
+    public ModeState GetMode()
+    {
+        return m_ModeState;
     }
 
 }

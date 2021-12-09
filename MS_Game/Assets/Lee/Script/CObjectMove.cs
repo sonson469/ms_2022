@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CObjectMove : MonoBehaviour
 {
-    private bool m_ObjectMove = false;     //移動モードかどうか
 
     private int m_TargetObjectCost;      //移動させるオブジェクトのコスト
 
@@ -81,7 +80,7 @@ public class CObjectMove : MonoBehaviour
 
         }
 
-        if (m_ObjectMove)
+        if (m_GameObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
             if(!m_Button.activeSelf)
             {
@@ -175,11 +174,19 @@ public class CObjectMove : MonoBehaviour
 
     public void ResetMove()
     {
-        m_ObjectMove = false;
+        m_GameObjectScript.SetMode(CGameObject.ModeState.NORMAL);
         m_Plane.SetActive(false);
         m_Button.SetActive(false);
 
-        TreeReset();
+        if (m_CreateObjectNum == CreateObject.TREE)
+        {
+            TreeReset();
+        }
+        else if(m_CreateObjectNum == CreateObject.NEST)
+        {
+            CNestCount nestscript = m_TargetObject.GetComponent<CNestCount>();
+            nestscript.ResetList();
+        }
 
         Destroy(m_TargetObject);
 
@@ -216,11 +223,6 @@ public class CObjectMove : MonoBehaviour
         }
 
         m_TreeSize = TreeSize.NONE;
-    }
-
-    public void SetObjectMove(bool flag)
-    {
-        m_ObjectMove = flag;
     }
 
     public void SetPlane()
