@@ -12,12 +12,19 @@ public class TutorialTextManager : MonoBehaviour
     float m_TextInterval = 0;
     [SerializeField] private int m_ReadSpeed;
     [SerializeField] private Text m_TutorialText;
+    public Button[] m_ObjButton;
+    private int count = 0;
+    [SerializeField] GameObject m_Manager;
+    private CGameTimeManager m_TimeManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
         m_TutorialText.text = "";
         StartCoroutine("LoadText");
+
     }
 
 
@@ -25,6 +32,36 @@ public class TutorialTextManager : MonoBehaviour
     void Update()
     {
         ControlText();
+
+        if (m_CurrentNum == 16 && m_TimeManager.GetGameDay() >= 2)
+        {
+            m_TimeManager.SetTimeSpeed(0);
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+        }
+
+
+        if (m_CurrentNum == 23 && m_TimeManager.GetGameDay() >= 4)
+        {
+            m_TimeManager.SetTimeSpeed(0);
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+        }
+
+        if (m_CurrentNum == 26 && m_TimeManager.GetGameDay() >= 5)
+        {
+            m_TimeManager.SetTimeSpeed(0);
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+
+        }
+
     }
 
     private IEnumerator LoadText()
@@ -42,16 +79,16 @@ public class TutorialTextManager : MonoBehaviour
             enabled = true;
         };
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
     }
 
     void ControlText()
     {
         if (m_CurrentCharNum < m_TextData[m_CurrentNum].Length)
             DisplayText();
-        else
-            NextText();
-        
+        //else
+        //    NextText();
+
     }
 
     void DisplayText()
@@ -60,35 +97,37 @@ public class TutorialTextManager : MonoBehaviour
         {
             m_TutorialText.text += m_TextData[m_CurrentNum][m_CurrentCharNum];
             m_CurrentCharNum++;
+            Debug.Log(m_CurrentNum);
             m_TextInterval = m_ReadSpeed;
         }
         else m_TextInterval--;
+
+       
     }
 
-    private void NextText()
+    public void OnClick()
     {
-        if (m_TextInterval == 0)
+        if (m_CurrentNum == 12 || m_CurrentNum == 14 || m_CurrentNum == 16 || m_CurrentNum == 22 || m_CurrentNum == 23 || m_CurrentNum == 26)
+        {
+            m_ObjButton[count].interactable = true;
+            return;
+        }
+        m_CurrentNum++;
+        m_CurrentCharNum = 0;
+        m_TutorialText.text = "";
+    }
+
+    public void OnNext(int num)
+    {
+
+        if (num == 0 && m_CurrentNum == 12 || num == 1 && m_CurrentNum == 14 || num == 3 && m_CurrentNum == 22)
         {
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
-            m_TextInterval = m_ReadSpeed;
+            count++;
         }
-        else m_TextInterval--;
-
+       
     }
-
-    private void OnClick()
-    {
-        if (m_TextInterval == 0)
-        {
-            m_CurrentNum++;
-            m_CurrentCharNum = 0;
-            m_TutorialText.text = "";
-            m_TextInterval = m_ReadSpeed;
-        }
-        else m_TextInterval--;
-    }
-   
 }
 
