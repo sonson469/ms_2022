@@ -162,8 +162,12 @@ public class COntaiTree : MonoBehaviour
     {
         for (int i = 0; i < InNestList.Count; i++)
         {
-            COntai script = InNestList[i].GetComponent<COntai>();
-            script.TreeMinus(m_Ontainum);
+            if (InNestList[i].gameObject != null)
+            {
+                COntai script = InNestList[i].GetComponent<COntai>();
+                script.TreeMinus(m_Ontainum);
+            }
+            
         }
         InNestList.Clear();
     }

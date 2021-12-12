@@ -8,6 +8,8 @@ public class COntai : CAnimalCreate
     [SerializeField] private int[] m_TreeCount = new int[10];
     private CNestCount m_NestCountScript;
 
+    [SerializeField] private GameObject m_DesObj;
+
 
     // Start is called before the first frame update
     public new void Start()
@@ -19,12 +21,23 @@ public class COntai : CAnimalCreate
 
         m_NestCountScript = this.gameObject.GetComponent<CNestCount>();
 
+        m_DesObj = this.gameObject.transform.GetChild(2).gameObject;
+
         m_MyObject = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (m_GameObjectScript.GetMode() == CGameObject.ModeState.DES)
+        {
+            m_DesObj.SetActive(true);
+        }
+        else
+        {
+            m_DesObj.SetActive(false);
+        }
 
         if (m_TimeManager.GetDayEnd())
         {
@@ -137,6 +150,16 @@ public class COntai : CAnimalCreate
     {
         m_MyAnimalList.Add(animal);
         m_GameObjectScript.AnimalList[m_NestScript.GetNestNum() - 1].Add(animal);
+    }
+
+    public void DesAnimal()
+    {
+
+        for(int i = 0; i < m_MyAnimalList.Count; i++)
+        {
+            Destroy(m_MyAnimalList[i]);
+        }
+        m_MyAnimalList.Clear();
     }
 
     private void OnTriggerStay(Collider other)

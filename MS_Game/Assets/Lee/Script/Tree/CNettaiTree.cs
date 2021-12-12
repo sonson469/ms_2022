@@ -159,8 +159,11 @@ public class CNettaiTree : MonoBehaviour
     {
         for (int i = 0; i < InNestList.Count; i++)
         {
-            CNettai script = InNestList[i].GetComponent<CNettai > ();
-            script.TreeMinus(m_Nettainum);
+            if (InNestList[i].gameObject != null)
+            {
+                CNettai script = InNestList[i].GetComponent<CNettai>();
+                script.TreeMinus(m_Nettainum);
+            }
         }
         InNestList.Clear();
     }

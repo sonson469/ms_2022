@@ -60,6 +60,50 @@ public class CWithdrawal : MonoBehaviour
                         }
                     }
 
+                    if (m_RaycastHit.collider.tag == "AnimalNest")
+                    {
+                        if (m_TargetObject == null)
+                        {
+                            m_TargetObject = m_RaycastHit.collider.gameObject;
+                        }
+                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)
+                        {
+                            CNestCount countscript = m_TargetObject.transform.parent.gameObject.GetComponent<CNestCount>();
+                            GameObject nest = countscript.GetNest();
+                            CNest m_NestScript = nest.GetComponent<CNest>();
+                            if(m_NestScript.GetClimate() == CNest.Climate.ONTAI)
+                            {
+                                COntai ontaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<COntai>();
+                                ontaiscript.DesAnimal();
+                            }
+                            else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
+                            {
+                                CNettai nettaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CNettai>();
+                                nettaiscript.DesAnimal();
+                            }
+                            else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
+                            {
+                                CKansoutai kansoutaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CKansoutai>();
+                                kansoutaiscript.DesAnimal();
+                            }
+                            else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
+                            {
+                                CKantai kantaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CKantai>();
+                                kantaiscript.DesAnimal();
+                            }
+
+                            countscript.ResetList();
+
+                            m_ObjectScript.AnimalNestList.Remove(m_TargetObject);
+                            Destroy(m_TargetObject.transform.parent.gameObject);
+                            m_TargetObject = null;
+                        }
+                        else
+                        {
+                            m_TargetObject = m_RaycastHit.collider.gameObject;
+                        }
+                    }
+
                 }
             }
 
