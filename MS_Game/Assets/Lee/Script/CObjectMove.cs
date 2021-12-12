@@ -204,7 +204,6 @@ public class CObjectMove : MonoBehaviour
         {
             COntaiTree treescript = m_TargetObject.GetComponent<COntaiTree>();
             treescript.ResetList();
-
         }
         else if (m_TreeSize == TreeSize.NETTAI)
         {

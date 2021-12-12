@@ -160,8 +160,11 @@ public class CKantaiTree : MonoBehaviour
     {
         for (int i = 0; i < InNestList.Count; i++)
         {
-            CKantai script = InNestList[i].GetComponent<CKantai>();
-            script.TreeMinus(m_Kantainum);
+            if (InNestList[i].gameObject != null)
+            {
+                CKantai script = InNestList[i].GetComponent<CKantai>();
+                script.TreeMinus(m_Kantainum);
+            }
         }
         InNestList.Clear();
     }

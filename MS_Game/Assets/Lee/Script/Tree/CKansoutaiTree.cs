@@ -160,8 +160,11 @@ public class CKansoutaiTree : MonoBehaviour
     {
         for (int i = 0; i < InNestList.Count; i++)
         {
-            CKansoutai script = InNestList[i].GetComponent<CKansoutai>();
-            script.TreeMinus(m_Kansoutai);
+            if (InNestList[i].gameObject != null)
+            {
+                CKansoutai script = InNestList[i].GetComponent<CKansoutai>();
+                script.TreeMinus(m_Kansoutai);
+            }
         }
         InNestList.Clear();
     }
