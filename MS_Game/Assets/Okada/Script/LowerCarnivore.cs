@@ -24,7 +24,6 @@ public class LowerCarnivore : CAnimalCreate
         if (m_TimeManager.GetDayEnd())
         {
             NestAnimal();
-            m_TimeManager.AddNestCount();
         }
     }
 

@@ -23,7 +23,6 @@ public class LowerHerbivore : CAnimalCreate
         if(m_TimeManager.GetDayEnd())
         {
             NestAnimal();
-            m_TimeManager.AddNestCount();
         }
     }
 

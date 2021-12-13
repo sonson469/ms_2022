@@ -48,7 +48,11 @@ public class COntai : CAnimalCreate
 
     public override void NestAnimal()
     {
-        if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= 10)
+
+        //------------------------------------------------------------------
+        // ‘‚¦‚é‚Ù‚¤
+        //------------------------------------------------------------------
+        if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
         {
             int count = 0;
             if (m_NestScript.GetNestNum() % 2 == 1)
@@ -134,6 +138,27 @@ public class COntai : CAnimalCreate
 
             }
         }
+
+        //------------------------------------------------------------------
+        // Œ¸‚é‚Ù‚¤
+        //------------------------------------------------------------------
+        int descount = 0;
+        if (m_NestScript.GetNestNum() % 2 == 1)
+        {
+            for (int i = m_NestScript.GetNestNum() + 2; i <= 10; i++)
+            {
+                descount += m_NestCountScript.m_NestNameCount[i - 1];
+            }
+        }
+        else if (m_NestScript.GetNestNum() % 2 == 0)
+        {
+            for (int i = m_NestScript.GetNestNum() + 1; i <= 10; i++)
+            {
+                descount += m_NestCountScript.m_NestNameCount[i - 1];
+            }
+        }
+
+        ReduceMyList(descount);
     }
 
     public void TreeCount(int num)
@@ -152,9 +177,20 @@ public class COntai : CAnimalCreate
         m_GameObjectScript.AnimalList[m_NestScript.GetNestNum() - 1].Add(animal);
     }
 
+    private void ReduceMyList(int count)
+    {
+        for (int i = 1; i <= count; i++)
+        {
+            if (m_MyAnimalList.Count >= 1)
+            {
+                Destroy(m_MyAnimalList[m_MyAnimalList.Count - 1]);
+                m_MyAnimalList.RemoveAt(m_MyAnimalList.Count - 1);
+            }
+        }
+    }
+
     public void DesAnimal()
     {
-
         for(int i = 0; i < m_MyAnimalList.Count; i++)
         {
             Destroy(m_MyAnimalList[i]);

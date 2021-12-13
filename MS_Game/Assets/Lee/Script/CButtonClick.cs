@@ -68,6 +68,15 @@ public class CButtonClick : MonoBehaviour
                 m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANTAI);
             }
 
+            if(TreeID <= 19)
+            {
+                m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.BIG);
+            }
+            else
+            {
+                m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.SMALL);
+            }
+
             m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
 
             ObjectCreate();
@@ -118,6 +127,20 @@ public class CButtonClick : MonoBehaviour
             ObjectCreate();
 
         }
+    }
+
+    public void CreateReaper()
+    {
+        if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
+        {
+            m_ObjectMoveScript.ResetMove();
+        }
+        m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.REAPER);
+        m_ObjectMoveScript.SetCost(0);
+
+        m_Object = (GameObject)Resources.Load("Machine/Š Žæ‚è‹@");
+
+        ObjectCreate();
     }
 
     public void Cancel()
