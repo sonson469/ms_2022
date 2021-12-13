@@ -35,10 +35,6 @@ public class CWithdrawal : MonoBehaviour
             {
                 if (Physics.Raycast(ray, out m_RaycastHit))
                 {
-                    /*if (m_RaycastHit.collider.tag == "Machine")
-                    {
-                        Destroy(m_RaycastHit.collider.gameObject);
-                    }*/
 
                     if (m_RaycastHit.collider.tag == "Tree")
                     {
@@ -46,11 +42,16 @@ public class CWithdrawal : MonoBehaviour
                         {
                             m_TargetObject = m_RaycastHit.collider.gameObject;
                         }
-                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)
+                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)     //選択中のオブジェを押したら消す
                         {
                             treescript = m_TargetObject.transform.parent.gameObject.GetComponent<CTree>();
                             treescript.TreeReset();
                             m_ObjectScript.TreeList.Remove(m_TargetObject);
+
+                            //--------------------------------------------------
+                            //消すエフェクトはこのへん
+                            //---------------------------------------------------
+
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;
                         }
@@ -66,7 +67,7 @@ public class CWithdrawal : MonoBehaviour
                         {
                             m_TargetObject = m_RaycastHit.collider.gameObject;
                         }
-                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)
+                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)    //選択中のオブジェを押したら消す
                         {
                             CNestCount countscript = m_TargetObject.transform.parent.gameObject.GetComponent<CNestCount>();
                             GameObject nest = countscript.GetNest();
@@ -95,6 +96,12 @@ public class CWithdrawal : MonoBehaviour
                             countscript.ResetList();
 
                             m_ObjectScript.AnimalNestList.Remove(m_TargetObject);
+
+                            //--------------------------------------------------
+                            //消すエフェクトはこのへん
+                            //---------------------------------------------------
+
+
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;
                         }
