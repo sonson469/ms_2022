@@ -13,6 +13,7 @@ public class CGameObject : MonoBehaviour
 
     public List<GameObject> AnimalNestList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩëÉ
     public List<GameObject> MachineList = new List<GameObject>();  //ê∂ê¨Ç≥ÇÍÇΩã@äB
+    public List<GameObject> ReaperList = new List<GameObject>();   //ê∂ê¨Ç≥ÇÍÇΩä†éÊÇËã@
 
     [SerializeField] private TreeData m_TreeData;
     public int[] m_TreeNameCount = new int[(int)TreeNumber.TREEMAX];

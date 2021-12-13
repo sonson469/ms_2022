@@ -26,8 +26,6 @@ public class CGameTimeManager : MonoBehaviour
     private int  m_TimeSpeed;
 
     private bool m_DayEnd;   //1“ú‚¨‚í‚è
-    private int m_NestCount;   //“®•¨‚ğ¶¬‚µ‚½‘ƒ‚Ì”(MAX‚É‚È‚Á‚½‚ç‚P“ú‚¨‚í‚èˆ—)
-    private int m_TreeCount;    //¶¬‚µ‚½–Ø‚Ì”(MAX‚É‚È‚Á‚½‚ç‚P“ú‚¨‚í‚èˆ—)
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +46,9 @@ public class CGameTimeManager : MonoBehaviour
         if(m_DayEnd)
         {
             m_GameDay++;
-            m_Money += 1000;
+            //m_Money += 1000;
             m_GameTime = 0;
             m_DayEnd = false;
-            m_NestCount = 0;
         }
         if(!m_DayEnd)
         {
@@ -87,17 +84,10 @@ public class CGameTimeManager : MonoBehaviour
     {
         m_Money -= cost;
     }
-
-    public void AddNestCount()
+    public void AddMoney(int cost)
     {
-        m_NestCount++;
+        m_Money += cost;
     }
-
-    public void AddTreeCount()
-    {
-        m_TreeCount++;
-    }
-
     public bool GetDayEnd()
     {
         return m_DayEnd;

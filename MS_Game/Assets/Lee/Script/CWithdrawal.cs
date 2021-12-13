@@ -46,7 +46,7 @@ public class CWithdrawal : MonoBehaviour
                         {
                             treescript = m_TargetObject.transform.parent.gameObject.GetComponent<CTree>();
                             treescript.TreeReset();
-                            m_ObjectScript.TreeList.Remove(m_TargetObject);
+                            m_ObjectScript.TreeList.Remove(m_TargetObject.transform.parent.gameObject);
 
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
@@ -95,12 +95,38 @@ public class CWithdrawal : MonoBehaviour
 
                             countscript.ResetList();
 
-                            m_ObjectScript.AnimalNestList.Remove(m_TargetObject);
+                            m_ObjectScript.AnimalNestList.Remove(m_TargetObject.transform.parent.gameObject);
 
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
 
+
+                            Destroy(m_TargetObject.transform.parent.gameObject);
+                            m_TargetObject = null;
+                        }
+                        else
+                        {
+                            m_TargetObject = m_RaycastHit.collider.gameObject;
+                        }
+                    }
+
+                    if (m_RaycastHit.collider.tag == "Reaper")
+                    {
+                        if (m_TargetObject == null)
+                        {
+                            m_TargetObject = m_RaycastHit.collider.gameObject;
+                        }
+                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)     //選択中のオブジェを押したら消す
+                        {
+                            Debug.Log("aaaaaaaaaaa");
+                            CReaper reaperscript = m_TargetObject.transform.parent.gameObject.GetComponent<CReaper>();
+                            reaperscript.ResetList();
+                            m_ObjectScript.ReaperList.Remove(m_TargetObject.transform.parent.gameObject);
+
+                            //--------------------------------------------------
+                            //消すエフェクトはこのへん
+                            //---------------------------------------------------
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;

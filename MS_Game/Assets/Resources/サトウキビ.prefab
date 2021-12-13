@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 4662454861760661957}
   m_Layer: 0
   m_Name: "\u30B5\u30C8\u30A6\u30AD\u30D3"
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eac41bb949f6f43964970836770d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Ontai: {fileID: 0}
+  m_ReaperNumMax: 3
   m_DesObj: {fileID: 0}
   m_MyZone: 2
   SaplingObject: {fileID: 5264035587627789098}

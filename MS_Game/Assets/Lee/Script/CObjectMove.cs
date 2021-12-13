@@ -33,6 +33,7 @@ public class CObjectMove : MonoBehaviour
         TREE,
         NEST,
         MACHINE,
+        REAPER,
         NULL
     }
 
@@ -47,6 +48,8 @@ public class CObjectMove : MonoBehaviour
 
     private CreateObject m_CreateObjectNum; //オブジェクトの種類番号
     private TreeSize m_TreeSize = TreeSize.NONE;        //木だったときに樹木か低樹木か判別用
+
+    private CTree.Size m_TreeSizeSize = CTree.Size.NONE;
 
     private RaycastHit m_RaycastHit;
 
@@ -139,6 +142,8 @@ public class CObjectMove : MonoBehaviour
 
                         CTree treescript = m_TargetObject.GetComponent<CTree>();
                         treescript.SetSapling();
+                        treescript.SetSize(m_TreeSizeSize);
+                        treescript.SetCost(m_TargetObjectCost * 2);
                         m_ButtonScript.CreateTree(m_Num);
 
                     }
@@ -161,6 +166,12 @@ public class CObjectMove : MonoBehaviour
                         m_GameObjectScript.MachineList.Add(m_TargetObject);
                         m_GameObjectScript.MachineNameCount(m_Num - 1);
                         m_ButtonScript.CreateMachine(m_Num);
+                    }
+                    else if(m_CreateObjectNum == CreateObject.REAPER)
+                    {
+                        CReaper reaperscript = m_TargetObject.GetComponent<CReaper>();
+                        m_GameObjectScript.ReaperList.Add(m_TargetObject);
+                        m_ButtonScript.CreateReaper();
                     }
 
                     //隣においてた時
@@ -258,6 +269,11 @@ public class CObjectMove : MonoBehaviour
     public void SetTreeSize(TreeSize size)
     {
         m_TreeSize = size;
+    }
+
+    public void SetTreeSiseSize(CTree.Size size)
+    {
+        m_TreeSizeSize = size;
     }
 
     public void SetCost(int cost)

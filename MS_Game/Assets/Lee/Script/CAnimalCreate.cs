@@ -19,6 +19,8 @@ public class CAnimalCreate : MonoBehaviour
 
     protected List<GameObject> m_MyAnimalList = new List<GameObject>();  //©•ª‚Ì‘ƒ‚Å¶¬‚³‚ê‚½“®•¨
 
+    protected int m_MaxAnimal = 8;   //ãŒÀ
+
 
     public void Start()
     {

@@ -8,7 +8,8 @@ public class CTree : MonoBehaviour
     public enum Size
     {
         BIG,
-        SMALL
+        SMALL,
+        NONE
     }
 
     public enum State
@@ -17,7 +18,7 @@ public class CTree : MonoBehaviour
         SAPLING, //苗木
         COMPLETE,  //成木(完成されてる状態)
         WITHER,   //枯れ
-        SMALLCOMPLETE    //低樹成木
+        DES       //消える
     }
 
     public enum Zone
@@ -33,6 +34,13 @@ public class CTree : MonoBehaviour
 
     private int m_Day;   //苗木からの経過日数
 
+    [SerializeField] private int m_ReaperNumMax;    //Max刈り取り数
+    private int m_ReaperNum;   //刈り取り数
+
+    private bool m_Reaper = false;
+
+    private int m_Cost;
+
     private State m_State = State.PUT;
 
     private CGameTimeManager m_TimeManager;
@@ -44,7 +52,7 @@ public class CTree : MonoBehaviour
     private CKansoutaiTree m_Kansoutai;
     private CKantaiTree m_Kantai;
 
-    [SerializeField] private GameObject m_DesObj;
+    private GameObject m_DesObj;
 
     [Header("適応地域")]
     [SerializeField] private Zone m_MyZone;   //適応地域
@@ -126,7 +134,6 @@ public class CTree : MonoBehaviour
                 if (m_TimeManager.GetDayEnd())
                 {
                     m_Day++;
-                    m_TimeManager.AddTreeCount();
                 }
 
                 if (m_Day >= 2)
@@ -185,7 +192,6 @@ public class CTree : MonoBehaviour
                 if (m_TimeManager.GetDayEnd())
                 {
                     m_Day++;
-                    m_TimeManager.AddTreeCount();
                 }
 
                 if (m_Day >= 2)
@@ -209,6 +215,20 @@ public class CTree : MonoBehaviour
 
                 if (SaplingObject.activeSelf)
                     SaplingObject.SetActive(false);
+
+                if (m_TimeManager.GetDayEnd())
+                {
+                    if(m_Reaper)
+                    {
+                        m_TimeManager.AddMoney(m_Cost);
+                        m_ReaperNum++;
+                    }
+                }
+
+                if(m_ReaperNum >= m_ReaperNumMax)
+                {
+                    m_State = State.DES;
+                }
             }
             else if (m_State == State.WITHER)
             {
@@ -217,7 +237,17 @@ public class CTree : MonoBehaviour
 
                 if (SaplingObject.activeSelf)
                     SaplingObject.SetActive(false);
+            }
+            else if(m_State == State.DES)
+            {
+                TreeReset();
+                m_ObjectScript.TreeList.Remove(this.gameObject);
 
+                //--------------------------------------------------
+                //消すエフェクトはこのへん
+                //---------------------------------------------------
+
+                Destroy(this.gameObject);
             }
         }
     }
@@ -230,6 +260,16 @@ public class CTree : MonoBehaviour
     public void SetSize(Size size)
     {
         m_Size = size;
+    }
+
+    public void SetReaper(bool flag)
+    {
+        m_Reaper = flag;
+    }
+
+    public void SetCost(int cost)
+    {
+        m_Cost = cost;
     }
 
     private void OnTriggerStay(Collider other)
