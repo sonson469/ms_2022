@@ -5,12 +5,19 @@ using UnityEngine;
 public class CTree : MonoBehaviour
 {
 
+    public enum Size
+    {
+        BIG,
+        SMALL
+    }
+
     public enum State
     {
         PUT,    //’u‚±‚¤‚Æ‚µ‚Ä‚é‚Æ‚«
         SAPLING, //•c–Ø
         COMPLETE,  //¬–Ø(Š®¬‚³‚ê‚Ä‚éó‘Ô)
-        WITHER   //ŒÍ‚ê
+        WITHER,   //ŒÍ‚ê
+        SMALLCOMPLETE    //’áŽ÷¬–Ø
     }
 
     public enum Zone
@@ -22,6 +29,8 @@ public class CTree : MonoBehaviour
         KANTAI
     }
 
+    private Size m_Size;
+
     private int m_Day;   //•c–Ø‚©‚ç‚ÌŒo‰ß“ú”
 
     private State m_State = State.PUT;
@@ -30,7 +39,7 @@ public class CTree : MonoBehaviour
     private CGameObject m_ObjectScript;
     private GameObject m_Manager;
 
-    [SerializeField] private COntaiTree m_Ontai;
+    private COntaiTree m_Ontai;
     private CNettaiTree m_Nettai;
     private CKansoutaiTree m_Kansoutai;
     private CKantaiTree m_Kantai;
@@ -83,6 +92,7 @@ public class CTree : MonoBehaviour
     void Update()
     {
 
+        //“P‹Žƒ‚[ƒhŽž‚Í‘I‘ð—p‚Ì‰~’Œ‚ª‚Å‚Ä‚­‚é
         if(m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
         {
             m_DesObj.SetActive(true);
@@ -92,60 +102,134 @@ public class CTree : MonoBehaviour
             m_DesObj.SetActive(false);
         }
 
-        if(m_State == State.PUT)
+        //------------------------------------------
+        // •’Ê‚ÌŽ÷–Ø
+        //------------------------------------------
+        if (m_Size == Size.BIG)
         {
-
-        }
-        else if (m_State == State.SAPLING)
-        {
-            if (CompleteObject.activeSelf)
-                CompleteObject.SetActive(false);
-
-            if (!SaplingObject.activeSelf)
-                SaplingObject.SetActive(true);
-
-            if (m_TimeManager.GetDayEnd())
+            if (m_State == State.PUT)
             {
-                m_Day++;
-                m_TimeManager.AddTreeCount();
-            }
+                if (!CompleteObject.activeSelf)
+                    CompleteObject.SetActive(true);
 
-            if(m_Day >= 2)
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+            }
+            else if (m_State == State.SAPLING)
             {
-                if(m_MyZone == m_NowZone)
+                if (CompleteObject.activeSelf)
+                    CompleteObject.SetActive(false);
+
+                if (!SaplingObject.activeSelf)
+                    SaplingObject.SetActive(true);
+
+                if (m_TimeManager.GetDayEnd())
                 {
-                    m_State = State.COMPLETE;
+                    m_Day++;
+                    m_TimeManager.AddTreeCount();
                 }
-                else
+
+                if (m_Day >= 2)
                 {
-                    m_State = State.WITHER;
+                    if (m_MyZone == m_NowZone)
+                    {
+                        m_State = State.COMPLETE;
+                    }
+                    else
+                    {
+                        m_State = State.WITHER;
+                    }
                 }
+
+
             }
+            else if (m_State == State.COMPLETE)
+            {
+                if (!CompleteObject.activeSelf)
+                    CompleteObject.SetActive(true);
 
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+            }
+            else if (m_State == State.WITHER)
+            {
+                if (!WitherObject.activeSelf)
+                    WitherObject.SetActive(true);
 
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+
+            }
         }
-        else if (m_State == State.COMPLETE)
+        //------------------------------------------
+        // ’áŽ÷–Ø
+        //------------------------------------------
+        else if(m_Size == Size.SMALL)
         {
-            if (!CompleteObject.activeSelf)
-                CompleteObject.SetActive(true);
+            if (m_State == State.PUT)
+            {
+                if (!CompleteObject.activeSelf)
+                    CompleteObject.SetActive(true);
 
-            if (SaplingObject.activeSelf)
-                SaplingObject.SetActive(false);
-        }
-        else if (m_State == State.WITHER)
-        {
-            if (!WitherObject.activeSelf)
-                WitherObject.SetActive(true);
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+            }
+            else if (m_State == State.SAPLING)
+            {
+                if (CompleteObject.activeSelf)
+                    CompleteObject.SetActive(false);
 
-            if (SaplingObject.activeSelf)
-                SaplingObject.SetActive(false);
+                if (!SaplingObject.activeSelf)
+                    SaplingObject.SetActive(true);
 
+                if (m_TimeManager.GetDayEnd())
+                {
+                    m_Day++;
+                    m_TimeManager.AddTreeCount();
+                }
+
+                if (m_Day >= 2)
+                {
+                    if (m_MyZone == m_NowZone)
+                    {
+                        m_State = State.COMPLETE;
+                    }
+                    else
+                    {
+                        m_State = State.WITHER;
+                    }
+                }
+
+
+            }
+            else if (m_State == State.COMPLETE)
+            {
+                if (!CompleteObject.activeSelf)
+                    CompleteObject.SetActive(true);
+
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+            }
+            else if (m_State == State.WITHER)
+            {
+                if (!WitherObject.activeSelf)
+                    WitherObject.SetActive(true);
+
+                if (SaplingObject.activeSelf)
+                    SaplingObject.SetActive(false);
+
+            }
         }
     }
 
     public void SetSapling()
     {
         m_State = State.SAPLING;
+    }
+
+    public void SetSize(Size size)
+    {
+        m_Size = size;
     }
 
     private void OnTriggerStay(Collider other)
