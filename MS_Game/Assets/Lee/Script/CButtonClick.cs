@@ -157,6 +157,18 @@ public class CButtonClick : MonoBehaviour
         
     }
 
+    public void RangeActive()
+    {
+        if(m_ObjectScript.GetRangeFlag())
+        {
+            m_ObjectScript.SetRangeFlag(false);
+        }
+        else
+        {
+            m_ObjectScript.SetRangeFlag(true);
+        }
+    }
+
     public void DesObj()
     {
         if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)

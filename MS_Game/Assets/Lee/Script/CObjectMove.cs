@@ -119,6 +119,7 @@ public class CObjectMove : MonoBehaviour
                     // 設置エフェクトはこのへん
                     //-----------------------------------
 
+
                     //同じオブジェクトを既に設置してたら
                     if (m_PutPosition != null)
                     {
@@ -149,6 +150,9 @@ public class CObjectMove : MonoBehaviour
                     }
                     else if (m_CreateObjectNum == CreateObject.NEST)
                     {
+                        CRange rangescript = m_TargetObject.GetComponent<CRange>();
+                        rangescript.SetMyRange(false);
+
                         m_OnObj = true;
                         m_GameObjectScript.AnimalNestList.Add(m_TargetObject);
                         m_GameObjectScript.NestNameCount(m_Num - 1);
@@ -169,6 +173,9 @@ public class CObjectMove : MonoBehaviour
                     }
                     else if(m_CreateObjectNum == CreateObject.REAPER)
                     {
+                        CRange rangescript = m_TargetObject.GetComponent<CRange>();
+                        rangescript.SetMyRange(false);
+
                         CReaper reaperscript = m_TargetObject.GetComponent<CReaper>();
                         m_GameObjectScript.ReaperList.Add(m_TargetObject);
                         m_ButtonScript.CreateReaper();
