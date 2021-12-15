@@ -23,6 +23,8 @@ public class CGameObject : MonoBehaviour
 
     public int[] m_MachineNameCount = new int[(int)MachineNumber.MACHINEMAX];
 
+    [SerializeField] private bool m_RangeFlag = false;
+
     public enum ModeState
     {
         NORMAL,
@@ -214,6 +216,16 @@ public class CGameObject : MonoBehaviour
     public ModeState GetMode()
     {
         return m_ModeState;
+    }
+
+    public void SetRangeFlag(bool flag)
+    {
+        m_RangeFlag = flag;
+    }
+
+    public bool GetRangeFlag()
+    {
+        return m_RangeFlag;
     }
 
 }
