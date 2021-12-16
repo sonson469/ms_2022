@@ -108,7 +108,10 @@ public class CObjectMove : MonoBehaviour
                 {
                     CMachine machinescript = m_TargetObject.GetComponent<CMachine>();
                     if (!machinescript.GetCanPut())
+                    {
+                        m_Succession = false;
                         return;
+                    }
                 }
 
                 //‚¨‹à‘«‚è‚Ä‚½‚ç’u‚­
