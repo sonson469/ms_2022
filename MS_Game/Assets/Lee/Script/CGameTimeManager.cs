@@ -7,7 +7,7 @@ public class CGameTimeManager : MonoBehaviour
 {
 
     private float m_GameTime;   //‚P“úisŠÔ(•b)
-    private int m_GameDay;      //“ú
+    private int m_GameDay = 1;      //“ú
 
     [SerializeField] private int m_Money;
 
@@ -62,7 +62,7 @@ public class CGameTimeManager : MonoBehaviour
 
         m_TimeMater.value = m_GameTime / m_DayTime;
         m_DayText.text = m_GameDay.ToString() + "“ú–Ú";
-        m_MoneyText.text = "Š‹à : " + m_Money.ToString() + "‰~";
+        m_MoneyText.text = m_Money.ToString() + "G";
     }
 
     private void Progress(int num)

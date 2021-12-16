@@ -14,18 +14,20 @@ public class FadeManager : MonoBehaviour
     public float alpha = 0.0f;//透過率、これを変化させる
     public float fadeSpeed = 0.2f;//フェードに掛かる時間
 
+    private bool m_FadeFlag = false;
+
     
 
     // Start is called before the first frame update
     void Start() {
-        if (!isFadeInstance)//起動時
+        /*if (!isFadeInstance)//起動時
         {
             DontDestroyOnLoad(this);
             isFadeInstance = true;
         } else//起動時以外は重複しないようにする
           {
             Destroy(this);
-        }
+        }*/
 
 
     }
@@ -47,6 +49,7 @@ public class FadeManager : MonoBehaviour
             {
                 isFadeOut = false;
                 alpha = 1.0f;
+                m_FadeFlag = true;
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
         }
@@ -60,5 +63,10 @@ public class FadeManager : MonoBehaviour
     public void fadeOut() {
         isFadeOut = true;
         isFadeIn = false;
+    }
+
+    public bool GetFade()
+    {
+        return m_FadeFlag;
     }
 }
