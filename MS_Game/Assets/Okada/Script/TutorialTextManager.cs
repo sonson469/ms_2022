@@ -62,6 +62,15 @@ public class TutorialTextManager : MonoBehaviour
 
         }
 
+        if(m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 6)
+        {
+            m_TimeManager.SetTimeSpeed(0);
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+        }
+
     }
 
     private IEnumerator LoadText()
@@ -106,12 +115,13 @@ public class TutorialTextManager : MonoBehaviour
 
     public void OnClick()
     {
-        if (m_CurrentNum == 12 || m_CurrentNum == 14 || m_CurrentNum == 16 || m_CurrentNum == 22 || m_CurrentNum == 23 || m_CurrentNum == 26)
+        if (m_CurrentNum == 12 || m_CurrentNum == 14 || m_CurrentNum == 16 || m_CurrentNum == 22 || m_CurrentNum == 23 || m_CurrentNum == 26 || m_CurrentNum == 39)
         {
             m_ObjButton[count].interactable = true;
             return;
         }
         m_CurrentNum++;
+        Debug.Log(m_CurrentNum);
         m_CurrentCharNum = 0;
         m_TutorialText.text = "";
     }
@@ -119,7 +129,7 @@ public class TutorialTextManager : MonoBehaviour
     public void OnNext(int num)
     {
 
-        if (num == 0 && m_CurrentNum == 12 || num == 1 && m_CurrentNum == 14 || num == 3 && m_CurrentNum == 22)
+        if (num == 0 && m_CurrentNum == 12 || num == 1 && m_CurrentNum == 14 || num == 3 && m_CurrentNum == 22 )
         {
             m_CurrentNum++;
             m_CurrentCharNum = 0;
