@@ -19,7 +19,13 @@ public class CKansoutai : CAnimalCreate
     [SerializeField] private Slider m_Slider2;
     [SerializeField] private Slider m_Slider3;
 
-    private int count;
+    private int count = 0;
+
+    private GameObject m_UIObjPlus;
+    private GameObject m_UIObjMinus;
+
+    private int descount;
+    private int pluscount;
 
     // Start is called before the first frame update
     public new void Start()
@@ -41,6 +47,9 @@ public class CKansoutai : CAnimalCreate
         m_Slider1 = m_SliderObj1.GetComponent<Slider>();
         m_Slider2 = m_SliderObj2.GetComponent<Slider>();
         m_Slider3 = m_SliderObj3.GetComponent<Slider>();
+
+        m_UIObjPlus = canvas.gameObject.transform.GetChild(6).gameObject;
+        m_UIObjMinus = canvas.gameObject.transform.GetChild(7).gameObject;
     }
 
     // Update is called once per frame
@@ -59,6 +68,17 @@ public class CKansoutai : CAnimalCreate
         if (m_TimeManager.GetDayEnd())
         {
             NestAnimal();
+        }
+
+        if (descount >= pluscount)
+        {
+            m_UIObjMinus.SetActive(true);
+            m_UIObjPlus.SetActive(false);
+        }
+        else
+        {
+            m_UIObjMinus.SetActive(false);
+            m_UIObjPlus.SetActive(true);
         }
 
         if (count >= 1)
@@ -190,7 +210,7 @@ public class CKansoutai : CAnimalCreate
         //------------------------------------------------------------------
         if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
         {
-            int count = 0;
+            count = 0;
             if (m_NestScript.GetNestNum() % 2 == 1)
             {
                 for (int i = 21; i < m_NestScript.GetNestNum() + 20; i++)
@@ -210,12 +230,15 @@ public class CKansoutai : CAnimalCreate
             {
                 if (m_TreeCount[0] >= 7)
                 {
+                    pluscount++;
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
                 if (m_TreeCount[5] >= 7)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
             }
@@ -223,12 +246,15 @@ public class CKansoutai : CAnimalCreate
             {
                 if (m_TreeCount[1] >= 6 && count >= 1)
                 {
+                    pluscount++;
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
                 if (m_TreeCount[6] >= 6)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
             }
@@ -236,12 +262,15 @@ public class CKansoutai : CAnimalCreate
             {
                 if (m_TreeCount[2] >= 5 && count >= 1)
                 {
+                    pluscount++;
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
                 if (m_TreeCount[7] >= 5)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
@@ -250,12 +279,15 @@ public class CKansoutai : CAnimalCreate
             {
                 if (m_TreeCount[3] >= 4 && count >= 1)
                 {
+                    pluscount++;
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
                 if (m_TreeCount[8] >= 4)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
             }
@@ -263,11 +295,13 @@ public class CKansoutai : CAnimalCreate
             {
                 if (m_TreeCount[4] >= 3 && count >= 1)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 
                 if (m_TreeCount[9] >= 3)
                 {
+                    pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 3);
                 }
 

@@ -28,6 +28,8 @@ public class CObjectMove : MonoBehaviour
 
     private bool m_OnObj;
 
+    private EffectManager m_EffectManager;
+
     public enum CreateObject     //置くオブジェクトの種類番号用
     { 
         TREE,
@@ -68,6 +70,8 @@ public class CObjectMove : MonoBehaviour
 
         m_RaycastHit = new RaycastHit();
         m_MainCamera = Camera.main;
+
+        m_EffectManager = GameObject.FindWithTag("EffectManager").GetComponent<EffectManager>();
 
     }
 
@@ -121,6 +125,7 @@ public class CObjectMove : MonoBehaviour
                     //---------------------------------
                     // 設置エフェクトはこのへん
                     //-----------------------------------
+                    m_EffectManager.PlayEffect(1, m_TargetObject.transform.position);
 
 
                     //同じオブジェクトを既に設置してたら
