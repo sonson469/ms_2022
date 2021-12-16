@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CKansoutai : CAnimalCreate
 {
@@ -8,6 +9,17 @@ public class CKansoutai : CAnimalCreate
     private CNestCount m_NestCountScript;
 
     [SerializeField] private GameObject m_DesObj;
+
+    private GameObject canvas;
+    private GameObject m_SliderObj1;
+    private GameObject m_SliderObj2;
+    private GameObject m_SliderObj3;
+
+    [SerializeField] private Slider m_Slider1;
+    [SerializeField] private Slider m_Slider2;
+    [SerializeField] private Slider m_Slider3;
+
+    private int count;
 
     // Start is called before the first frame update
     public new void Start()
@@ -21,15 +33,151 @@ public class CKansoutai : CAnimalCreate
         m_DesObj = this.gameObject.transform.GetChild(2).gameObject;
 
         m_MyObject = this.gameObject;
+
+        canvas = this.gameObject.transform.GetChild(4).gameObject;
+        m_SliderObj1 = canvas.gameObject.transform.GetChild(0).gameObject;
+        m_SliderObj2 = canvas.gameObject.transform.GetChild(1).gameObject;
+        m_SliderObj3 = canvas.gameObject.transform.GetChild(2).gameObject;
+        m_Slider1 = m_SliderObj1.GetComponent<Slider>();
+        m_Slider2 = m_SliderObj2.GetComponent<Slider>();
+        m_Slider3 = m_SliderObj3.GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (m_GameObjectScript.GetMode() == CGameObject.ModeState.DES)
+        {
+            m_DesObj.SetActive(true);
+        }
+        else
+        {
+            m_DesObj.SetActive(false);
+        }
+
         if (m_TimeManager.GetDayEnd())
         {
             NestAnimal();
+        }
+
+        if (count >= 1)
+        {
+            m_Slider2.value = 1;
+        }
+        else
+        {
+            m_Slider2.value = 0;
+        }
+
+        if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
+        {
+            if (m_NestScript.GetNestNum() == 1 || m_NestScript.GetNestNum() == 2)
+            {
+                m_Slider2.value = 1;
+
+                if (m_TreeCount[0] >= 7)
+                {
+                    m_Slider3.value = 1;
+                }
+                else
+                {
+                    m_Slider3.value = (float)m_TreeCount[0] / 7.0f;
+                }
+
+                if (m_TreeCount[5] >= 7)
+                {
+                    m_Slider1.value = 1;
+                }
+                else
+                {
+                    m_Slider1.value = (float)m_TreeCount[5] / 7.0f;
+                }
+            }
+            else if (m_NestScript.GetNestNum() == 3 || m_NestScript.GetNestNum() == 4)
+            {
+                if (m_TreeCount[1] >= 6)
+                {
+                    m_Slider3.value = 1;
+                }
+                else
+                {
+                    m_Slider3.value = (float)m_TreeCount[1] / 6.0f;
+                }
+
+                if (m_TreeCount[6] >= 6)
+                {
+                    m_Slider1.value = 1;
+                }
+                else
+                {
+                    m_Slider1.value = (float)m_TreeCount[6] / 6.0f;
+                }
+            }
+            else if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
+            {
+                if (m_TreeCount[2] >= 5)
+                {
+                    m_Slider3.value = 1;
+                }
+                else
+                {
+                    m_Slider3.value = (float)m_TreeCount[2] / 5.0f;
+                }
+
+                if (m_TreeCount[7] >= 5)
+                {
+                    m_Slider1.value = 1;
+                }
+                else
+                {
+                    m_Slider1.value = (float)m_TreeCount[7] / 5.0f;
+                }
+
+            }
+            else if (m_NestScript.GetNestNum() == 7 || m_NestScript.GetNestNum() == 8)
+            {
+                if (m_TreeCount[3] >= 4)
+                {
+                    m_Slider3.value = 1;
+                }
+                else
+                {
+                    m_Slider3.value = (float)m_TreeCount[3] / 4.0f;
+                }
+
+                if (m_TreeCount[8] >= 4)
+                {
+                    m_Slider1.value = 1;
+                }
+                else
+                {
+                    m_Slider1.value = (float)m_TreeCount[8] / 4.0f;
+                }
+            }
+            else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
+            {
+                if (m_TreeCount[4] >= 3)
+                {
+                    m_Slider3.value = 1;
+                }
+                else
+                {
+                    m_Slider3.value = (float)m_TreeCount[4] / 3.0f;
+
+                }
+
+                if (m_TreeCount[9] >= 3)
+                {
+                    m_Slider1.value = 1;
+                }
+                else
+                {
+                    m_Slider1.value = (float)m_TreeCount[9] / 3.0f;
+                }
+
+            }
+
         }
 
     }
