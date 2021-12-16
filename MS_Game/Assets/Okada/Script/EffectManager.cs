@@ -20,10 +20,10 @@ public class EffectManager : MonoBehaviour
 
     private void OnGUI()
     {
-        if (GUILayout.Button("Create Particles"))
+        /*if (GUILayout.Button("Create Particles"))
         {
             effectPools[1].EffectPlay(new Vector3(0.0f, 1.0f, 0.0f));
 
-        }
+        }*/
     }
 }
