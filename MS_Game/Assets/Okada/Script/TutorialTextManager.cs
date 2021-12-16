@@ -97,7 +97,6 @@ public class TutorialTextManager : MonoBehaviour
         {
             m_TutorialText.text += m_TextData[m_CurrentNum][m_CurrentCharNum];
             m_CurrentCharNum++;
-            Debug.Log(m_CurrentNum);
             m_TextInterval = m_ReadSpeed;
         }
         else m_TextInterval--;

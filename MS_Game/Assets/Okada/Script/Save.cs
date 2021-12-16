@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[System.Serializable] 
-public class Test
+public class Save : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
+
+}
+
+public class SaveControl:Save
+{
     private CGameObject m_CGameObj;
     private GameObject m_Manager;
 
-    Test()
+
+    void save()
     {
         m_Manager = GameObject.FindWithTag("Manager");
         m_CGameObj = m_Manager.GetComponent<CGameObject>();
@@ -25,7 +30,7 @@ public class Test
 
         Debug.Log(m_CGameObj.ToString());
     }
+
+
 }
-
-
 
