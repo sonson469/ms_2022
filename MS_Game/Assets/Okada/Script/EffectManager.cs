@@ -13,21 +13,17 @@ public class EffectManager : MonoBehaviour
     /// エフェクト再生
     /// </summary>
     /// <param name="indexNum"></param>
-    public void PlayEffect(int indexNum)
+    public void PlayEffect(int indexNum,Vector3 position)
     {
-        effectPools[indexNum].EffectPlay(new Vector3(0.0f, 1.0f, 0.0f));
+        effectPools[indexNum].EffectPlay(position);
     }
 
     private void OnGUI()
     {
         if (GUILayout.Button("Create Particles"))
         {
-            effectPools[0].EffectPlay(new Vector3(0.0f, 1.0f, 0.0f));
+            effectPools[1].EffectPlay(new Vector3(0.0f, 1.0f, 0.0f));
 
         }
-    }
-
-    private void Update()
-    {
     }
 }
