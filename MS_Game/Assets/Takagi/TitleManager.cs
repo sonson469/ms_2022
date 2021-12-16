@@ -6,24 +6,20 @@ using System.Threading.Tasks;
 public class TitleManager : MonoBehaviour
 {
     public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
-    public GameObject fadeCanvas;//操作するCanvas、タグで探す
+    public FadeManager m_FadeManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!FadeManager.isFadeInstance)//isFadeInstanceは後で用意する
-        {
-            Instantiate(fade);
-        }
-
-        Invoke("findFadeObject", 0.02f);//起動時用にCanvasの召喚をちょっと待つ
+        m_FadeManager = fade.GetComponent<FadeManager>();
 
     }
 
     public async void sceneChange()//ボタン操作などで呼び出す
     {
-         await Task.Delay(100);//暗転するまで待つ
-         SceneManager.LoadScene("Game_Takagi");//"移動先シーン名"へ遷移
+        m_FadeManager.fadeOut();
+        await Task.Delay(1000);//暗転するまで待つ
+        SceneManager.LoadScene("Game");//"移動先シーン名"へ遷移
     }
 
     //public async void sceneChange(string sceneName)//ボタン操作などで呼び出す

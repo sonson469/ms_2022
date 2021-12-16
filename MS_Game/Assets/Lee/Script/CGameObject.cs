@@ -25,6 +25,9 @@ public class CGameObject : MonoBehaviour
 
     [SerializeField] private bool m_RangeFlag = false;
 
+    public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
+    public FadeManager m_FadeManager;
+
     public enum ModeState
     {
         NORMAL,
@@ -36,6 +39,9 @@ public class CGameObject : MonoBehaviour
 
     private void Start()
     {
+
+        m_FadeManager.fadeIn();
+
         for(int i = 0; i < 40; i++)
         {
             AnimalList.Add(new List<GameObject>());

@@ -199,6 +199,11 @@ public class CKansoutai : CAnimalCreate
             }
 
         }
+        else
+        {
+            m_UIObjMinus.SetActive(true);
+            m_UIObjPlus.SetActive(false);
+        }
 
     }
 
@@ -210,6 +215,7 @@ public class CKansoutai : CAnimalCreate
         //------------------------------------------------------------------
         if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
         {
+            pluscount = 0;
             count = 0;
             if (m_NestScript.GetNestNum() % 2 == 1)
             {
@@ -311,7 +317,7 @@ public class CKansoutai : CAnimalCreate
         //------------------------------------------------------------------
         // Œ¸‚é‚Ù‚¤
         //------------------------------------------------------------------
-        int descount = 0;
+        descount = 0;
         if (m_NestScript.GetNestNum() % 2 == 1)
         {
             for (int i = m_NestScript.GetNestNum() + 22; i <= 30; i++)

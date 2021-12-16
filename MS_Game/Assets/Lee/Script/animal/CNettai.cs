@@ -199,6 +199,11 @@ public class CNettai : CAnimalCreate
             }
 
         }
+        else
+        {
+            m_UIObjMinus.SetActive(true);
+            m_UIObjPlus.SetActive(false);
+        }
     }
 
     public override void NestAnimal()
@@ -208,6 +213,7 @@ public class CNettai : CAnimalCreate
         //------------------------------------------------------------------
         if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
         {
+            pluscount = 0;
             count = 0;
             if (m_NestScript.GetNestNum() % 2 == 1)
             {
@@ -309,7 +315,7 @@ public class CNettai : CAnimalCreate
         //------------------------------------------------------------------
         // Œ¸‚é‚Ù‚¤
         //------------------------------------------------------------------
-        int descount = 0;
+        descount = 0;
         if (m_NestScript.GetNestNum() % 2 == 1)
         {
             for (int i = m_NestScript.GetNestNum() + 12; i <= 20; i++)

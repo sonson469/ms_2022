@@ -200,6 +200,11 @@ public class CKantai : CAnimalCreate
             }
 
         }
+        else
+        {
+            m_UIObjMinus.SetActive(true);
+            m_UIObjPlus.SetActive(false);
+        }
 
     }
 
@@ -240,7 +245,7 @@ public class CKantai : CAnimalCreate
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 }
 
-                if (m_TreeCount[5] >= 7)
+                if (m_TreeCount[4] >= 7)
                 {
                     pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
@@ -256,7 +261,7 @@ public class CKantai : CAnimalCreate
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 }
 
-                if (m_TreeCount[6] >= 6)
+                if (m_TreeCount[5] >= 6)
                 {
                     pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
@@ -273,7 +278,7 @@ public class CKantai : CAnimalCreate
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 }
 
-                if (m_TreeCount[7] >= 5)
+                if (m_TreeCount[6] >= 5)
                 {
                     pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
@@ -290,7 +295,7 @@ public class CKantai : CAnimalCreate
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
                 }
 
-                if (m_TreeCount[8] >= 4)
+                if (m_TreeCount[7] >= 4)
                 {
                     pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
@@ -299,7 +304,7 @@ public class CKantai : CAnimalCreate
             else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
             {
 
-                if (m_TreeCount[4] >= 3 && count >= 1)
+                if (m_TreeCount[8] >= 3 && count >= 1)
                 {
                     pluscount++;
                     CreateAnimal(m_NestScript.GetNestNumAll(), m_MyObject, m_NestScript.GetRange(), 4);
