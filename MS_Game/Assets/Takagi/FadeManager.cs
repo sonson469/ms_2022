@@ -8,7 +8,7 @@ public class FadeManager : MonoBehaviour
 
     public static bool isFadeInstance = false;//Canvas召喚フラグ
 
-    public bool isFadeIn = true;//フェードインするフラグ
+    public bool isFadeIn = false;//フェードインするフラグ
     public bool isFadeOut =false;//フェードアウトするフラグ
 
     public float alpha = 0.0f;//透過率、これを変化させる
