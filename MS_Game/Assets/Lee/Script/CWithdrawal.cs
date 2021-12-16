@@ -15,6 +15,8 @@ public class CWithdrawal : MonoBehaviour
     [SerializeField] private GameObject m_Cube;
     [SerializeField] private CTree treescript;
 
+    private EffectManager m_EffectManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class CWithdrawal : MonoBehaviour
 
         m_MainCamera = Camera.main;
         m_RaycastHit = new RaycastHit();
+
+        m_EffectManager = GameObject.FindWithTag("EffectManager").GetComponent<EffectManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,8 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
+
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;
@@ -100,6 +106,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
 
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
@@ -127,6 +134,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;
