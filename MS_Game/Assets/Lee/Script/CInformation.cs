@@ -52,6 +52,11 @@ public class CInformation : MonoBehaviour
                         {
                             treescript.SetInformation(false);
                         }
+                        if (m_Objnum == Obj.NEST && m_TargetObject != null)
+                        {
+                            animscript.SetInformation(false);
+                        }
+
                         m_TargetObject = m_RaycastHit.collider.gameObject;
                         m_Objnum = Obj.TREE;
 
@@ -62,6 +67,10 @@ public class CInformation : MonoBehaviour
 
                     if (m_RaycastHit.collider.tag == "AnimalNest")
                     {
+                        if (m_Objnum == Obj.TREE && m_TargetObject != null)
+                        {
+                            treescript.SetInformation(false);
+                        }
                         if (m_Objnum == Obj.NEST && m_TargetObject != null)
                         {
                             animscript.SetInformation(false);
