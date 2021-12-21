@@ -1663,6 +1663,7 @@ GameObject:
   - component: {fileID: -5578523816399591845}
   - component: {fileID: 3120833778168820496}
   - component: {fileID: -2375009411534258815}
+  - component: {fileID: -722690566549210037}
   m_Layer: 0
   m_Name: "\u30B0\u30EA\u30BA\u30EA\u30FC\u306E\u5DE3"
   m_TagString: nGURIZURI
@@ -1750,6 +1751,7 @@ MonoBehaviour:
   m_AnimalData: {fileID: 11400000, guid: c0fce42bfd5743e44bc48cf5141c6b2e, type: 2}
   m_TreeCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_DesObj: {fileID: 0}
+  m_InforObj: {fileID: 0}
   m_Slider1: {fileID: 0}
   m_Slider2: {fileID: 0}
   m_Slider3: {fileID: 0}
@@ -1765,6 +1767,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fa248f814c72a40bfb1ecd16917872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-722690566549210037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390668884925363215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463d480ef8375941a7791a808ee52bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAnimalNumText: {fileID: 0}
+  m_HighNestText: {fileID: 0}
+  m_Canvas: {fileID: 0}
 --- !u!1 &8717128244670303314
 GameObject:
   m_ObjectHideFlags: 0

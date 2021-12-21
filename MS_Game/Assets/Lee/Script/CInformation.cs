@@ -14,6 +14,7 @@ public class CInformation : MonoBehaviour
 
     [SerializeField] private GameObject m_Cube;
     [SerializeField] private CTree treescript;
+    [SerializeField] private CAnimaInfo animscript;
 
     private enum Obj
     {
@@ -61,49 +62,15 @@ public class CInformation : MonoBehaviour
 
                     if (m_RaycastHit.collider.tag == "AnimalNest")
                     {
-                        /*if (m_TargetObject == null)
+                        if (m_Objnum == Obj.NEST && m_TargetObject != null)
                         {
-                            m_TargetObject = m_RaycastHit.collider.gameObject;
+                            animscript.SetInformation(false);
                         }
-                        else if (m_RaycastHit.collider.gameObject == m_TargetObject)    //選択中のオブジェを押したら消す
-                        {
-                            CNestCount countscript = m_TargetObject.transform.parent.gameObject.GetComponent<CNestCount>();
-                            GameObject nest = countscript.GetNest();
-                            CNest m_NestScript = nest.GetComponent<CNest>();
-                            if (m_NestScript.GetClimate() == CNest.Climate.ONTAI)
-                            {
-                                COntai ontaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<COntai>();
-                                ontaiscript.DesAnimal();
-                            }
-                            else if (m_NestScript.GetClimate() == CNest.Climate.NETTAI)
-                            {
-                                CNettai nettaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CNettai>();
-                                nettaiscript.DesAnimal();
-                            }
-                            else if (m_NestScript.GetClimate() == CNest.Climate.KANSOUTAI)
-                            {
-                                CKansoutai kansoutaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CKansoutai>();
-                                kansoutaiscript.DesAnimal();
-                            }
-                            else if (m_NestScript.GetClimate() == CNest.Climate.KANTAI)
-                            {
-                                CKantai kantaiscript = m_TargetObject.transform.parent.gameObject.GetComponent<CKantai>();
-                                kantaiscript.DesAnimal();
-                            }
+                        m_TargetObject = m_RaycastHit.collider.gameObject;
+                        m_Objnum = Obj.NEST;
 
-                            countscript.ResetList();
-
-                            m_ObjectScript.NestNameCountMinus(m_NestScript.GetNestNumAll());
-                            m_ObjectScript.AnimalNestList.Remove(m_TargetObject.transform.parent.gameObject);
-
-
-                            Destroy(m_TargetObject.transform.parent.gameObject);
-                            m_TargetObject = null;
-                        }
-                        else
-                        {
-                            m_TargetObject = m_RaycastHit.collider.gameObject;
-                        }*/
+                        animscript = m_TargetObject.transform.parent.gameObject.GetComponent<CAnimaInfo>();
+                        animscript.SetInformation(true);
                     }
 
                    
@@ -129,6 +96,10 @@ public class CInformation : MonoBehaviour
                 if (m_Objnum == Obj.TREE)
                 {
                     treescript.SetInformation(false);
+                }
+                if (m_Objnum == Obj.NEST)
+                {
+                    animscript.SetInformation(false);
                 }
             }
             

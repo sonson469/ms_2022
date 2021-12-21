@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 5051520726199736594}
   - component: {fileID: -8765393603675660256}
   - component: {fileID: 8623148390022298207}
+  - component: {fileID: -2165927667773255264}
   m_Layer: 0
   m_Name: "\u30E9\u30AF\u30C0\u306E\u5DE3"
   m_TagString: nRAKUDA
@@ -830,6 +831,7 @@ MonoBehaviour:
   m_AnimalData: {fileID: 0}
   m_TreeCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_DesObj: {fileID: 0}
+  m_InforObj: {fileID: 0}
   m_Slider1: {fileID: 0}
   m_Slider2: {fileID: 0}
   m_Slider3: {fileID: 0}
@@ -845,6 +847,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fa248f814c72a40bfb1ecd16917872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2165927667773255264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539166072642879353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463d480ef8375941a7791a808ee52bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAnimalNumText: {fileID: 0}
+  m_HighNestText: {fileID: 0}
+  m_Canvas: {fileID: 0}
 --- !u!1 &5160129843812429830
 GameObject:
   m_ObjectHideFlags: 0
