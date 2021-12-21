@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CTree : MonoBehaviour
 {
@@ -53,6 +54,13 @@ public class CTree : MonoBehaviour
     private CKantaiTree m_Kantai;
 
     private GameObject m_DesObj;
+    private GameObject m_InforObj;
+
+    private GameObject m_InforCanvas;
+
+    private Text m_StateText;
+    private Text m_KaritoriText;
+    private Text m_UrineText;
 
     [Header("適応地域")]
     [SerializeField] private Zone m_MyZone;   //適応地域
@@ -65,6 +73,10 @@ public class CTree : MonoBehaviour
     [Header("老木")]
     [SerializeField] private GameObject WitherObject;
 
+    private GameObject m_SapUI;
+    private GameObject m_CompUI;
+    private GameObject m_WithUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +85,23 @@ public class CTree : MonoBehaviour
         m_ObjectScript = m_Manager.GetComponent<CGameObject>();
 
         m_DesObj = this.gameObject.transform.GetChild(3).gameObject;
+        m_InforObj = this.gameObject.transform.GetChild(4).gameObject;
+
+        m_InforCanvas = this.gameObject.transform.GetChild(5).gameObject;
+
+        GameObject obj = m_InforCanvas.gameObject.transform.GetChild(0).gameObject;
+
+        m_StateText = obj.gameObject.transform.GetChild(2).gameObject.GetComponent<Text>();
+        m_KaritoriText = obj.gameObject.transform.GetChild(4).gameObject.GetComponent<Text>();
+        m_UrineText = obj.gameObject.transform.GetChild(5).gameObject.GetComponent<Text>();
+
+        m_CompUI = obj.gameObject.transform.GetChild(3).gameObject;
+        m_SapUI = obj.gameObject.transform.GetChild(6).gameObject;
+        m_WithUI = obj.gameObject.transform.GetChild(7).gameObject;
+
+        m_CompUI.SetActive(false);
+        m_SapUI.SetActive(false);
+        m_WithUI.SetActive(false);
 
         CompleteObject.SetActive(true);
         SaplingObject.SetActive(false);
@@ -94,19 +123,145 @@ public class CTree : MonoBehaviour
         {
             m_Kantai = this.gameObject.GetComponent<CKantaiTree>();
         }
+
+        m_InforCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        //表示するテキスト
+        if (m_InforCanvas.activeSelf)
+        {
+            if (m_Size == Size.BIG)
+            {
+                if (m_State == State.SAPLING)
+                {
+                    if(m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(false);
+                    }
+                    if(!m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(true);
+                    }
+                    if(m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(false);
+                    }
+
+                    m_StateText.text = "成長前";
+                }
+                else if (m_State == State.COMPLETE)
+                {
+                    if (!m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(true);
+                    }
+                    if (m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(false);
+                    }
+                    if (m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(false);
+                    }
+                    m_StateText.text = "成長成功";
+                }
+                else if (m_State == State.WITHER)
+                {
+                    if (m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(false);
+                    }
+                    if (m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(false);
+                    }
+                    if (!m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(true);
+                    }
+                    m_StateText.text = "成長失敗";
+                }
+
+                m_KaritoriText.text = "";
+                m_UrineText.text = "";
+            }
+            else if (m_Size == Size.SMALL)
+            {
+                if (m_State == State.SAPLING)
+                {
+                    if (m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(false);
+                    }
+                    if (!m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(true);
+                    }
+                    if (m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(false);
+                    }
+                    m_StateText.text = "成長前";
+                }
+                else if (m_State == State.COMPLETE)
+                {
+                    if (!m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(true);
+                    }
+                    if (m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(false);
+                    }
+                    if (m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(false);
+                    }
+                    m_StateText.text = "成長成功";
+                }
+                else if (m_State == State.WITHER)
+                {
+                    if (m_CompUI.activeSelf)
+                    {
+                        m_CompUI.SetActive(false);
+                    }
+                    if (m_SapUI.activeSelf)
+                    {
+                        m_SapUI.SetActive(false);
+                    }
+                    if (!m_WithUI.activeSelf)
+                    {
+                        m_WithUI.SetActive(true);
+                    }
+                    m_StateText.text = "成長失敗";
+                }
+
+                int num = m_ReaperNumMax - m_ReaperNum;
+                m_KaritoriText.text = "刈り取り残り : " + num.ToString();
+                m_UrineText.text = "売値 : " + m_Cost.ToString() + "G";
+            }
+
+        }
+
+
         //撤去モード時は選択用の円柱がでてくる
-        if(m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
         {
             m_DesObj.SetActive(true);
+            m_InforObj.SetActive(false);
+        }
+        else if(m_ObjectScript.GetMode() == CGameObject.ModeState.INFOR)
+        {
+            m_DesObj.SetActive(false);
+            m_InforObj.SetActive(true);
         }
         else
         {
+            m_InforObj.SetActive(false);
             m_DesObj.SetActive(false);
         }
 
@@ -318,6 +473,11 @@ public class CTree : MonoBehaviour
         {
             m_Kantai.ResetList();
         }
+    }
+
+    public void SetInformation(bool flag)
+    {
+        m_InforCanvas.SetActive(flag);
     }
 
 }
