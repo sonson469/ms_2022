@@ -827,6 +827,7 @@ GameObject:
   - component: {fileID: -5712765539678065972}
   - component: {fileID: 4900701496554593840}
   - component: {fileID: 8605712352932725036}
+  - component: {fileID: 7141356351948144685}
   m_Layer: 0
   m_Name: "\u30AA\u30AA\u30B3\u30A6\u30E2\u30EA\u306E\u5DE3"
   m_TagString: nOOKOUMORI
@@ -914,6 +915,7 @@ MonoBehaviour:
   m_AnimalData: {fileID: 11400000, guid: c0fce42bfd5743e44bc48cf5141c6b2e, type: 2}
   m_TreeCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_DesObj: {fileID: 0}
+  m_InforObj: {fileID: 0}
   m_Slider1: {fileID: 0}
   m_Slider2: {fileID: 0}
   m_Slider3: {fileID: 0}
@@ -929,6 +931,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fa248f814c72a40bfb1ecd16917872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7141356351948144685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762806168718188157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463d480ef8375941a7791a808ee52bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAnimalNumText: {fileID: 0}
+  m_HighNestText: {fileID: 0}
+  m_Canvas: {fileID: 0}
 --- !u!1 &4910783830115419577
 GameObject:
   m_ObjectHideFlags: 0

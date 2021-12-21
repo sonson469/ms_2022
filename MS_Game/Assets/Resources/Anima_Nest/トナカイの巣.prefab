@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: -580375749150585769}
   - component: {fileID: -4687087371412326762}
   - component: {fileID: -571461322568420929}
+  - component: {fileID: -7259637467112185209}
   m_Layer: 0
   m_Name: "\u30C8\u30CA\u30AB\u30A4\u306E\u5DE3"
   m_TagString: nTONAKAI
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_AnimalData: {fileID: 11400000, guid: c0fce42bfd5743e44bc48cf5141c6b2e, type: 2}
   m_TreeCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_DesObj: {fileID: 0}
+  m_InforObj: {fileID: 0}
   m_Slider1: {fileID: 0}
   m_Slider2: {fileID: 0}
   m_Slider3: {fileID: 0}
@@ -191,6 +193,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fa248f814c72a40bfb1ecd16917872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7259637467112185209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462064227051873404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463d480ef8375941a7791a808ee52bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAnimalNumText: {fileID: 0}
+  m_HighNestText: {fileID: 0}
+  m_Canvas: {fileID: 0}
 --- !u!1 &1323373605431080495
 GameObject:
   m_ObjectHideFlags: 0
