@@ -90,7 +90,7 @@ public class CKansoutai : CAnimalCreate
             m_Slider2.value = 0;
         }
 
-        if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal)
+        if (m_NestCountScript.GetPut() && m_NestScript.GetNowZone() == m_NestScript.GetClimate() && m_MyAnimalList.Count <= m_MaxAnimal - 1)
         {
             if (m_NestScript.GetNestNum() == 1 || m_NestScript.GetNestNum() == 2)
             {

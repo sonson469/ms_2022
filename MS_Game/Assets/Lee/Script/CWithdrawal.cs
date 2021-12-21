@@ -101,6 +101,7 @@ public class CWithdrawal : MonoBehaviour
 
                             countscript.ResetList();
 
+                            m_ObjectScript.NestNameCountMinus(m_NestScript.GetNestNumAll());
                             m_ObjectScript.AnimalNestList.Remove(m_TargetObject.transform.parent.gameObject);
 
                             //--------------------------------------------------
