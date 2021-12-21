@@ -82,14 +82,14 @@ public class CObjectMove : MonoBehaviour
         if (Physics.Raycast(ray, out m_RaycastHit))
         {
 
-            m_CreatePosition = new Vector3 (Mathf.Round(m_RaycastHit.point.x + 16.5f), 0, Mathf.Round(m_RaycastHit.point.z - 1.5f));
-            
+            m_CreatePosition = new Vector3(Mathf.Round(m_RaycastHit.point.x + 16.5f), 0, Mathf.Round(m_RaycastHit.point.z - 1.5f));
+
 
         }
 
         if (m_GameObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
-            if(!m_Button.activeSelf)
+            if (!m_Button.activeSelf)
             {
                 m_Button.SetActive(true);
             }
@@ -97,7 +97,7 @@ public class CObjectMove : MonoBehaviour
             //マウスで動かしてる床の位置と同じにする
             m_TargetObject.transform.position = new Vector3(m_Plane.transform.position.x, m_TargetObject.transform.position.y, m_Plane.transform.position.z);
 
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 m_Succession = true;
             }
@@ -105,13 +105,23 @@ public class CObjectMove : MonoBehaviour
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------
             // 設置
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-            if(m_Succession)
+            if (m_Succession)
             {
                 //機械の時、他の機械の地面と接してたらおけない
                 if (m_CreateObjectNum == CreateObject.MACHINE)
                 {
                     CMachine machinescript = m_TargetObject.GetComponent<CMachine>();
                     if (!machinescript.GetCanPut())
+                    {
+                        m_Succession = false;
+                        return;
+                    }
+                }
+
+                //巣の上限
+                if (m_CreateObjectNum == CreateObject.NEST)
+                {
+                    if (m_GameObjectScript.GetNestNameCount(m_Num) >= 5)
                     {
                         m_Succession = false;
                         return;
@@ -179,7 +189,7 @@ public class CObjectMove : MonoBehaviour
                         m_GameObjectScript.MachineNameCount(m_Num - 1);
                         m_ButtonScript.CreateMachine(m_Num);
                     }
-                    else if(m_CreateObjectNum == CreateObject.REAPER)
+                    else if (m_CreateObjectNum == CreateObject.REAPER)
                     {
                         CRange rangescript = m_TargetObject.GetComponent<CRange>();
                         rangescript.SetMyRange(false);

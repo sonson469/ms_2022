@@ -203,12 +203,20 @@ public class CGameObject : MonoBehaviour
     {
         m_TreeNameCount[num]++;
     }
+    public int GetNestNameCount(int num)
+    {
+        return m_NestNameCount[num - 1];
+    }
 
     public void NestNameCount(int num)
     {
         m_NestNameCount[num]++;
     }
-    
+    public void NestNameCountMinus(int num)
+    {
+        m_NestNameCount[num - 1]--;
+    }
+
     public void MachineNameCount(int num)
     {
         m_MachineNameCount[num]++;

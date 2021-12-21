@@ -7,6 +7,8 @@ public class MainCameraManager : MonoBehaviour
     [SerializeField]private float m_MoveSpeed;
     [SerializeField] private float m_ScrollSpeed;
 
+    [SerializeField] private float m_ScrollMax, m_ScrollMin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,20 @@ public class MainCameraManager : MonoBehaviour
 
         transform.position += moveForward.normalized * m_MoveSpeed * Time.unscaledDeltaTime;
 
-        transform.position += transform.forward * Input.mouseScrollDelta.y * m_ScrollSpeed;
+        if (Input.mouseScrollDelta.y > 0)
+        {
+            if(transform.position.y >= m_ScrollMin)
+            {
+                transform.position += transform.forward * Input.mouseScrollDelta.y * m_ScrollSpeed;
+            }
+        }
+        else if (Input.mouseScrollDelta.y < 0)
+        {
+            if (transform.position.y <= m_ScrollMax)
+            {
+                transform.position += transform.forward * Input.mouseScrollDelta.y * m_ScrollSpeed;
+            }
+        }
 
     }
 }

@@ -27,6 +27,9 @@ public class CGameTimeManager : MonoBehaviour
 
     private bool m_DayEnd;   //1“ú‚¨‚í‚è
 
+    [SerializeField] private Button[] m_TimeButton = new Button[4];
+    [SerializeField] private Color m_TimeButtonSelectColor = new Color(0, 0, 0, 0);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +66,27 @@ public class CGameTimeManager : MonoBehaviour
         m_TimeMater.value = m_GameTime / m_DayTime;
         m_DayText.text = m_GameDay.ToString() + "“ú–Ú";
         m_MoneyText.text = m_Money.ToString() + "G";
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == m_TimeSpeed)
+            {
+                m_TimeButton[i].image.color = m_TimeButtonSelectColor;
+            }
+            else
+            {
+                m_TimeButton[i].image.color = new Color(1, 1, 1, 1);
+            }
+        }
+
+        if(m_TimeSpeed == 4)
+        {
+            m_TimeButton[3].image.color = m_TimeButtonSelectColor;
+        }
+        else
+        {
+            m_TimeButton[3].image.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void Progress(int num)
