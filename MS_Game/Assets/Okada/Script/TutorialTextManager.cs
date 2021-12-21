@@ -16,12 +16,14 @@ public class TutorialTextManager : MonoBehaviour
     private int count = 0;
     [SerializeField] GameObject m_Manager;
     private CGameTimeManager m_TimeManager;
+    private CObjectMove m_ObjectMove;
 
 
     // Start is called before the first frame update
     void Start()
     {
         m_TimeManager = m_Manager.GetComponent<CGameTimeManager>();
+        m_ObjectMove = m_Manager.GetComponent<CObjectMove>();
         m_TutorialText.text = "";
         StartCoroutine("LoadText");
 
@@ -33,7 +35,7 @@ public class TutorialTextManager : MonoBehaviour
     {
         ControlText();
 
-        if (m_CurrentNum == 16 && m_TimeManager.GetGameDay() >= 2)
+        if (m_CurrentNum == 16 && m_TimeManager.GetGameDay() >= 3)
         {
             m_TimeManager.SetTimeSpeed(0);
             m_CurrentNum++;
@@ -43,7 +45,7 @@ public class TutorialTextManager : MonoBehaviour
         }
 
 
-        if (m_CurrentNum == 23 && m_TimeManager.GetGameDay() >= 4)
+        if (m_CurrentNum == 23 && m_TimeManager.GetGameDay() >= 5)
         {
             m_TimeManager.SetTimeSpeed(0);
             m_CurrentNum++;
@@ -52,7 +54,7 @@ public class TutorialTextManager : MonoBehaviour
             count++;
         }
 
-        if (m_CurrentNum == 26 && m_TimeManager.GetGameDay() >= 5)
+        if (m_CurrentNum == 26 && m_TimeManager.GetGameDay() >= 6)
         {
             m_TimeManager.SetTimeSpeed(0);
             m_CurrentNum++;
@@ -62,7 +64,7 @@ public class TutorialTextManager : MonoBehaviour
 
         }
 
-        if(m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 6)
+        if(m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 7)
         {
             m_TimeManager.SetTimeSpeed(0);
             m_CurrentNum++;
@@ -70,6 +72,21 @@ public class TutorialTextManager : MonoBehaviour
             m_TutorialText.text = "";
             count++;
         }
+        if(m_CurrentNum == 14 && m_ObjectMove.m_IsYatudeFlag == true)
+        {
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+        }
+        if (m_CurrentNum == 22 && m_ObjectMove.m_IsmachineFlag == true)
+        {
+            m_CurrentNum++;
+            m_CurrentCharNum = 0;
+            m_TutorialText.text = "";
+            count++;
+        }
+
 
     }
 
@@ -109,8 +126,6 @@ public class TutorialTextManager : MonoBehaviour
             m_TextInterval = m_ReadSpeed;
         }
         else m_TextInterval--;
-
-       
     }
 
     public void OnClick()
@@ -120,23 +135,21 @@ public class TutorialTextManager : MonoBehaviour
             m_ObjButton[count].interactable = true;
             return;
         }
+        m_TutorialText.text = m_TextData[m_CurrentNum] + "\n";
         m_CurrentNum++;
         Debug.Log(m_CurrentNum);
         m_CurrentCharNum = 0;
-        m_TutorialText.text = "";
     }
 
     public void OnNext(int num)
     {
-
-        if (num == 0 && m_CurrentNum == 12 || num == 1 && m_CurrentNum == 14 || num == 3 && m_CurrentNum == 22 )
+        if (num == 0 && m_CurrentNum == 12)
         {
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
             count++;
         }
-       
     }
 }
 
