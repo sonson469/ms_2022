@@ -32,7 +32,8 @@ public class CGameObject : MonoBehaviour
     {
         NORMAL,
         OBJMOVE,
-        DES
+        DES,
+        INFOR
     }
 
     private ModeState m_ModeState;
@@ -195,7 +196,7 @@ public class CGameObject : MonoBehaviour
     }
     private void Update()
     {
-        
+        //Debug.Log(m_ModeState);
     }
 
     //ñºëOÇ≤Ç∆Ç…âΩå¬Ç†ÇÈÇ©êîÇ¶ÇÈ

@@ -25,7 +25,7 @@ public class CKantaiTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES || m_GameObjectScript.GetMode() != CGameObject.ModeState.INFOR)
         {
             if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
             {
@@ -92,7 +92,7 @@ public class CKantaiTree : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES)
+        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES || m_GameObjectScript.GetMode() != CGameObject.ModeState.INFOR)
         {
             if (other.gameObject.tag == "n" + CGameObject.NestNumber.PENGIN)
             {

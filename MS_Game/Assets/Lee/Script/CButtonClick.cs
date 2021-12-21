@@ -145,7 +145,7 @@ public class CButtonClick : MonoBehaviour
 
     public void Cancel()
     {
-        if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES || m_ObjectScript.GetMode() == CGameObject.ModeState.INFOR)
         {
             m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
         }
@@ -184,6 +184,23 @@ public class CButtonClick : MonoBehaviour
         else
         {
             m_ObjectScript.SetMode(CGameObject.ModeState.DES);
+        }
+    }
+    public void Information()
+    {
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.INFOR)
+        {
+            m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
+        }
+        else if (m_ObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
+        {
+            m_NestBreake = true;
+            m_ObjectMoveScript.ResetMove();
+            m_ObjectScript.SetMode(CGameObject.ModeState.INFOR);
+        }
+        else
+        {
+            m_ObjectScript.SetMode(CGameObject.ModeState.INFOR);
         }
     }
 
