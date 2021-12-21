@@ -30,6 +30,9 @@ public class CObjectMove : MonoBehaviour
 
     private EffectManager m_EffectManager;
 
+    public bool m_IsYatudeFlag = false;
+    public bool m_IsmachineFlag = false;
+
     public enum CreateObject     //置くオブジェクトの種類番号用
     { 
         TREE,
@@ -164,6 +167,7 @@ public class CObjectMove : MonoBehaviour
                         treescript.SetSize(m_TreeSizeSize);
                         treescript.SetCost(m_TargetObjectCost * 2);
                         m_ButtonScript.CreateTree(m_Num);
+                        m_IsYatudeFlag = true;
 
                     }
                     else if (m_CreateObjectNum == CreateObject.NEST)
@@ -188,6 +192,7 @@ public class CObjectMove : MonoBehaviour
                         m_GameObjectScript.MachineList.Add(m_TargetObject);
                         m_GameObjectScript.MachineNameCount(m_Num - 1);
                         m_ButtonScript.CreateMachine(m_Num);
+                        m_IsmachineFlag = true;
                     }
                     else if (m_CreateObjectNum == CreateObject.REAPER)
                     {
