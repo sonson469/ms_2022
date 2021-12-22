@@ -25,7 +25,7 @@ public class COntaiTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES || m_GameObjectScript.GetMode() != CGameObject.ModeState.INFOR)
+        if (m_GameObjectScript.GetMode() == CGameObject.ModeState.NORMAL || m_GameObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
             if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
             {
@@ -88,12 +88,11 @@ public class COntaiTree : MonoBehaviour
                 script.TreeCount(m_Ontainum);
             }
         }
-
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (m_GameObjectScript.GetMode() != CGameObject.ModeState.DES || m_GameObjectScript.GetMode() != CGameObject.ModeState.INFOR)
+        if (m_GameObjectScript.GetMode() == CGameObject.ModeState.NORMAL || m_GameObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
             if (other.gameObject.tag == "n" + CGameObject.NestNumber.HATUKANEZUMI)
             {

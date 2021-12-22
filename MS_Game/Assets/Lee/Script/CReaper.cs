@@ -35,7 +35,7 @@ public class CReaper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_ObjectScript.GetMode() != CGameObject.ModeState.DES || m_ObjectScript.GetMode() != CGameObject.ModeState.INFOR)
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.NORMAL || m_ObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
             if (other.gameObject.tag == "Tree")
             {
@@ -48,7 +48,7 @@ public class CReaper : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (m_ObjectScript.GetMode() != CGameObject.ModeState.DES || m_ObjectScript.GetMode() != CGameObject.ModeState.INFOR)
+        if (m_ObjectScript.GetMode() == CGameObject.ModeState.NORMAL || m_ObjectScript.GetMode() == CGameObject.ModeState.OBJMOVE)
         {
             if (other.gameObject.tag == "Tree")
             {
