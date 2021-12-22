@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828d68fb7a22db74aa0f70e9dd0f7a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postprocessMaterial: {fileID: 2100000, guid: 8ffe2fdd55a312a4498aa12bbdb5d12b, type: 2}
+  postprocessMaterial: {fileID: 2100000, guid: d58470040f65a864eb4ab9110291b862, type: 2}
 --- !u!114 &487450643
 MonoBehaviour:
   m_ObjectHideFlags: 0

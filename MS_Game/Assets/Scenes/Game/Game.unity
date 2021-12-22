@@ -4739,7 +4739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828d68fb7a22db74aa0f70e9dd0f7a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postprocessMaterial: {fileID: 2100000, guid: 8ffe2fdd55a312a4498aa12bbdb5d12b, type: 2}
+  postprocessMaterial: {fileID: 2100000, guid: d58470040f65a864eb4ab9110291b862, type: 2}
 --- !u!114 &135993610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28930,7 +28930,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1763558377}
   m_HandleRect: {fileID: 1763558375}
   m_Direction: 0
-  m_Value: -0.00000017691356
+  m_Value: 0.0000005307407
   m_Size: 0.80229235
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -57565,6 +57565,7 @@ MonoBehaviour:
   m_TimeMaterObject: {fileID: 1450086432}
   m_DayTextObject: {fileID: 1564703449}
   m_MoneyTextObject: {fileID: 168702770}
+  m_Light: {fileID: 1038782832}
   m_TimeButton:
   - {fileID: 1803438602}
   - {fileID: 1445744282}
