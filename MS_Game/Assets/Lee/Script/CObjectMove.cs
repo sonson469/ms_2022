@@ -33,6 +33,8 @@ public class CObjectMove : MonoBehaviour
 
     public bool m_IsYatudeFlag = false;
     public bool m_IsmachineFlag = false;
+    public bool m_IsNezumiFlag = false;
+
 
     public enum CreateObject     //置くオブジェクトの種類番号用
     { 
@@ -184,6 +186,8 @@ public class CObjectMove : MonoBehaviour
                         script.SetPut();
 
                         m_ButtonScript.CreateNest(m_Num);
+
+                        m_IsNezumiFlag = true;
                     }
                     else if (m_CreateObjectNum == CreateObject.MACHINE)
                     {
@@ -203,6 +207,7 @@ public class CObjectMove : MonoBehaviour
                         CReaper reaperscript = m_TargetObject.GetComponent<CReaper>();
                         m_GameObjectScript.ReaperList.Add(m_TargetObject);
                         m_ButtonScript.CreateReaper();
+                        m_IsmachineFlag = true;
                     }
 
                     //隣においてた時

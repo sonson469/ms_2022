@@ -75,8 +75,8 @@ public class TutorialTextManager : MonoBehaviour
         if (m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 7)
 
         {
-            m_TimeManager.SetTimeSpeed(0);
-            m_ObjButton[2].interactable = false;
+            m_TimeManager.SetTimeSpeed(4);
+            m_ObjButton[2].interactable = true;
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
@@ -94,6 +94,7 @@ public class TutorialTextManager : MonoBehaviour
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
+            m_ObjectMove.m_IsmachineFlag = false;
             count++;
         }
 
@@ -101,6 +102,13 @@ public class TutorialTextManager : MonoBehaviour
         {
             m_ObjButton[2].interactable = true;
             m_TimeManager.SetTimeSpeed(4);
+        }
+
+        if (m_CurrentNum == 39 && m_ObjectMove.m_IsmachineFlag == true)
+        {
+            m_ObjButton[2].interactable = true;
+            m_TimeManager.SetTimeSpeed(4);
+
         }
         Debug.Log(m_CurrentNum);
 
