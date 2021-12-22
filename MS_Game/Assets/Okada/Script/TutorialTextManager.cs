@@ -73,6 +73,7 @@ public class TutorialTextManager : MonoBehaviour
         }
 
         if (m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 7)
+
         {
             m_TimeManager.SetTimeSpeed(0);
             m_ObjButton[2].interactable = false;

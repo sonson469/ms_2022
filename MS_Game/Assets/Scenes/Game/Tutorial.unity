@@ -36722,6 +36722,7 @@ MonoBehaviour:
   m_TargetObject: {fileID: 0}
   m_IsYatudeFlag: 0
   m_IsmachineFlag: 0
+  m_IsNezumiFlag: 0
 --- !u!114 &1642023834
 MonoBehaviour:
   m_ObjectHideFlags: 0
