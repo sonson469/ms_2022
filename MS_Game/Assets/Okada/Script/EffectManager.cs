@@ -9,11 +9,19 @@ public class EffectManager : MonoBehaviour
 
     // Start is called before the first frame update
 
+    public enum EffectNum
+    {
+        Delete, //削除
+        Set,    //設置
+        Decrease//減少
+    }
+
+
     /// <summary>
     /// エフェクト再生
     /// </summary>
     /// <param name="indexNum"></param>
-    public void PlayEffect(int indexNum,Vector3 position)
+    public void PlayEffect(int indexNum, Vector3 position)
     {
         effectPools[indexNum].EffectPlay(position);
     }

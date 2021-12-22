@@ -86,7 +86,7 @@ public class TutorialTextManager : MonoBehaviour
             m_TutorialText.text = "";
             count++;
         }
-
+        Debug.Log(m_CurrentNum);
 
     }
 
