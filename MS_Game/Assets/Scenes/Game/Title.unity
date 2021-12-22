@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 502712200}
   - component: {fileID: 502712199}
   - component: {fileID: 502712198}
-  - component: {fileID: 502712197}
   m_Layer: 5
   m_Name: "\u30C1\u30E5\u30FC\u30C8\u30EA\u30A2\u30EB"
   m_TagString: Untagged
@@ -275,23 +274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &502712197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502712196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df40e54b7b277498a339d8c5185a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fade: {fileID: 1230862463}
-  m_FadeManager: {fileID: 1230862464}
-  hazimeru: {fileID: 0}
-  tyutoriaru: {fileID: 0}
-  nyugemu: {fileID: 0}
 --- !u!114 &502712198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +400,6 @@ GameObject:
   - component: {fileID: 539792524}
   - component: {fileID: 539792523}
   - component: {fileID: 539792522}
-  - component: {fileID: 539792521}
   m_Layer: 5
   m_Name: "\u30CB\u30E5\u30FC\u30B2\u30FC\u30E0"
   m_TagString: Untagged
@@ -446,23 +427,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -390.1}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &539792521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539792519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df40e54b7b277498a339d8c5185a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fade: {fileID: 1230862463}
-  m_FadeManager: {fileID: 1230862464}
-  hazimeru: {fileID: 0}
-  tyutoriaru: {fileID: 0}
-  nyugemu: {fileID: 0}
 --- !u!114 &539792522
 MonoBehaviour:
   m_ObjectHideFlags: 0
