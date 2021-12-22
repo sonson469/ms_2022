@@ -13,6 +13,8 @@ public class ButtonRelease : MonoBehaviour
     private Button[] m_NestButton = new Button[(int)NestNumber.NESTMAX];
     [SerializeField] private bool[] m_NestActive = new bool[(int)NestNumber.NESTMAX];
 
+    [SerializeField] private GameObject[] m_Zukan = new GameObject[(int)NestNumber.NESTMAX];
+
     private CGameTimeManager m_TimeManager;
 
     private void Start()
@@ -22,6 +24,7 @@ public class ButtonRelease : MonoBehaviour
 
         for (int i = 0; i < 40; i++)
         {
+            m_Zukan[i].SetActive(true);
             m_NestButton[i] = m_NestButtonObject[i].gameObject.GetComponent<Button>();
             //m_NestActive[i] = true;
             m_NestButton[i].interactable = m_NestActive[i];
@@ -166,9 +169,15 @@ public class ButtonRelease : MonoBehaviour
             && m_CGameObj.AnimalList[(int)AnimalNumber.SHIROHUKUROU].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.TUNDORAOOKAMI].Count >= 10)
             m_NestActive[(int)NestNumber.HOKKYOKUGUMA] = true;
 
-
-
         for (int i = 0; i < 40; i++)
+        {
+            if(m_NestActive[i])
+            {
+                m_Zukan[i].SetActive(false);
+            }
+        }
+
+            for (int i = 0; i < 40; i++)
         {
             m_NestButton[i].interactable = m_NestActive[i];
         }
