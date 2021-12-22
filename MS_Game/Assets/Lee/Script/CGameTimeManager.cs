@@ -12,7 +12,7 @@ public class CGameTimeManager : MonoBehaviour
     [SerializeField] private int m_Money;
 
     [Header("1“ú‚É‚©‚©‚éŽžŠÔ(•b)")]
-    [SerializeField] float m_DayTime = 60;
+    [SerializeField] float m_DayTime;
 
     [SerializeField] GameObject m_TimeMaterObject;
     [SerializeField] GameObject m_DayTextObject;
@@ -26,6 +26,8 @@ public class CGameTimeManager : MonoBehaviour
     private int  m_TimeSpeed;
 
     private bool m_DayEnd;   //1“ú‚¨‚í‚è
+
+    [SerializeField] private Light m_Light;
 
     [SerializeField] private Button[] m_TimeButton = new Button[4];
     [SerializeField] private Color m_TimeButtonSelectColor = new Color(0, 0, 0, 0);
@@ -46,7 +48,9 @@ public class CGameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_DayEnd)
+        m_Light.transform.Rotate(new Vector3(18*m_TimeSpeed,0, 0)*Time.deltaTime, Space.World);
+
+        if (m_DayEnd)
         {
             m_GameDay++;
             //m_Money += 1000;
