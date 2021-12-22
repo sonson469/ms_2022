@@ -130,6 +130,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4c048d639178972419c7407ab4bd7045, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3c029a6f3c37d5419642e88d143197a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 4c048d639178972419c7407ab4bd7045, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52808da35c1646444914de436125f527, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 4c048d639178972419c7407ab4bd7045, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71b93695efa19e246b8da4f717666a2c, type: 2}
     - target: {fileID: 919132149155446097, guid: 4c048d639178972419c7407ab4bd7045, type: 3}
       propertyPath: m_Name
       value: Model_Tundraookami

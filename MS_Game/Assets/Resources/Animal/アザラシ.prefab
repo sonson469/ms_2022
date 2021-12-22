@@ -130,6 +130,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8ac6603ab896af247ac4a21c480873f4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c45fc2a5eb2a6d44b1ac7eec30ecea8, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8ac6603ab896af247ac4a21c480873f4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e06f5e51e424f6469463e778559a6bb, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8ac6603ab896af247ac4a21c480873f4, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6718c746ec59c0a46b3d6c35ae2a8f7b, type: 2}
     - target: {fileID: 919132149155446097, guid: 8ac6603ab896af247ac4a21c480873f4, type: 3}
       propertyPath: m_Name
       value: Model_Azarashi

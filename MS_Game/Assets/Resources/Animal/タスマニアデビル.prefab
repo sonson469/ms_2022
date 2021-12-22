@@ -130,6 +130,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b269e30f5daea9c41950c9a726adbe6c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 925748e8233dc8b448954bd7e53dd206, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9ef774836d72394884ff9d5676352fc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e466797b84299b4ab9d1e9bfd60a9ed, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d284b42927fe39419fc91d82e07e79c, type: 2}
     - target: {fileID: 919132149155446097, guid: d3f4b516774c84e4f8cccb0a0a7f18d1, type: 3}
       propertyPath: m_Name
       value: Model_Tasmaniadevil
