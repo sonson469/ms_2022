@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Takagi/Title_ver02.unity
+    guid: 99e364beda577a649876fe6fa5080843
+  - enabled: 1
+    path: Assets/Scenes/Game/Title.unity
+    guid: 51e50eb6f66f02a44823c22396ef3497
+  - enabled: 1
+    path: Assets/Scenes/Game/Game.unity
+    guid: 8c717bc5ab9c6b348b0fd0639221e7e6
+  - enabled: 1
+    path: Assets/Scenes/Game/Tutorial.unity
+    guid: cbce8867ceeba6f409beed9c8a578d60
   m_configObjects: {}
