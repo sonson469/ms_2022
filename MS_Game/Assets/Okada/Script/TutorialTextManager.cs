@@ -34,10 +34,11 @@ public class TutorialTextManager : MonoBehaviour
     void Update()
     {
         ControlText();
-
         if (m_CurrentNum == 16 && m_TimeManager.GetGameDay() >= 3)
         {
+            m_ObjectMove.m_IsYatudeFlag = false;
             m_TimeManager.SetTimeSpeed(0);
+            m_ObjButton[2].interactable = false;
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
@@ -52,21 +53,30 @@ public class TutorialTextManager : MonoBehaviour
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
             count++;
+            m_ObjButton[2].interactable=true;
         }
 
         if (m_CurrentNum == 26 && m_TimeManager.GetGameDay() >= 6)
         {
             m_TimeManager.SetTimeSpeed(0);
+            m_ObjButton[2].interactable = false;
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
             count++;
 
         }
+        if (m_CurrentNum == 26 && m_ObjectMove.m_IsNezumiFlag == true)
+        {
+            m_ObjButton[2].interactable = true;
+            m_TimeManager.SetTimeSpeed(4);
+        }
 
-        if(m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 7)
+        if (m_CurrentNum==39 && m_TimeManager.GetGameDay() >= 7)
+
         {
             m_TimeManager.SetTimeSpeed(0);
+            m_ObjButton[2].interactable = false;
             m_CurrentNum++;
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
@@ -85,6 +95,12 @@ public class TutorialTextManager : MonoBehaviour
             m_CurrentCharNum = 0;
             m_TutorialText.text = "";
             count++;
+        }
+
+        if (m_CurrentNum == 23 && m_ObjectMove.m_IsYatudeFlag == true)
+        {
+            m_ObjButton[2].interactable = true;
+            m_TimeManager.SetTimeSpeed(4);
         }
         Debug.Log(m_CurrentNum);
 
