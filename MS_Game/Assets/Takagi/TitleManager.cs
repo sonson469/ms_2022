@@ -8,19 +8,43 @@ public class TitleManager : MonoBehaviour
     public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
     public FadeManager m_FadeManager;
 
+    [SerializeField] GameObject hazimeru;
+    [SerializeField] GameObject tyutoriaru;
+    [SerializeField] GameObject nyugemu;
+
     // Start is called before the first frame update
     void Start()
     {
         m_FadeManager = fade.GetComponent<FadeManager>();
 
+        hazimeru.SetActive(true);
+        tyutoriaru.SetActive(false);
+        nyugemu.SetActive(false);
+
     }
 
-    public async void sceneChange()//ボタン操作などで呼び出す
+    public void hazimerubutton()
+    {
+        hazimeru.SetActive(false);
+        tyutoriaru.SetActive(true);
+        nyugemu.SetActive(true);
+    }
+
+    public async void sceneGameChange()//ボタン操作などで呼び出す
     {
         m_FadeManager.fadeOut();
         await Task.Delay(1000);//暗転するまで待つ
         SceneManager.LoadScene("Game");//"移動先シーン名"へ遷移
     }
+
+    public async void sceneTutoChange()//ボタン操作などで呼び出す
+    {
+        m_FadeManager.fadeOut();
+        await Task.Delay(1000);//暗転するまで待つ
+        SceneManager.LoadScene("Tutorial");//"移動先シーン名"へ遷移
+    }
+
+
 
     //public async void sceneChange(string sceneName)//ボタン操作などで呼び出す
     //{
