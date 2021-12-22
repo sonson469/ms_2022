@@ -49138,94 +49138,90 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642023826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58847542427e69545895d2b27c846281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NestButtonObject:
-  - {fileID: 382933311}
-  - {fileID: 356400518}
-  - {fileID: 1984138208}
-  - {fileID: 915641733}
-  - {fileID: 1017967965}
-  - {fileID: 899824918}
-  - {fileID: 1450330990}
-  - {fileID: 1051642204}
-  - {fileID: 1946970842}
-  - {fileID: 1582353641}
-  - {fileID: 1442087892}
-  - {fileID: 983912486}
-  - {fileID: 1686434070}
-  - {fileID: 1767197870}
-  - {fileID: 710303512}
-  - {fileID: 577183045}
-  - {fileID: 1085135305}
-  - {fileID: 1703169511}
-  - {fileID: 512942979}
-  - {fileID: 1045980586}
-  - {fileID: 892471131}
-  - {fileID: 790155722}
-  - {fileID: 1336444331}
-  - {fileID: 1154300981}
-  - {fileID: 429480556}
-  - {fileID: 2058507008}
-  - {fileID: 169439202}
-  - {fileID: 1740974261}
-  - {fileID: 1079898483}
-  - {fileID: 1501692805}
-  - {fileID: 1859462831}
-  - {fileID: 4449929}
-  - {fileID: 1932081613}
-  - {fileID: 1470547863}
-  - {fileID: 1521711805}
-  - {fileID: 918229337}
-  - {fileID: 423792652}
-  - {fileID: 1033077456}
-  - {fileID: 81298711}
-  - {fileID: 845863448}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_NestActive: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_Zukan:
-  - {fileID: 1267948303}
-  - {fileID: 776939164}
-  - {fileID: 1382121619}
-  - {fileID: 28258413}
-  - {fileID: 901596729}
-  - {fileID: 1016095995}
-  - {fileID: 2054633103}
-  - {fileID: 5775133}
-  - {fileID: 218710745}
-  - {fileID: 924489473}
-  - {fileID: 527454647}
-  - {fileID: 167924862}
-  - {fileID: 314451970}
-  - {fileID: 207165061}
-  - {fileID: 1411663256}
-  - {fileID: 2139353615}
-  - {fileID: 1197399665}
-  - {fileID: 1298227936}
-  - {fileID: 870205715}
-  - {fileID: 810963152}
-  - {fileID: 1690985693}
-  - {fileID: 1266331353}
-  - {fileID: 632860845}
-  - {fileID: 1353371255}
-  - {fileID: 2068992488}
-  - {fileID: 362662521}
-  - {fileID: 980032173}
-  - {fileID: 15310901}
-  - {fileID: 1475108663}
-  - {fileID: 1378025892}
-  - {fileID: 876672239}
-  - {fileID: 423166047}
-  - {fileID: 423014562}
-  - {fileID: 443457143}
-  - {fileID: 1185727177}
-  - {fileID: 2147004371}
-  - {fileID: 895040401}
-  - {fileID: 977115942}
-  - {fileID: 215996704}
-  - {fileID: 1164428962}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1642023830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49252,7 +49248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b3b6e0621f25c4e96d32262fbd2347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Money: 1000000
+  m_Money: 100000
   m_DayTime: 20
   m_TimeMaterObject: {fileID: 1837970211}
   m_DayTextObject: {fileID: 1879449565}
@@ -49288,8 +49284,8 @@ MonoBehaviour:
   m_NestNameCount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_MachineNameCount: 00000000000000000000000000000000
   m_RangeFlag: 0
-  fade: {fileID: 0}
-  m_FadeManager: {fileID: 0}
+  fade: {fileID: 2134083655}
+  m_FadeManager: {fileID: 2134083656}
 --- !u!114 &1642023833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63644,6 +63640,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131624764}
   m_CullTransparentMesh: 1
+--- !u!1 &2134083655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 888010945212246261, guid: b991309e20f2d324ca549c70cb38a050, type: 3}
+  m_PrefabInstance: {fileID: 2140447663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134083656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888010945212246270, guid: b991309e20f2d324ca549c70cb38a050, type: 3}
+  m_PrefabInstance: {fileID: 2140447663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134083655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95314f1b050d0194386260d56faf96a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2134686832
 GameObject:
   m_ObjectHideFlags: 0
