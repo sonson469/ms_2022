@@ -14,6 +14,7 @@ Shader "Custom/monoTone" {
 
 				sampler2D _MainTex;
 
+				//ランプテクスチャの色反映
 				fixed4 frag(v2f_img i) : COLOR {
 					fixed4 c = tex2D(_MainTex, i.uv);
 					float gray = c.r * 0.3 + c.g * 0.6 + c.b * 0.1;
