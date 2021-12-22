@@ -213,10 +213,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7404482121336452012, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53ff11f88dd84c742ac4521febc50807, type: 2}
+    - target: {fileID: -7140696722106645540, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18608f5c7fec9c247976c57fc25a7e23, type: 2}
+    - target: {fileID: -4982390722618918542, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 376b16c15426ffd45b49ed36493e995d, type: 2}
+    - target: {fileID: -1037931412314210397, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 376b16c15426ffd45b49ed36493e995d, type: 2}
     - target: {fileID: 919132149155446097, guid: 377b1ad9feec30545a7458461143a997, type: 3}
       propertyPath: m_Name
       value: ms_harinezumi
       objectReference: {fileID: 0}
+    - target: {fileID: 4262682939560965369, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53ff11f88dd84c742ac4521febc50807, type: 2}
+    - target: {fileID: 4584869386695466082, guid: 377b1ad9feec30545a7458461143a997, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 376b16c15426ffd45b49ed36493e995d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377b1ad9feec30545a7458461143a997, type: 3}
 --- !u!4 &4584812376517974775 stripped
