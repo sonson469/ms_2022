@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EffectManager;
 
 public class CObjectMove : MonoBehaviour
 {
@@ -138,7 +139,7 @@ public class CObjectMove : MonoBehaviour
                     //---------------------------------
                     // 設置エフェクトはこのへん
                     //-----------------------------------
-                    m_EffectManager.PlayEffect(1, m_TargetObject.transform.position);
+                    m_EffectManager.PlayEffect((int)EffectNum.Set, m_TargetObject.transform.position);
 
 
                     //同じオブジェクトを既に設置してたら

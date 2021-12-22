@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EffectManager;
 
 public class CWithdrawal : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
-                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
+                            m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
@@ -107,7 +108,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
-                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
+                            m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
@@ -135,7 +136,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
-                            m_EffectManager.PlayEffect(0, m_TargetObject.transform.position);
+                            m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
                             m_TargetObject = null;

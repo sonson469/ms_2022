@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static EffectManager;
 
 public class CKantai : CAnimalCreate
 {
@@ -30,6 +31,9 @@ public class CKantai : CAnimalCreate
 
     private CAnimaInfo m_InfoScript;
 
+    private EffectManager m_EffectManager;
+
+
     // Start is called before the first frame update
     public new void Start()
     {
@@ -55,6 +59,8 @@ public class CKantai : CAnimalCreate
 
         m_UIObjPlus = canvas.gameObject.transform.GetChild(6).gameObject;
         m_UIObjMinus = canvas.gameObject.transform.GetChild(7).gameObject;
+
+        m_EffectManager = GameObject.FindWithTag("EffectManager").GetComponent<EffectManager>();
 
     }
 
@@ -398,6 +404,7 @@ public class CKantai : CAnimalCreate
         {
             if (m_MyAnimalList.Count >= 1)
             {
+                m_EffectManager.PlayEffect((int)EffectNum.Decrease, m_MyAnimalList[m_MyAnimalList.Count - 1].transform.position);
                 Destroy(m_MyAnimalList[m_MyAnimalList.Count - 1]);
                 m_MyAnimalList.RemoveAt(m_MyAnimalList.Count - 1);
             }
