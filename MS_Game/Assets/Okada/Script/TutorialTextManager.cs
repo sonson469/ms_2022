@@ -20,10 +20,15 @@ public class TutorialTextManager : MonoBehaviour
     private CGameTimeManager m_TimeManager;
     private CObjectMove m_ObjectMove;
 
+    private CAudio m_AudioScript;
+    private AudioSource m_Audio;
+
     public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
     public FadeManager m_FadeManager;
 
     public GameObject button;
+
+    [SerializeField] private GameObject m_Yazirushi;
 
     private bool next = false;
 
@@ -35,6 +40,11 @@ public class TutorialTextManager : MonoBehaviour
         m_TutorialText.text = "";
         StartCoroutine("LoadText");
         m_FadeManager = fade.GetComponent<FadeManager>();
+
+        m_AudioScript = m_Manager.gameObject.GetComponent<CAudio>();
+        m_Audio = m_Manager.gameObject.GetComponent<AudioSource>();
+
+        m_Yazirushi.SetActive(false);
     }
 
 
@@ -84,9 +94,11 @@ public class TutorialTextManager : MonoBehaviour
         if (m_CurrentNum == 22)
         {
             m_ObjButton[3].interactable = true;
+            m_Yazirushi.SetActive(true);
         }
         if (m_CurrentNum == 22 && m_ObjectMove.m_IsmachineFlag == true)
         {
+            m_Yazirushi.SetActive(false);
             m_ObjButton[2].interactable = true;
             m_CurrentNum++;
             m_CurrentCharNum = 0;
@@ -208,6 +220,9 @@ public class TutorialTextManager : MonoBehaviour
 
     public async void sceneGameChange()//ボタン操作などで呼び出す
     {
+
+        m_Audio.PlayOneShot(m_AudioScript.SEStart);
+
         m_FadeManager.fadeOut();
         await Task.Delay(1000);//暗転するまで待つ
         SceneManager.LoadScene("Game");//"移動先シーン名"へ遷移
