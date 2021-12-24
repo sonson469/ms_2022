@@ -394,7 +394,7 @@ public class COntai : CAnimalCreate
     public void AddMyList(GameObject animal)
     {
         m_MyAnimalList.Add(animal);
-        m_GameObjectScript.AnimalList[m_NestScript.GetNestNum() - 1].Add(animal);
+        m_GameObjectScript.AnimalList[m_NestScript.GetNestNumAll() - 1].Add(animal);
     }
 
     private void ReduceMyList(int count)
