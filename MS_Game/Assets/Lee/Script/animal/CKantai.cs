@@ -130,7 +130,7 @@ public class CKantai : CAnimalCreate
                     m_Slider3.value = (float)m_TreeCount[0] / 7.0f;
                 }
 
-                if (m_TreeCount[5] >= 7)
+                if (m_TreeCount[4] >= 7)
                 {
                     m_Slider1.value = 1;
                 }
@@ -150,7 +150,7 @@ public class CKantai : CAnimalCreate
                     m_Slider3.value = (float)m_TreeCount[1] / 6.0f;
                 }
 
-                if (m_TreeCount[6] >= 6)
+                if (m_TreeCount[5] >= 6)
                 {
                     m_Slider1.value = 1;
                 }
@@ -170,7 +170,7 @@ public class CKantai : CAnimalCreate
                     m_Slider3.value = (float)m_TreeCount[2] / 5.0f;
                 }
 
-                if (m_TreeCount[7] >= 5)
+                if (m_TreeCount[6] >= 5)
                 {
                     m_Slider1.value = 1;
                 }
@@ -191,7 +191,7 @@ public class CKantai : CAnimalCreate
                     m_Slider3.value = (float)m_TreeCount[3] / 4.0f;
                 }
 
-                if (m_TreeCount[8] >= 4)
+                if (m_TreeCount[7] >= 4)
                 {
                     m_Slider1.value = 1;
                 }
@@ -202,7 +202,7 @@ public class CKantai : CAnimalCreate
             }
             else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
             {
-                if (m_TreeCount[4] >= 3)
+                if (m_TreeCount[8] >= 3)
                 {
                     m_Slider3.value = 1;
                 }

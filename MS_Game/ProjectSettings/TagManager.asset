@@ -52,6 +52,13 @@ TagManager:
   - KANSOUTAI
   - KANTAI
   - Machine
+  - AnimalNest
+  - Tree
+  - Reaper
+  - Fade
+  - Floor
+  - EffectManager
+  - nHUKUROU
   layers:
   - Default
   - TransparentFX
