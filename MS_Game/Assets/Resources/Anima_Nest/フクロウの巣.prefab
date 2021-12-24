@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: -583957143127152920}
   m_Layer: 0
   m_Name: "\u30D5\u30AF\u30ED\u30A6\u306E\u5DE3"
-  m_TagString: nHUKUROU,
+  m_TagString: nHUKUROU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

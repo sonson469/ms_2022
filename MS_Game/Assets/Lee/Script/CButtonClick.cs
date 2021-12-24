@@ -39,79 +39,71 @@ public class CButtonClick : MonoBehaviour
     public void CreateTree(int TreeID)
     {
 
-        if(m_TreeData.sheets[0].list[TreeID-1].Cost <= m_TimeManager.GetMoney())
+        if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
         {
-
-            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
-            {
-                m_ObjectMoveScript.ResetMove();
-            }
-
-            m_ObjectMoveScript.SetNum(TreeID);
-            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
-            m_ObjectMoveScript.SetCost(m_TreeData.sheets[0].list[TreeID - 1].Cost);
-
-            if (TreeID <= 5 || (TreeID >= 20 && TreeID <= 24))
-            {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.ONTAI);
-            }
-            else if((TreeID >= 6 && TreeID <= 10) || (TreeID >= 25 && TreeID <= 29))
-            {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.NETTAI);
-            }
-            else if ((TreeID >= 11 && TreeID <= 15) || (TreeID >= 30 && TreeID <= 34))
-            {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANSOUTAI);
-            }
-            else if ((TreeID >= 16 && TreeID <= 19) || (TreeID >= 35 && TreeID <= 40))
-            {
-                m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANTAI);
-            }
-
-            if(TreeID <= 19)
-            {
-                m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.BIG);
-            }
-            else
-            {
-                m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.SMALL);
-            }
-
-            m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
-
-            ObjectCreate();
-            float y = Random.Range(0.0f, 360.0f);
-            m_TargetObject.transform.Rotate(new Vector3(0, y, 0));
-
+            m_ObjectMoveScript.ResetMove();
         }
+
+        m_ObjectMoveScript.SetNum(TreeID);
+        m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.TREE);
+        m_ObjectMoveScript.SetCost(m_TreeData.sheets[0].list[TreeID - 1].Cost);
+
+        if (TreeID <= 5 || (TreeID >= 20 && TreeID <= 24))
+        {
+            m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.ONTAI);
+        }
+        else if ((TreeID >= 6 && TreeID <= 10) || (TreeID >= 25 && TreeID <= 29))
+        {
+            m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.NETTAI);
+        }
+        else if ((TreeID >= 11 && TreeID <= 15) || (TreeID >= 30 && TreeID <= 34))
+        {
+            m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANSOUTAI);
+        }
+        else if ((TreeID >= 16 && TreeID <= 19) || (TreeID >= 35 && TreeID <= 40))
+        {
+            m_ObjectMoveScript.SetTreeSize(CObjectMove.TreeSize.KANTAI);
+        }
+
+        if (TreeID <= 19)
+        {
+            m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.BIG);
+        }
+        else
+        {
+            m_ObjectMoveScript.SetTreeSiseSize(CTree.Size.SMALL);
+        }
+
+        m_Object = (GameObject)Resources.Load(m_TreeData.sheets[0].list[TreeID - 1].Name);
+
+        ObjectCreate();
+        float y = Random.Range(0.0f, 360.0f);
+        m_TargetObject.transform.Rotate(new Vector3(0, y, 0));
+
+
     }
 
     public void CreateNest(int NestID)
     {
 
-        if (m_NestData.sheets[0].list[NestID - 1].Cost <= m_TimeManager.GetMoney())
+        if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
         {
-
-            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
-            {
-                m_ObjectMoveScript.ResetMove();
-            }
-
-            m_ObjectMoveScript.SetNum(NestID);
-            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.NEST);
-
-            m_ObjectMoveScript.SetCost(m_NestData.sheets[0].list[NestID - 1].Cost);
-
-            m_Object = (GameObject)Resources.Load("Anima_Nest/" + m_NestData.sheets[0].list[NestID - 1].Name);
-
-            ObjectCreate();
+            m_ObjectMoveScript.ResetMove();
         }
+
+        m_ObjectMoveScript.SetNum(NestID);
+        m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.NEST);
+
+        m_ObjectMoveScript.SetCost(m_NestData.sheets[0].list[NestID - 1].Cost);
+
+        m_Object = (GameObject)Resources.Load("Anima_Nest/" + m_NestData.sheets[0].list[NestID - 1].Name);
+
+        ObjectCreate();
+
     }
 
     public void CreateMachine(int MachineID)
     {
-        if (m_MachineData.sheets[0].list[MachineID - 1].Cost <= m_TimeManager.GetMoney())
-        {
 
             if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
             {
@@ -125,8 +117,6 @@ public class CButtonClick : MonoBehaviour
             m_Object = (GameObject)Resources.Load("Machine/" + m_MachineData.sheets[0].list[MachineID - 1].Name);
 
             ObjectCreate();
-
-        }
     }
 
     public void CreateReaper()

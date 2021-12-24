@@ -222,8 +222,10 @@ public class CObjectMove : MonoBehaviour
                         m_Plane.transform.position = new Vector3(m_PutPosition.x + 1.0f, 0.52f, m_PutPosition.z);
                     }
 
-                    m_Succession = false;
+                    
                 }
+
+                m_Succession = false;
             }
         }
     }
