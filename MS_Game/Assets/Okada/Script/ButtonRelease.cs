@@ -86,7 +86,6 @@ public class ButtonRelease : MonoBehaviour
             m_NestActive[(int)NestNumber.TORA] = true;
         }
 
-
         //”M‘Ñ‰ð•ú
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.RATANNYASHI] >= 1)
             m_NestActive[(int)NestNumber.SYOUGARAGO] = true;
@@ -191,13 +190,13 @@ public class ButtonRelease : MonoBehaviour
 
         for (int i = 0; i < 40; i++)
         {
-            if(m_NestActive[i])
+            if (m_NestActive[i])
             {
                 m_Zukan[i].SetActive(false);
             }
         }
 
-            for (int i = 0; i < 40; i++)
+        for (int i = 0; i < 40; i++)
         {
             m_NestButton[i].interactable = m_NestActive[i];
         }

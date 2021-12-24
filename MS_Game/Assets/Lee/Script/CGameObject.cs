@@ -196,7 +196,7 @@ public class CGameObject : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(m_ModeState);
+        
     }
 
     //–¼‘O‚²‚Æ‚É‰½ŒÂ‚ ‚é‚©”‚¦‚é
