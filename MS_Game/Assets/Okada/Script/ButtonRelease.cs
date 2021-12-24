@@ -36,94 +36,53 @@ public class ButtonRelease : MonoBehaviour
 
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.YATUDE] >= 1)
         {
-            if(!m_NestActive[(int)NestNumber.HATUKANEZUMI])
-            {
-                m_TimeManager.AddMoney(400);
-            }
-
             m_NestActive[(int)NestNumber.HATUKANEZUMI] = true;
         }
 
         if (m_CGameObj.m_TreeNameCount[(int)TreeNumber.KEYAKI] >= 1)
         {
-            if (!m_NestActive[(int)NestNumber.AMAKAERU])
-            {
-                m_TimeManager.AddMoney(600);
-            }
             m_NestActive[(int)NestNumber.AMAKAERU] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.AMAKAERU].Count >= 5)
         {
-            if (!m_NestActive[(int)NestNumber.SHIMAHEBI])
-            {
-                m_TimeManager.AddMoney(900);
-            }
             m_NestActive[(int)NestNumber.SHIMAHEBI] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.AMAKAERU].Count >= 1)
         {
-            if (!m_NestActive[(int)NestNumber.RESSAPANDA])
-            {
-                m_TimeManager.AddMoney(1300);
-            }
             m_NestActive[(int)NestNumber.RESSAPANDA] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.RESSAPANDA].Count >= 1)
         {
-            if (!m_NestActive[(int)NestNumber.NIHONNITATI])
-            {
-                m_TimeManager.AddMoney(1900);
-            }
             m_NestActive[(int)NestNumber.NIHONNITATI] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.RESSAPANDA].Count >= 5)
         {
-            if (!m_NestActive[(int)NestNumber.YAMAINU])
-            {
-                m_TimeManager.AddMoney(2800);
-            }
             m_NestActive[(int)NestNumber.YAMAINU] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 1 && m_CGameObj.AnimalList[(int)AnimalNumber.YAMAINU].Count >= 5)
         {
-            if (!m_NestActive[(int)NestNumber.OOTAKA])
-            {
-                m_TimeManager.AddMoney(4200);
-            }
             m_NestActive[(int)NestNumber.OOTAKA] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 5 && m_CGameObj.AnimalList[(int)AnimalNumber.YAMAINU].Count >= 1)
         {
-            if (!m_NestActive[(int)NestNumber.HUKUROU])
-            {
-                m_TimeManager.AddMoney(6300);
-            }
             m_NestActive[(int)NestNumber.HUKUROU] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 10
             && m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.OOTAKA].Count >= 10)
         {
-            if (!m_NestActive[(int)NestNumber.GURIZURI])
-            {
-                m_TimeManager.AddMoney(9400);
-            }
             m_NestActive[(int)NestNumber.GURIZURI] = true;
         }
 
         if (m_CGameObj.AnimalList[(int)AnimalNumber.HATUKANEZUMI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.SHIMAHEBI].Count >= 10
             && m_CGameObj.AnimalList[(int)AnimalNumber.NIHONNITATI].Count >= 10 && m_CGameObj.AnimalList[(int)AnimalNumber.OOTAKA].Count >= 10)
         {
-            if (!m_NestActive[(int)NestNumber.TORA])
-            {
-                m_TimeManager.AddMoney(14000);
-            }
             m_NestActive[(int)NestNumber.TORA] = true;
         }
 

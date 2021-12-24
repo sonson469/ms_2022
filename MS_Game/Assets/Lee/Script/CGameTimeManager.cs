@@ -53,7 +53,7 @@ public class CGameTimeManager : MonoBehaviour
         if (m_DayEnd)
         {
             m_GameDay++;
-            m_Money += 10;
+            m_Money += 50;
             m_GameTime = 0;
             m_DayEnd = false;
         }
