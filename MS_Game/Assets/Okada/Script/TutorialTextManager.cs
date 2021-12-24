@@ -165,7 +165,7 @@ public class TutorialTextManager : MonoBehaviour
     private IEnumerator LoadText()
     {
         enabled = false;
-        string m_FileName = "Assets/Okada/TutorialText.txt";
+        string m_FileName = "Assets/Resources/TutorialText.txt";
 
         // ˆês‚¸‚Â“Ç‚İ‚Ş
         using (var fs = new StreamReader(m_FileName, System.Text.Encoding.GetEncoding("UTF-8")))
