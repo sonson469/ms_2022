@@ -64,6 +64,8 @@ public class CObjectMove : MonoBehaviour
     private Camera m_MainCamera;
     private Vector3 m_CreatePosition;
 
+    private CAudio m_AudioScript;
+    private AudioSource m_Audio;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +73,8 @@ public class CObjectMove : MonoBehaviour
         m_ButtonScript = this.gameObject.GetComponent<CButtonClick>();
         m_GameObjectScript = this.gameObject.GetComponent<CGameObject>();
         m_TimeScript = this.gameObject.GetComponent<CGameTimeManager>();
+        m_AudioScript = this.gameObject.GetComponent<CAudio>();
+        m_Audio = this.gameObject.GetComponent<AudioSource>();
 
         m_Vector = new Vector3(2.0f, 0, 0);
 
@@ -143,6 +147,8 @@ public class CObjectMove : MonoBehaviour
                     //-----------------------------------
                     m_EffectManager.PlayEffect((int)EffectNum.Set, m_TargetObject.transform.position);
 
+                    m_Audio.PlayOneShot(m_AudioScript.SEPut);
+
 
                     //同じオブジェクトを既に設置してたら
                     if (m_PutPosition != null)
@@ -168,7 +174,7 @@ public class CObjectMove : MonoBehaviour
                         CTree treescript = m_TargetObject.GetComponent<CTree>();
                         treescript.SetSapling();
                         treescript.SetSize(m_TreeSizeSize);
-                        treescript.SetCost(m_TargetObjectCost * 2);
+                        treescript.SetCost(m_TargetObjectCost * 3);
                         m_ButtonScript.CreateTree(m_Num);
                         m_IsYatudeFlag = true;
 

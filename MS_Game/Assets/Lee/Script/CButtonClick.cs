@@ -21,6 +21,9 @@ public class CButtonClick : MonoBehaviour
 
     private bool m_NestBreake;
 
+    private CAudio m_AudioScript;
+    private AudioSource m_Audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,9 @@ public class CButtonClick : MonoBehaviour
         m_ObjectMoveScript = this.gameObject.GetComponent<CObjectMove>();
         m_TimeManager = this.gameObject.GetComponent<CGameTimeManager>();
         m_ObjectScript = this.gameObject.GetComponent<CGameObject>();
+
+        m_AudioScript = this.gameObject.GetComponent<CAudio>();
+        m_Audio = this.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +44,11 @@ public class CButtonClick : MonoBehaviour
 
     public void CreateTree(int TreeID)
     {
+
+        if(!m_ObjectMoveScript.GetSuccession())
+        {
+            m_Audio.PlayOneShot(m_AudioScript.SESelest);
+        }
 
         if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
         {
@@ -86,6 +97,11 @@ public class CButtonClick : MonoBehaviour
     public void CreateNest(int NestID)
     {
 
+        if (!m_ObjectMoveScript.GetSuccession())
+        {
+            m_Audio.PlayOneShot(m_AudioScript.SESelest);
+        }
+
         if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
         {
             m_ObjectMoveScript.ResetMove();
@@ -105,28 +121,39 @@ public class CButtonClick : MonoBehaviour
     public void CreateMachine(int MachineID)
     {
 
-            if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
-            {
-                m_ObjectMoveScript.ResetMove();
-            }
+        if (!m_ObjectMoveScript.GetSuccession())
+        {
+            m_Audio.PlayOneShot(m_AudioScript.SESelest);
+        }
 
-            m_ObjectMoveScript.SetNum(MachineID);
-            m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.MACHINE);
-            m_ObjectMoveScript.SetCost(m_MachineData.sheets[0].list[MachineID - 1].Cost);
+        if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
+        {
+            m_ObjectMoveScript.ResetMove();
+        }
 
-            m_Object = (GameObject)Resources.Load("Machine/" + m_MachineData.sheets[0].list[MachineID - 1].Name);
+        m_ObjectMoveScript.SetNum(MachineID);
+        m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.MACHINE);
+        m_ObjectMoveScript.SetCost(m_MachineData.sheets[0].list[MachineID - 1].Cost);
 
-            ObjectCreate();
+        m_Object = (GameObject)Resources.Load("Machine/" + m_MachineData.sheets[0].list[MachineID - 1].Name);
+
+        ObjectCreate();
     }
 
     public void CreateReaper()
     {
+
+        if (!m_ObjectMoveScript.GetSuccession())
+        {
+            m_Audio.PlayOneShot(m_AudioScript.SESelest);
+        }
+
         if (m_TargetObject != null && !m_ObjectMoveScript.GetSuccession())
         {
             m_ObjectMoveScript.ResetMove();
         }
         m_ObjectMoveScript.SetObjectNum(CObjectMove.CreateObject.REAPER);
-        m_ObjectMoveScript.SetCost(0);
+        m_ObjectMoveScript.SetCost(500);
 
         m_Object = (GameObject)Resources.Load("Machine/Š Žæ‚è‹@");
 
@@ -135,6 +162,8 @@ public class CButtonClick : MonoBehaviour
 
     public void Cancel()
     {
+        m_Audio.PlayOneShot(m_AudioScript.SEKettei);
+
         if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES || m_ObjectScript.GetMode() == CGameObject.ModeState.INFOR)
         {
             m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
@@ -149,7 +178,10 @@ public class CButtonClick : MonoBehaviour
 
     public void RangeActive()
     {
-        if(m_ObjectScript.GetRangeFlag())
+
+        m_Audio.PlayOneShot(m_AudioScript.SEKettei);
+
+        if (m_ObjectScript.GetRangeFlag())
         {
             m_ObjectScript.SetRangeFlag(false);
         }
@@ -161,6 +193,8 @@ public class CButtonClick : MonoBehaviour
 
     public void DesObj()
     {
+        m_Audio.PlayOneShot(m_AudioScript.SEKettei);
+
         if (m_ObjectScript.GetMode() == CGameObject.ModeState.DES)
         {
             m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
@@ -178,6 +212,8 @@ public class CButtonClick : MonoBehaviour
     }
     public void Information()
     {
+        m_Audio.PlayOneShot(m_AudioScript.SEKettei);
+
         if (m_ObjectScript.GetMode() == CGameObject.ModeState.INFOR)
         {
             m_ObjectScript.SetMode(CGameObject.ModeState.NORMAL);
@@ -196,6 +232,8 @@ public class CButtonClick : MonoBehaviour
 
     public void ChangeTimeSpeed(int num)
     {
+        m_Audio.PlayOneShot(m_AudioScript.SESelest);
+
         m_TimeManager.SetTimeSpeed(num);
     }
 

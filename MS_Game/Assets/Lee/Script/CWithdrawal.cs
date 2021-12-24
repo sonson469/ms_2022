@@ -18,6 +18,9 @@ public class CWithdrawal : MonoBehaviour
 
     private EffectManager m_EffectManager;
 
+    private CAudio m_AudioScript;
+    private AudioSource m_Audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,9 @@ public class CWithdrawal : MonoBehaviour
         m_RaycastHit = new RaycastHit();
 
         m_EffectManager = GameObject.FindWithTag("EffectManager").GetComponent<EffectManager>();
+
+        m_AudioScript = this.gameObject.GetComponent<CAudio>();
+        m_Audio = this.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +62,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_Audio.PlayOneShot(m_AudioScript.SETekkyo);
                             m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
 
@@ -108,6 +115,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_Audio.PlayOneShot(m_AudioScript.SETekkyo);
                             m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
 
@@ -136,6 +144,7 @@ public class CWithdrawal : MonoBehaviour
                             //--------------------------------------------------
                             //消すエフェクトはこのへん
                             //---------------------------------------------------
+                            m_Audio.PlayOneShot(m_AudioScript.SETekkyo);
                             m_EffectManager.PlayEffect((int)EffectNum.Delete, m_TargetObject.transform.position);
 
                             Destroy(m_TargetObject.transform.parent.gameObject);
