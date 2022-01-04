@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: -2896125090045137465}
   - component: {fileID: -7284932837706421039}
   - component: {fileID: 8897094206029865142}
+  - component: {fileID: -5949586506441552207}
   m_Layer: 0
   m_Name: "\u30CA\u30C4\u30E1\u30E4\u30B7"
   m_TagString: Tree
@@ -664,6 +665,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Kansoutai: 0
+--- !u!65 &-5949586506441552207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223235082574792321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &6228863934156231903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,14 +1243,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: df1df9f1c8aefa745812b8f84a3dd8a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f96f28cc40f24488f4bcbd1f9601f2, type: 3}
---- !u!1 &3260046888325736538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78f96f28cc40f24488f4bcbd1f9601f2, type: 3}
-  m_PrefabInstance: {fileID: 2449793883614795019}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2771354189626192608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78f96f28cc40f24488f4bcbd1f9601f2, type: 3}
+  m_PrefabInstance: {fileID: 2449793883614795019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3260046888325736538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78f96f28cc40f24488f4bcbd1f9601f2, type: 3}
   m_PrefabInstance: {fileID: 2449793883614795019}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4778157055802768191

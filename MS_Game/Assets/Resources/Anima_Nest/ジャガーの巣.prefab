@@ -1515,6 +1515,7 @@ GameObject:
   - component: {fileID: 8697752699117487505}
   - component: {fileID: 8697282744473418195}
   - component: {fileID: 5885329930789242904}
+  - component: {fileID: -6918073690022967301}
   m_Layer: 0
   m_Name: "\u30B8\u30E3\u30AC\u30FC\u306E\u5DE3"
   m_TagString: nZYAGA
@@ -1635,6 +1636,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-6918073690022967301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138521910114537550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &5457778000926717035
 GameObject:
   m_ObjectHideFlags: 0

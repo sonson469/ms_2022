@@ -1956,6 +1956,7 @@ GameObject:
   - component: {fileID: 3452561567806420566}
   - component: {fileID: 5242250019871876139}
   - component: {fileID: 5416194577126680964}
+  - component: {fileID: -9055771863511475995}
   m_Layer: 0
   m_Name: "\u30B7\u30DE\u30A6\u30DE\u306E\u5DE3"
   m_TagString: nSHIMAUMA
@@ -2076,6 +2077,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-9055771863511475995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7826088785172007941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &7868401328377910494
 GameObject:
   m_ObjectHideFlags: 0

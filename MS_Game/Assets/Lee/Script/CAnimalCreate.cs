@@ -30,8 +30,32 @@ public class CAnimalCreate : MonoBehaviour
     {
         GameObject Object = (GameObject)Resources.Load("Animal/" + m_AnimalData.sheets[0].list[NestID - 1].Name);
 
-        float posX = Random.Range(-range,range);
+        float posX = Random.Range(-range, range);
         float posZ = Random.Range(-range, range);
+
+        int xnum = 0;
+        int znum = 0;
+
+        while (xnum == 0)
+        {
+            posX = Random.Range(-range, range);
+
+            if (nest.transform.position.x + posX < 45.0f && nest.transform.position.x + posX > -45.0f)
+            {
+                xnum = 1;
+            }
+        }
+
+        while (znum == 0)
+        {
+            posZ = Random.Range(-range, range);
+
+            if (nest.transform.position.z + posZ < 45.0f && nest.transform.position.z + posZ > -45.0f)
+            {
+                znum = 1;
+            }
+        }
+
 
         Vector3 Position = new Vector3(nest.transform.position.x + posX, 0.0f, nest.transform.position.z + posZ);
 

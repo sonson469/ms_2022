@@ -1818,6 +1818,7 @@ GameObject:
   - component: {fileID: 2186928536903627802}
   - component: {fileID: -6032911576630846767}
   - component: {fileID: 7492572763391743509}
+  - component: {fileID: 4398186607550417696}
   m_Layer: 0
   m_Name: "\u30A2\u30DE\u30AB\u30A8\u30EB\u306E\u5DE3"
   m_TagString: nAMAKAERU
@@ -1938,6 +1939,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &4398186607550417696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745183738834314139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &6510484215300509489
 GameObject:
   m_ObjectHideFlags: 0

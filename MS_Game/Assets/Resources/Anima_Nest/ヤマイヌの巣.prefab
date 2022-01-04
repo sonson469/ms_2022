@@ -1025,6 +1025,7 @@ GameObject:
   - component: {fileID: 6414649334533890107}
   - component: {fileID: -8162182978799147989}
   - component: {fileID: -1585224046260618284}
+  - component: {fileID: -7065761454019472035}
   m_Layer: 0
   m_Name: "\u30E4\u30DE\u30A4\u30CC\u306E\u5DE3"
   m_TagString: nYAMAINU
@@ -1145,6 +1146,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-7065761454019472035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922546738890905313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &4009137489647259208
 GameObject:
   m_ObjectHideFlags: 0

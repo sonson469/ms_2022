@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: -7873969643740866019}
   - component: {fileID: 1519608173887688938}
   - component: {fileID: 5361457610438320680}
+  - component: {fileID: -8260816933171404240}
   m_Layer: 0
   m_Name: "\u30E9\u30D9\u30F3\u30C0\u30FC"
   m_TagString: Tree
@@ -1066,6 +1067,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Ontainum: 8
   InNestList: []
+--- !u!65 &-8260816933171404240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180499047416331659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1001 &411726980644198857
 PrefabInstance:
   m_ObjectHideFlags: 0

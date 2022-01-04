@@ -46,7 +46,33 @@ public class AnimalMove : MonoBehaviour
     void GotoNextPoint()
     {
         //m_NavMeshSurface.BuildNavMesh();
-        m_TargetPos = new Vector3(Random.Range(-m_Range, m_Range), m_TargetNest.transform.position.y, Random.Range(-m_Range, m_Range));
+
+        int xnum = 0;
+        int znum = 0;
+
+        while(xnum == 0)
+        {
+            m_TargetPos.x = Random.Range(-m_Range, m_Range);
+
+            if(m_TargetNest.transform.position.x + m_TargetPos.x < 45.0f && m_TargetNest.transform.position.x + m_TargetPos.x > -45.0f)
+            {
+                xnum = 1;
+            }
+        }
+
+        while (znum == 0)
+        {
+            m_TargetPos.z = Random.Range(-m_Range, m_Range);
+
+            if (m_TargetNest.transform.position.z + m_TargetPos.z < 45.0f && m_TargetNest.transform.position.z + m_TargetPos.z > -45.0f)
+            {
+                znum = 1;
+            }
+        }
+
+        m_TargetPos.y = m_TargetNest.transform.position.y;
+
+        //m_TargetPos = new Vector3(Random.Range(-m_Range, m_Range), m_TargetNest.transform.position.y, Random.Range(-m_Range, m_Range));
         Vector3 pos = m_TargetNest.transform.position + m_TargetPos;
         m_NavMeshAgent.SetDestination(pos);
     }

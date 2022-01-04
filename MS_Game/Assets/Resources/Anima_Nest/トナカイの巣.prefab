@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: -4687087371412326762}
   - component: {fileID: -571461322568420929}
   - component: {fileID: -7259637467112185209}
+  - component: {fileID: -6397827478936804988}
   m_Layer: 0
   m_Name: "\u30C8\u30CA\u30AB\u30A4\u306E\u5DE3"
   m_TagString: nTONAKAI
@@ -210,6 +211,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-6397827478936804988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462064227051873404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &1099578959624473334
 GameObject:
   m_ObjectHideFlags: 0

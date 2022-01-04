@@ -2026,6 +2026,7 @@ GameObject:
   - component: {fileID: 3121441450208357356}
   - component: {fileID: -2637764164040714590}
   - component: {fileID: -1645656741554767137}
+  - component: {fileID: -8254963500586103059}
   m_Layer: 0
   m_Name: "\u30CF\u30C4\u30AB\u30CD\u30BA\u30DF\u306E\u5DE3"
   m_TagString: nHATUKANEZUMI
@@ -2146,6 +2147,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-8254963500586103059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891917950360676866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &8948255005136694141
 GameObject:
   m_ObjectHideFlags: 0

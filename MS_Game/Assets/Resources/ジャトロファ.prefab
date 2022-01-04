@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 5162525789897501474}
   - component: {fileID: 890514084177063799}
   - component: {fileID: -3799615432333972937}
+  - component: {fileID: 1010726871713317745}
   m_Layer: 0
   m_Name: "\u30B8\u30E3\u30C8\u30ED\u30D5\u30A1"
   m_TagString: Tree
@@ -420,6 +421,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Kansoutai: 8
+--- !u!65 &1010726871713317745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911977068473147111}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &2030233302884431266
 GameObject:
   m_ObjectHideFlags: 0
