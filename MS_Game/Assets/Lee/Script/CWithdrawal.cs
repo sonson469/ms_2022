@@ -130,6 +130,7 @@ public class CWithdrawal : MonoBehaviour
 
                     if (m_RaycastHit.collider.tag == "Reaper")
                     {
+
                         if (m_TargetObject == null)
                         {
                             m_TargetObject = m_RaycastHit.collider.gameObject;

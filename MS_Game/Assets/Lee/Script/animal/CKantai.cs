@@ -136,7 +136,7 @@ public class CKantai : CAnimalCreate
                 }
                 else
                 {
-                    m_Slider1.value = (float)m_TreeCount[5] / 7.0f;
+                    m_Slider1.value = (float)m_TreeCount[4] / 7.0f;
                 }
             }
             else if (m_NestScript.GetNestNum() == 3 || m_NestScript.GetNestNum() == 4)
@@ -156,7 +156,7 @@ public class CKantai : CAnimalCreate
                 }
                 else
                 {
-                    m_Slider1.value = (float)m_TreeCount[6] / 6.0f;
+                    m_Slider1.value = (float)m_TreeCount[5] / 6.0f;
                 }
             }
             else if (m_NestScript.GetNestNum() == 5 || m_NestScript.GetNestNum() == 6)
@@ -176,7 +176,7 @@ public class CKantai : CAnimalCreate
                 }
                 else
                 {
-                    m_Slider1.value = (float)m_TreeCount[7] / 5.0f;
+                    m_Slider1.value = (float)m_TreeCount[6] / 5.0f;
                 }
 
             }
@@ -197,7 +197,7 @@ public class CKantai : CAnimalCreate
                 }
                 else
                 {
-                    m_Slider1.value = (float)m_TreeCount[8] / 4.0f;
+                    m_Slider1.value = (float)m_TreeCount[7] / 4.0f;
                 }
             }
             else if (m_NestScript.GetNestNum() == 9 || m_NestScript.GetNestNum() == 10)
@@ -208,7 +208,7 @@ public class CKantai : CAnimalCreate
                 }
                 else
                 {
-                    m_Slider3.value = (float)m_TreeCount[4] / 3.0f;
+                    m_Slider3.value = (float)m_TreeCount[8] / 3.0f;
 
                 }
 

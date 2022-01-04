@@ -1576,6 +1576,7 @@ GameObject:
   - component: {fileID: 7331946221581395047}
   - component: {fileID: 5995074910121286206}
   - component: {fileID: -9027426606569271663}
+  - component: {fileID: 6340116686446904387}
   m_Layer: 0
   m_Name: "\u30AA\u30AA\u30BF\u30AB\u306E\u5DE3"
   m_TagString: nOOTAKA
@@ -1696,6 +1697,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &6340116686446904387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403514157044448319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &5617962154218698525
 GameObject:
   m_ObjectHideFlags: 0

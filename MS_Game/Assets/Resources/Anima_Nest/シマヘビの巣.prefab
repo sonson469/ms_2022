@@ -1844,6 +1844,7 @@ GameObject:
   - component: {fileID: 5542695902607695297}
   - component: {fileID: 6871714213987767828}
   - component: {fileID: -1161306333014630676}
+  - component: {fileID: 1206516074485294465}
   m_Layer: 0
   m_Name: "\u30B7\u30DE\u30D8\u30D3\u306E\u5DE3"
   m_TagString: nSHIMAHEBI
@@ -1964,6 +1965,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &1206516074485294465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169877644121760125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &6973304656369613307
 GameObject:
   m_ObjectHideFlags: 0

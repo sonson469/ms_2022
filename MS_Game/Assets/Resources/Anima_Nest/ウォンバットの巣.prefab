@@ -748,6 +748,7 @@ GameObject:
   - component: {fileID: -6220739510000504967}
   - component: {fileID: 4077366455239048688}
   - component: {fileID: -8620420351895365924}
+  - component: {fileID: -2525662240897548506}
   m_Layer: 0
   m_Name: "\u30A6\u30A9\u30F3\u30D0\u30C3\u30C8\u306E\u5DE3"
   m_TagString: nWONBATTO
@@ -868,6 +869,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-2525662240897548506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379427757088282938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &3431845102353655763
 GameObject:
   m_ObjectHideFlags: 0

@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 4687929647096946893}
   - component: {fileID: -4639801008334359983}
   - component: {fileID: 7300645194970982171}
+  - component: {fileID: -2352606474791007014}
   m_Layer: 0
   m_Name: "\u30B8\u30E3\u30B3\u30A6\u30A6\u30B7\u306E\u5DE3"
   m_TagString: nZYAKOUUSHI
@@ -778,6 +779,19 @@ MonoBehaviour:
   m_MyAnimalNumText: {fileID: 0}
   m_HighNestText: {fileID: 0}
   m_Canvas: {fileID: 0}
+--- !u!65 &-2352606474791007014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916579030573085070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &2430103371518321524
 GameObject:
   m_ObjectHideFlags: 0

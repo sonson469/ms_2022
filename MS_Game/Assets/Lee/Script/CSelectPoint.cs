@@ -45,12 +45,13 @@ public class CSelectPoint : MonoBehaviour
             if (Physics.Raycast(ray, out m_RaycastHit))
             {
 
-                //1マス超えなかったらreturn
-                if (Mathf.Abs(m_SelectPointPlane.transform.position.x - m_RaycastHit.point.x) >= 0.5f || Mathf.Abs(m_SelectPointPlane.transform.position.z - m_RaycastHit.point.z) >= 0.5f)
+                //1マス超えてる、範囲内
+                if ((Mathf.Abs(m_SelectPointPlane.transform.position.x - m_RaycastHit.point.x) >= 0.5f || Mathf.Abs(m_SelectPointPlane.transform.position.z - m_RaycastHit.point.z) >= 0.5f )
+                    && ((m_RaycastHit.point.x < 45.0f && m_RaycastHit.point.x > -45.0f) && (m_RaycastHit.point.z < 45.0f && m_RaycastHit.point.z > -45.0f)))
                 {
                     //planeの座標をレイがあってるとこにする(微妙な少数になったりしたから整数にする)
-                    m_SelectPointPlane.transform.position = new Vector3(Mathf.RoundToInt(m_RaycastHit.point.x), m_RaycastHit.point.y, Mathf.RoundToInt(m_RaycastHit.point.z));
-                    m_SelectPointPlane.transform.position += new Vector3(0, 0.15f, 0);
+                    m_SelectPointPlane.transform.position = new Vector3(Mathf.RoundToInt(m_RaycastHit.point.x), 0.15f, Mathf.RoundToInt(m_RaycastHit.point.z));
+                   // m_SelectPointPlane.transform.position += new Vector3(0, 0.15f, 0);
                 }
             }
 
