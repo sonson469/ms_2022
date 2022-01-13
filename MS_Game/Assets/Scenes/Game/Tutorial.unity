@@ -47631,7 +47631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464caf922d40b5d41907ad8477813e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ReadSpeed: 10
+  m_ReadSpeed: 0.05
   m_TutorialText: {fileID: 398765312}
   m_ObjButton:
   - {fileID: 1919701715}
